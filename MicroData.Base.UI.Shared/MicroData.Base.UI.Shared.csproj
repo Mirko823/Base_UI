@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Common\UI\MicroData.Common.UI.Shared\MicroData.Common.UI.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
