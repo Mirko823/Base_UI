@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-	  <UseMauiEssentials>true</UseMauiEssentials>
+	
   </PropertyGroup>
 
 
@@ -14,7 +14,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.5" />
-		<PackageReference Include="DevExpress.Blazor" Version="23.2.5" />
+		<PackageReference Include="DevExpress.Blazor" Version="23.2.6" />
 
 	</ItemGroup>
 
