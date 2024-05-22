@@ -7,17 +7,17 @@ namespace MicroData.Base.UI.Shared.ViewModel
     {
         [Required(ErrorMessage = "Šifra je obavezno polje")]
         [Display(Name = "Šifra")]
-        public string Code { get; set; }
+        public string? Code { get; set; }
 
         [Required(ErrorMessage = "Oznaka je obavezno polje")]
         [Display(Name = "Oznaka")]
-        public string Label { get; set; }
+        public string? Label { get; set; }
 
         [Required(ErrorMessage = "Naziv je obavezno polje")]
         [Display(Name = "Naziv")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Display(Name = "Aktivna", AutoGenerateField = false)]
-        public string IsActive { get; set; }
+        public bool IsActive { get; set; }
     }
 }

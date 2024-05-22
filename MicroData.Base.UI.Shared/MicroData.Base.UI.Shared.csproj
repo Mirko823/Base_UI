@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Common\UI\MicroData.Common.UI.Shared\MicroData.Common.UI.Shared.csproj" />
+    <ProjectReference Include="..\MicroData.Base.UI.Resource\MicroData.Base.UI.Resource.csproj" />
   </ItemGroup>
 
 </Project>
