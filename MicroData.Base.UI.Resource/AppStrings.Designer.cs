@@ -79,6 +79,24 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Šifra.
+        /// </summary>
+        public static string CodeUnits {
+            get {
+                return ResourceManager.GetString("CodeUnits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tabela jedinica.
+        /// </summary>
+        public static string HeaderUnit {
+            get {
+                return ResourceManager.GetString("HeaderUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zdravo Svete - Srpski.
         /// </summary>
         public static string Hello {
@@ -93,6 +111,15 @@ namespace MicroData.Base.UI.Resource {
         public static string IsActiveName {
             get {
                 return ResourceManager.GetString("IsActiveName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Da li je aktivna jedinica?.
+        /// </summary>
+        public static string IsActiveUnits {
+            get {
+                return ResourceManager.GetString("IsActiveUnits", resourceCulture);
             }
         }
         
@@ -115,6 +142,15 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Oznaka.
+        /// </summary>
+        public static string LabelUnits {
+            get {
+                return ResourceManager.GetString("LabelUnits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Naziv.
         /// </summary>
         public static string NameName {
@@ -129,6 +165,15 @@ namespace MicroData.Base.UI.Resource {
         public static string NameRequired {
             get {
                 return ResourceManager.GetString("NameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Naziv.
+        /// </summary>
+        public static string NameUnits {
+            get {
+                return ResourceManager.GetString("NameUnits", resourceCulture);
             }
         }
     }

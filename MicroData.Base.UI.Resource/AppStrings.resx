@@ -123,11 +123,20 @@
   <data name="CodeRequired" xml:space="preserve">
     <value>Šifra je obavezno polje</value>
   </data>
+  <data name="CodeUnits" xml:space="preserve">
+    <value>Šifra</value>
+  </data>
+  <data name="HeaderUnit" xml:space="preserve">
+    <value>Tabela jedinica</value>
+  </data>
   <data name="Hello" xml:space="preserve">
     <value>Zdravo Svete - Srpski</value>
   </data>
   <data name="IsActiveName" xml:space="preserve">
     <value>Aktivna</value>
+  </data>
+  <data name="IsActiveUnits" xml:space="preserve">
+    <value>Da li je aktivna jedinica?</value>
   </data>
   <data name="LabelName" xml:space="preserve">
     <value>Oznaka</value>
@@ -135,10 +144,16 @@
   <data name="LabelRequired" xml:space="preserve">
     <value>Oznaka je obavezno polje</value>
   </data>
+  <data name="LabelUnits" xml:space="preserve">
+    <value>Oznaka</value>
+  </data>
   <data name="NameName" xml:space="preserve">
     <value>Naziv</value>
   </data>
   <data name="NameRequired" xml:space="preserve">
     <value>Naziv je obavezno polje</value>
+  </data>
+  <data name="NameUnits" xml:space="preserve">
+    <value>Naziv</value>
   </data>
 </root>

@@ -1,17 +1,9 @@
 ﻿@page "/unitlist"
 @inject IStringLocalizer<AppStrings> localizer
 
-<h1>@localizer["Name"]</h1>
+<h1>@localizer["HeaderUnit"]</h1>
 
-<h2>@localizer["Hello"]</h2>
 
-<h3>UnitList - Napraviti listu jedinica mere sa devexpres gridom</h3>
-
-<h5>UnitList - Dodati akcije, Novi , izmeni, brisanje</h5>
-
-<h5>UnitList - Novi i izmenu neka idu na posebnoj formi </h5>
-
-<h5>UnitList - Pre brisanje postaviti pitanje ? Da li ste sigurni da zelite da obrisete ________   DA /NE </h5>
 
 <DxGrid Data="@Units"
         CssClass="mw-1100"
@@ -20,12 +12,12 @@
 
     <Columns>
 
+       
+        <DxGridDataColumn Caption="@localizer["CodeUnits"]" FieldName="Code" Width="10%" />
+        <DxGridDataColumn Caption="@localizer["LabelUnits"]" FieldName="Label" />
+        <DxGridDataColumn Caption="@localizer["NameUnits"]" FieldName="Name" />
+        <DxGridDataColumn Caption="@localizer["IsActiveUnits"]" FieldName="IsActive" />
         <DxGridCommandColumn />
-        <DxGridDataColumn Caption="ID" FieldName="Code" Width="5%" />
-        <DxGridDataColumn Caption="Label" FieldName="Label" />
-        <DxGridDataColumn Caption="Name" FieldName="Name" />
-        <DxGridDataColumn Caption="IsActive" FieldName="IsActive" />
-        
 
 
 
@@ -54,3 +46,22 @@
 
 
 </DxGrid>
+
+
+            <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+<h3>UnitList - Napraviti listu jedinica mere sa devexpres gridom</h3>
+
+<h5>UnitList - Dodati akcije, Novi , izmeni, brisanje</h5>
+
+<h5>UnitList - Novi i izmenu neka idu na posebnoj formi </h5>
+
+<h5>UnitList - Pre brisanje postaviti pitanje ? Da li ste sigurni da zelite da obrisete ________   DA /NE </h5>
+

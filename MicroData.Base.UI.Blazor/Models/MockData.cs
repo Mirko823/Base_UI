@@ -1,4 +1,5 @@
-﻿using MicroData.Base.UI.Shared.ViewModel;
+﻿using DevExpress.DirectX.Common.Direct3D;
+using MicroData.Base.UI.Shared.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,38 @@ namespace MicroData.Base.UI.Blazor.Models
                 IsActive = true
             };
 
-             return new List<UnitViewModel>() { e1};
+            var e2 = new UnitViewModel
+            {
+                Code = "0001",
+                Label = "g",
+                Name = "gram",
+                IsActive = true
+            };
+                
+            var e3 = new UnitViewModel
+                {
+                    Code = "0002",
+                    Label = "Mg",
+                    Name = "Tona",
+                    IsActive = true
+                };
+            var e4 = new UnitViewModel
+            {
+                Code = "0003",
+                Label = "m",
+                Name = "metar",
+                IsActive = false
+            };
+
+            var e5 = new UnitViewModel
+            {
+                Code = "0004",
+                Label = "Km",
+                Name = "Kilometar",
+                IsActive = false
+            };
+
+            return new List<UnitViewModel>() { e1, e2, e3, e4, e5};
         }
 
 
