@@ -8,7 +8,7 @@ namespace MicroData.Base.UI.Shared.ViewModel
         [Required(ErrorMessage = "Šifra je obavezno polje")]
         [Display(Name = "Šifra")]
         public string? Code { get; set; }
-
+        
         [Required(ErrorMessage = "Oznaka je obavezno polje")]
         [Display(Name = "Oznaka")]
         public string? Label { get; set; }

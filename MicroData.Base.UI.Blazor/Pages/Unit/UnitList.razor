@@ -13,3 +13,44 @@
 
 <h5>UnitList - Pre brisanje postaviti pitanje ? Da li ste sigurni da zelite da obrisete ________   DA /NE </h5>
 
+<DxGrid Data="@Units"
+        CssClass="mw-1100"
+        EditMode="GridEditMode.PopupEditForm"
+        KeyFieldName="Code">
+
+    <Columns>
+
+        <DxGridCommandColumn />
+        <DxGridDataColumn Caption="ID" FieldName="Code" Width="5%" />
+        <DxGridDataColumn Caption="Label" FieldName="Label" />
+        <DxGridDataColumn Caption="Name" FieldName="Name" />
+        <DxGridDataColumn Caption="IsActive" FieldName="IsActive" />
+        
+
+
+
+        
+
+
+    </Columns>
+    <EditFormTemplate Context="editFormContext">
+        <DxFormLayout>
+            <DxFormLayoutItem Caption="First Name:">
+                @editFormContext.GetEditor("FirstName")
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Last Name:">
+                @editFormContext.GetEditor("LastName")
+            </DxFormLayoutItem>
+
+            <DxFormLayoutItem Caption="City:">
+                @editFormContext.GetEditor("City")
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Email:">
+                @editFormContext.GetEditor("Email")
+            </DxFormLayoutItem>
+        </DxFormLayout>
+    </EditFormTemplate>
+
+
+
+</DxGrid>
