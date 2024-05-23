@@ -16,36 +16,22 @@
         <DxGridDataColumn Caption="@localizer["CodeUnits"]" FieldName="Code" Width="10%" />
         <DxGridDataColumn Caption="@localizer["LabelUnits"]" FieldName="Label" />
         <DxGridDataColumn Caption="@localizer["NameUnits"]" FieldName="Name" />
-        <DxGridDataColumn Caption="@localizer["IsActiveUnits"]" FieldName="IsActive" />
-        <DxGridCommandColumn />
-
-
-
-        
+        <DxGridDataColumn Caption="@localizer["IsActiveUnits"]"  FieldName="IsActive" />
+        <DxGridCommandColumn>
+            <HeaderTemplate>
+                <a class="oi oi-plus" style="text-decoration: none;" href="javascript:void(0);">@localizer["NewUnits"]</a>
+            </HeaderTemplate>
+            <CellDisplayTemplate>
+                <a class="oi oi-pencil" Text="dx-icon-aligncenter" style="text-decoration: none; margin-right: 5px;" href="javascript:void(0);">@localizer["EditUnits"]</a>
+                <a class="oi oi-x" style="text-decoration: none; color: #DC143C;" href="javascript:void(0);">@localizer["DeleteUnits"]</a>
+            </CellDisplayTemplate>
+        </DxGridCommandColumn>
 
 
     </Columns>
-    <EditFormTemplate Context="editFormContext">
-        <DxFormLayout>
-            <DxFormLayoutItem Caption="First Name:">
-                @editFormContext.GetEditor("FirstName")
-            </DxFormLayoutItem>
-            <DxFormLayoutItem Caption="Last Name:">
-                @editFormContext.GetEditor("LastName")
-            </DxFormLayoutItem>
-
-            <DxFormLayoutItem Caption="City:">
-                @editFormContext.GetEditor("City")
-            </DxFormLayoutItem>
-            <DxFormLayoutItem Caption="Email:">
-                @editFormContext.GetEditor("Email")
-            </DxFormLayoutItem>
-        </DxFormLayout>
-    </EditFormTemplate>
-
-
 
 </DxGrid>
+
 
 
             <br />
@@ -54,6 +40,8 @@
 <br />
 <br />
 <br />
+
+    <DxButton RenderStyle="ButtonRenderStyle.Primary" IconCssClass="dx-icon-aligncenter" Text="dx-icon-aligncenter" />
 
 
 

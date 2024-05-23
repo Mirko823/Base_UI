@@ -126,6 +126,12 @@
   <data name="CodeUnits" xml:space="preserve">
     <value>Code</value>
   </data>
+  <data name="DeleteUnits" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="EditUnits" xml:space="preserve">
+    <value>Edit</value>
+  </data>
   <data name="HeaderUnit" xml:space="preserve">
     <value>Units Grid</value>
   </data>
@@ -155,5 +161,8 @@
   </data>
   <data name="NameUnits" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="NewUnits" xml:space="preserve">
+    <value>New</value>
   </data>
 </root>

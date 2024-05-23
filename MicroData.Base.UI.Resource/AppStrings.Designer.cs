@@ -88,6 +88,24 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Obriši.
+        /// </summary>
+        public static string DeleteUnits {
+            get {
+                return ResourceManager.GetString("DeleteUnits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Izmeni.
+        /// </summary>
+        public static string EditUnits {
+            get {
+                return ResourceManager.GetString("EditUnits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tabela jedinica.
         /// </summary>
         public static string HeaderUnit {
@@ -174,6 +192,15 @@ namespace MicroData.Base.UI.Resource {
         public static string NameUnits {
             get {
                 return ResourceManager.GetString("NameUnits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Novi.
+        /// </summary>
+        public static string NewUnits {
+            get {
+                return ResourceManager.GetString("NewUnits", resourceCulture);
             }
         }
     }
