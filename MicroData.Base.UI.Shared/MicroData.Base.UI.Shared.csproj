@@ -1,14 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Common\UI\MicroData.Common.UI.Shared\MicroData.Common.UI.Shared.csproj" />
-    <ProjectReference Include="..\MicroData.Base.UI.Resource\MicroData.Base.UI.Resource.csproj" />
   </ItemGroup>
 
 </Project>
