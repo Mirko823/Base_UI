@@ -1,49 +1,28 @@
-﻿using MicroData.Common.UI.Shared.Email;
+﻿using AutoMapper;
+using MicroData.Common.UI.Shared.Email;
 using MicroData.Common.UI.Shared.Identity;
-using MicroData.Common.UI.Shared.Lookup;
-using MicroData.Identity.UI.Shared.Helper;
+using MicroData.Identity.Application.Interface;
+using MicroData.Identity.Domain.Model;
 using MicroData.Identity.UI.Shared.Interface;
 using MicroData.Identity.UI.Shared.ViewModel;
-using Newtonsoft.Json;
-using System;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
 
 namespace MicroData.Identity.UI.Shared.App
 {
-    public class AuthrizeApi : IAuthorizeApi
+    public class AuthrizeApp : IAuthorizeApi
     {
-
-        private string _webHostApi;
-        //private string _signInEndpoint2 = "http://178.219.10.32:50551/api/account/signin2";
-
-       // public event EventHandler<EventArgs> AccessTokenChanged;
-
-        private static HttpClient _httpClient = new HttpClient();
-
-        public AuthrizeApi()
+        private readonly IUserService _userService;
+        private readonly IMapper _mapper;
+        public AuthrizeApp(IUserService userService, IMapper mapper)
         {
-            _webHostApi = IdentityHelper.IdentityWebApiHost;
+            _userService = userService;
+            _mapper = mapper;
         }
 
-        public bool SignInUserCompany(SignInViewModel userModel)
+        public bool SignInUserCompany(SignInViewModel userViewModel)
         {
-            //to do - Razdvojiti logovanje usera od company
-            // company uzeti podatke async
+            var userModel = _mapper.Map<SignInModel>(userViewModel);
 
-            var _signInEndpoint3 = _webHostApi + "api/authenticate/SignInUserCompany";
-
-            HttpRequestMessage req = new HttpRequestMessage();
-            req.Method = HttpMethod.Post;
-            req.RequestUri = new Uri(_signInEndpoint3);
-
-            req.Content = new StringContent(JsonConvert.SerializeObject(userModel), Encoding.UTF8, "application/json");
-
-            HttpResponseMessage response = _httpClient.SendAsync(req).Result;
-            var body = response.Content.ReadAsStringAsync().Result;
-
-            var logInUser= JsonConvert.DeserializeObject<UserViewModel>(body);
+            var logInUser= _userService.GetUser(userModel, true);
 
             if (logInUser == null)
                 return false;
@@ -75,7 +54,7 @@ namespace MicroData.Identity.UI.Shared.App
             {
                 var emailModel = new EmailViewModel()
                 {
-                    Type = logInUser.Company.EmailAccount.Type,
+                    //Type = logInUser.Company.EmailAccount.Type,
                     ApiKey = logInUser.Company.EmailAccount.ApiKey,
                     Password = logInUser.Company.EmailAccount.Password,
                     SmtpServer = logInUser.Company.EmailAccount.SmtServer,
@@ -108,22 +87,13 @@ namespace MicroData.Identity.UI.Shared.App
 
         }
 
-        public  UserViewModel SignInUser(SignInViewModel userModel)
+        public  UserViewModel SignInUser(SignInViewModel userViewModel)
         {
-            var _signInEndpoint3 = _webHostApi + "api/authenticate/SignInUser";
+            var userModel = _mapper.Map<SignInModel>(userViewModel);
 
-            HttpRequestMessage req = new HttpRequestMessage();
-            req.Method = HttpMethod.Post;
-            req.RequestUri = new Uri(_signInEndpoint3);
+            var logInUser = _userService.GetUser(userModel, true);
 
-            req.Content = new StringContent(JsonConvert.SerializeObject(userModel), Encoding.UTF8, "application/json");
-
-            HttpResponseMessage response = _httpClient.SendAsync(req).Result;
-            var body = response.Content.ReadAsStringAsync().Result;
-
-            var logInUser = JsonConvert.DeserializeObject<UserViewModel>(body);
-
-            return logInUser;
+            return _mapper.Map<UserViewModel>(logInUser);
         }
     }
 }

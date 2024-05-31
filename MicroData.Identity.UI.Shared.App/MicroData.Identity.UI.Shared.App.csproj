@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Identity\MicroData.Identity.Application\MicroData.Identity.Application.csproj" />
+    <ProjectReference Include="..\..\..\Core\Identity\MicroData.Identity.IoC\MicroData.Identity.IoC.csproj" />
     <ProjectReference Include="..\..\Identity\MicroData.Identity.UI.Shared\MicroData.Identity.UI.Shared.csproj" />
   </ItemGroup>
 
