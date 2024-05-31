@@ -23,12 +23,12 @@ namespace MicroData.Base.UI.Shared.App.Mapper
 
             CreateMap<EmployeeModel, EmployeeViewModel>();
 
-            CreateMap<ProductCategoryModel, CatalogCategoryViewModel>();
-            CreateMap<ServiceCategoryModel, CatalogCategoryViewModel>();
+            CreateMap<ProductCategoryModel, ProductCategoryViewModel>();
+            CreateMap<ServiceCategoryModel, ProductCategoryViewModel>();
 
-            CreateMap<ProductCatalogModel, CatalogViewModel>(MemberList.Source);
+            CreateMap<ProductCatalogModel, ProductCatalogViewModel>(MemberList.Source);
 
-            CreateMap<ServiceCatalogModel, CatalogViewModel>(MemberList.Source);
+            CreateMap<ServiceCatalogModel, ServiceCatalogViewModel>(MemberList.Source);
 
             CreateMap<ProfessionModel, ProfessionViewModel>();
 

@@ -88,7 +88,7 @@ namespace MicroData.Base.UI.Shared.App.App
             return resultViewModel;
         }
 
-        public T CreateNew(T viewModel, string accessToken)
+        public virtual T CreateNew(T viewModel, string accessToken)
         {
             var model = _mapper.Map<M>(viewModel);
 

@@ -132,6 +132,9 @@
   <data name="EditUnits" xml:space="preserve">
     <value>Izmeni</value>
   </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Zaposleni</value>
+  </data>
   <data name="HeaderUnit" xml:space="preserve">
     <value>Tabela jedinica</value>
   </data>

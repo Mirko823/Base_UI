@@ -120,7 +120,7 @@ namespace MicroData.Base.UI.Shared.ViewModel
 
         [Required(ErrorMessage = "Cena je obavezno polje")]
         //[Display(Name = "Cena")]
-        [Display(Name = "Cena", Order = 100)]
+        [Display(AutoGenerateField = false,Name = "Cena", Order = 100)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:N2}")]
         public decimal Price { get; set; }
 

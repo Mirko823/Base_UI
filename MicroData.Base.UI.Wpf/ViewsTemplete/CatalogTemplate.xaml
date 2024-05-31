@@ -1,0 +1,118 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                     xmlns:commonControl="clr-namespace:MicroData.Common.UI.Wpf.Controls;assembly=MicroData.Common.UI.Wpf"
+                    >
+
+    <DataTemplate x:Key="EditTemplate">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Šifra " Margin="0 3 0 0"/>
+            <telerik:RadWatermarkTextBox Grid.Row="0"
+                                        Grid.Column="1"
+                                        Margin="0 3 5 3"
+                                        Text="{Binding Code, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                        WatermarkContent="Unesite šifru proizvoda..." 
+                                        IsReadOnly="{Binding IsReadOnly}"/>
+            <Label Grid.Row="0" Grid.Column="2" Content="Bar Kod " Margin="0 3 0 0"/>
+            <telerik:RadWatermarkTextBox Grid.Row="0"
+                                        Grid.Column="3"
+                                        Margin="0 3 5 3"
+                                        Text="{Binding BarCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                        WatermarkContent="Unesite barkod proizvoda..." 
+                                        IsReadOnly="{Binding IsReadOnly}"/>
+
+            <Label Grid.Row="1" Grid.Column="0" Content="Naziv " Margin="0 3 0 0"/>
+            <telerik:RadWatermarkTextBox Grid.Row="1"
+                                        Grid.Column="1"
+                                        Grid.ColumnSpan="3"  
+                                        Margin="0 3 5 3"
+                                        Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                        WatermarkContent="Unesite naziv proizvoda..." 
+                                        IsReadOnly="{Binding IsReadOnly}"/>
+
+            <Label Grid.Row="2" Grid.Column="0" Content="Jedinica Mere " Margin="0 3 0 0"/>
+            <telerik:RadComboBox 
+                        Grid.Row="2" 
+                        Grid.Column="1" 
+                        Margin="0 3 5 3"
+                        Visibility="{Binding IsReadOnly,  Converter={StaticResource InvertedBooleanToVisibilityConverter}}"
+                        ItemsSource="{Binding AllUnits}"
+                        SelectedValue="{Binding UnitId, Mode=TwoWay}"
+                        DisplayMemberPath="Value"
+                        SelectedValuePath="Id"               
+                        />
+            <telerik:RadWatermarkTextBox Grid.Row="2" 
+                        Grid.Column="1" 
+                        Margin="0 3 5 3"
+                        Visibility="{Binding IsReadOnly,  Converter={StaticResource BooleanToVisibilityConverter}}"
+                        Text="{Binding Unit}"  
+                        IsReadOnly="{Binding IsReadOnly}"/>
+
+            <Label Grid.Row="3" Grid.Column="0" Content="Poreska oznaka " Margin="0 3 0 0"/>
+            <telerik:RadComboBox 
+                        Grid.Row="3" 
+                        Grid.Column="1" 
+                        Margin="0 3 5 3"
+                        Visibility="{Binding IsReadOnly,  Converter={StaticResource InvertedBooleanToVisibilityConverter}}"
+                        ItemsSource="{Binding AllTaxes}"
+                        SelectedValue="{Binding TaxId, Mode=TwoWay}"
+                        DisplayMemberPath="Value"
+                        SelectedValuePath="Id"               
+                        />
+            <telerik:RadWatermarkTextBox Grid.Row="3" 
+                        Grid.Column="1" 
+                        Margin="0 3 5 3"
+                        Visibility="{Binding IsReadOnly,  Converter={StaticResource BooleanToVisibilityConverter}}"
+                        Text="{Binding TaxLabel}"  
+                        IsReadOnly="{Binding IsReadOnly}"/>
+            
+
+            <Label Grid.Row="3" Grid.Column="2" Content="Stopa PDV-a " Margin="0 3 0 0"/>
+            <telerik:RadMaskedNumericInput
+                               Grid.Row="3" Grid.Column="3" Margin="0 3 5 0"
+                               HorizontalAlignment="Right"  
+                               Culture="sr-Latn-RS"                                 
+                               InputBehavior="Insert"
+                               Mask=""
+                               Width="150"
+                               FormatString="n2"  
+                               IsEnabled="False"
+                               TextMode="PlainText" 
+                               IsReadOnly="True" 
+                               Value="{Binding TaxRate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+
+            <Label Grid.Row="4" Grid.Column="0" Content="Cena" Margin="0 3 0 0"/>
+
+            <telerik:RadMaskedNumericInput
+                               Grid.Row="4" Grid.Column="1" Margin="0 3 5 0"
+                               HorizontalAlignment="Right"  
+                               Culture="sr-Latn-RS"                                 
+                               InputBehavior="Insert"
+                               Mask=""
+                               Width="150"
+                               FormatString="n2"  
+                               TextMode="PlainText" 
+                               IsReadOnly="{Binding IsReadOnly}" 
+                               Value="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

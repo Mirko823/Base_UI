@@ -106,6 +106,15 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zaposleni.
+        /// </summary>
+        public static string Employee {
+            get {
+                return ResourceManager.GetString("Employee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tabela jedinica.
         /// </summary>
         public static string HeaderUnit {

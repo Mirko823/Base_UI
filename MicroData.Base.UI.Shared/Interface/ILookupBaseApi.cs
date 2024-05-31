@@ -43,8 +43,8 @@ namespace MicroData.Base.UI.Shared.Interface
         IEnumerable<BusinessPartnerLookup> GetAllBusinessPartners(string accessToken);
         Task<IEnumerable<BusinessPartnerLookup>> GetAllBusinessPartnerAsync(string accessToken);
 
-        IEnumerable<BusinessPartnerSmallLookup> GetAllBusinessPartnersSmall(string accessToken);
-        Task<IEnumerable<BusinessPartnerSmallLookup>> GetAllBusinessPartnerSmallAsync(string accessToken);
+        IEnumerable<BusinessPartnerSmallLookupView> GetAllBusinessPartnersSmall(string accessToken);
+        Task<IEnumerable<BusinessPartnerSmallLookupView>> GetAllBusinessPartnerSmallAsync(string accessToken);
 
         #endregion
 

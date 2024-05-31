@@ -132,6 +132,9 @@
   <data name="EditUnits" xml:space="preserve">
     <value>Edit</value>
   </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
   <data name="HeaderUnit" xml:space="preserve">
     <value>Units Grid</value>
   </data>

@@ -19,7 +19,7 @@ namespace MicroData.Base.UI.Shared.ViewModel
         [Display(Name = "Šifra", Order =10)]
         public string Code { get; set; }
 
-        [Display(Name = "Titula", Order = 19)]
+        [Display(AutoGenerateField = false, Name = "Titula", Order = 19)]
         public string Title { get; set; }
 
         [Required(ErrorMessage = "Prezime je obavezno polje")]
@@ -31,7 +31,7 @@ namespace MicroData.Base.UI.Shared.ViewModel
         [Display(Name = "Ime", Order = 30)]
         public string FirstName { get; set; }
 
-        [Display(Name = "Imenovanje", Order = 40)]
+        [Display(AutoGenerateField = false, Name = "Imenovanje", Order = 40)]
         public string Designation { get; set; }
 
         [Display(Name = "Telefon", Order = 40)]

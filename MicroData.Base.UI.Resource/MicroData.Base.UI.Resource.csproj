@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <EmbeddedResource Update="AppStrings.hr-HR.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator></Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Update="AppStrings.resx">
@@ -24,7 +24,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Update="AppStrings.en-US.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator></Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
