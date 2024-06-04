@@ -20,6 +20,10 @@ namespace MicroData.Base.UI.Shared.App.Mapper
             CreateMap<ClientViewModel, ClientModel>();
             CreateMap<EmployeeViewModel, EmployeeModel>();
 
+            CreateMap<LocationViewModel, LocationModel>();
+            CreateMap<ShipperViewModel, ShipperModel>();
+            CreateMap<QualityParameterViewModel, QualityParameterModel>();
+
             CreateMap<CatalogCategoryViewModel, ProductCategoryModel>();
             CreateMap<CatalogCategoryViewModel, ServiceCategoryModel>();
 

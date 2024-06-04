@@ -7,13 +7,13 @@ using MicroData.Base.UI.Shared.ViewModel;
 
 namespace MicroData.Base.UI.Shared.Api
 {
-    public class TaxApp : BaseBaseApp<TaxViewModel,TaxModel> , ITaxApi
+    public class ShipperApp : BaseBaseApp<ShipperViewModel,ShipperModel> , IShipperApi
     {
-        private readonly ITaxService _taxService;
+        private readonly IShipperService _shipperService;
         private readonly IMapper _mapper;
-        public TaxApp(ITaxService taxService, IMapper mapper) : base(taxService, mapper)
+        public ShipperApp(IShipperService shipperService, IMapper mapper) : base(shipperService, mapper)
         {
-            _taxService = taxService;
+            _shipperService = shipperService;
             _mapper = mapper;
         }
 

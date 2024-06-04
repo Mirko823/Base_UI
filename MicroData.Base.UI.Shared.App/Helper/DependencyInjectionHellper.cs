@@ -27,7 +27,13 @@ namespace MicroData.Base.UI.Shared.App.Helper
             services.AddScoped<IEmployeeApi, EmployeeApp>();
             services.AddScoped<IProductCatalogApi, ProductCatalogApp>();
             services.AddScoped<IProductCategoryApi, ProductCategoryApp>();
-            //services.AddScoped<ITaxApi, TaxApp>();
+
+            services.AddScoped<ILocationApi, LocationApp>();
+            services.AddScoped<IShipperApi, ShipperApp>();
+            services.AddScoped<IQualityParameterApi, QualityParameterApp>();
+
+            services.AddScoped<ITaxApi, TaxApp>();
+            
             services.AddScoped<IUnitApi, UnitApp>();
             services.AddScoped<IWarehouseApi, WarehouseApp>();
 

@@ -7,13 +7,13 @@ using MicroData.Base.UI.Shared.ViewModel;
 
 namespace MicroData.Base.UI.Shared.Api
 {
-    public class TaxApp : BaseBaseApp<TaxViewModel,TaxModel> , ITaxApi
+    public class LocationApp : BaseBaseApp<LocationViewModel,LocationModel> , ILocationApi
     {
-        private readonly ITaxService _taxService;
+        private readonly ILocationService _locationService;
         private readonly IMapper _mapper;
-        public TaxApp(ITaxService taxService, IMapper mapper) : base(taxService, mapper)
+        public LocationApp(ILocationService locationService, IMapper mapper) : base(locationService, mapper)
         {
-            _taxService = taxService;
+            _locationService = locationService;
             _mapper = mapper;
         }
 

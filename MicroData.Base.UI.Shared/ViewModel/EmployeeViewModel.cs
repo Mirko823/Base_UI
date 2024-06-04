@@ -1,4 +1,5 @@
-﻿using MicroData.Common.UI.Shared.ViewModel;
+﻿using MicroData.Common.UI.Resource;
+using MicroData.Common.UI.Shared.ViewModel;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -16,8 +17,8 @@ namespace MicroData.Base.UI.Shared.ViewModel
         public int? ExportId { get; set; }
 
         [Required(ErrorMessage = "Šifra je obavezno polje")]
-        [Display(Name = "Šifra", Order =10)]
-        public string Code { get; set; }
+        [Display(Name = "Code", ResourceType = typeof(CommonStrings))]
+        public string? Code { get; set; }
 
         [Display(AutoGenerateField = false, Name = "Titula", Order = 19)]
         public string Title { get; set; }

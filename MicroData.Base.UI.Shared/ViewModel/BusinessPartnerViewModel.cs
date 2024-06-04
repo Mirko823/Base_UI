@@ -170,7 +170,7 @@ namespace MicroData.Base.UI.Shared.ViewModel
         [Display(AutoGenerateField = false)]
         public string Note { get; set; }
 
-        [Display(AutoGenerateField = false)]
+        [Display(Name = "IsActive", ResourceType = typeof(CommonStrings), Order = 110)]
         public bool? IsActive { get; set; }
 
 

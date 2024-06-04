@@ -8,13 +8,13 @@ using MicroData.Common.UI.Wpf.ViewModels;
 
 namespace MicroData.Base.UI.Wpf.ViewModels
 {
-    public class WarehouseVM : TableBaseEditor<WarehouseViewModel>
+    public class LocationVM : TableBaseEditor<LocationViewModel>
     {
-        private IWarehouseApi _warehouseApi;
+        private ILocationApi _LocationApi;
 
-        public WarehouseVM(IWarehouseApi warehouseApi) : base(warehouseApi)
+        public LocationVM(ILocationApi LocationApi) : base(LocationApi)
         {
-            _warehouseApi = warehouseApi;
+            _LocationApi = LocationApi;
 
             this.DelegateAddNewCommand();
             this.DelegateEditCommand();
@@ -23,40 +23,43 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             this.DelegateDeleteCommand();
         }
 
-        public override string ModelName => "Skladiste";
-        public override bool ShowGroupPanel => false;
+        public override string ModelName => "Zaposleni";
+        public override bool ShowGroupPanel => true;
         public override bool ShowAddButton => true;
         public override bool ShowEditButton => true;
         public override bool ShowDeleteButton => true;
         public override bool ShowPreviewButton => true;
         public override bool ShowRightPanel => false;
-        public override bool ReadAsync => true;
+        public override bool ReadAsync => false;
 
         public override IBaseEditorVM BaseEditorVM => GetBaseEditor();
         private IBaseEditorVM GetBaseEditor()
         {
-            var baseEditorVM = new BaseEditorVM<WarehouseViewModel>(_warehouseApi);
-
-
+            var baseEditorVM = new BaseEditorVM<LocationViewModel>(_LocationApi);
             baseEditorVM.EditorType = EditorType.BaseDataFormDialog;
             baseEditorVM.ModelName = this.ModelName;
 
             return baseEditorVM;
         }
 
-        public override WarehouseViewModel GetNewItem()
+        public override LocationViewModel GetNewItem()
         {
-            var warehouse = new WarehouseViewModel();
-            warehouse.IsNew = true;
-            warehouse.IsReadOnly = false;
+            var location = new LocationViewModel();
+            location.IsNew = true;
+            location.IsReadOnly = false;
 
             //todo refactoring
-            warehouse.TenantId = new Guid(CurrentCompany.TenantId);
-            warehouse.CompanyId = new Guid(CurrentCompany.CompanyId);
+            location.TenantId = new Guid(CurrentCompany.TenantId);
+            location.CompanyId = new Guid(CurrentCompany.CompanyId);
 
 
-            return warehouse;
+            return location;
         }
+
+        //public override LocationModel GetEditItem()
+        //{
+        //    return _LocationApi.Get(this.SelectedItem.Id);
+        //}
 
     }
 }

@@ -22,14 +22,14 @@ namespace MicroData.Base.UI.Resource {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class AppStrings {
+    public class BaseStrings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal AppStrings() {
+        internal BaseStrings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MicroData.Base.UI.Resource {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MicroData.Base.UI.Resource.AppStrings", typeof(AppStrings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MicroData.Base.UI.Resource.BaseStrings", typeof(BaseStrings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -93,6 +93,15 @@ namespace MicroData.Base.UI.Resource {
         public static string DeleteUnits {
             get {
                 return ResourceManager.GetString("DeleteUnits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opis.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
             }
         }
         
@@ -178,6 +187,15 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lokacija.
+        /// </summary>
+        public static string Location {
+            get {
+                return ResourceManager.GetString("Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Naziv.
         /// </summary>
         public static string NameName {
@@ -210,6 +228,33 @@ namespace MicroData.Base.UI.Resource {
         public static string NewUnits {
             get {
                 return ResourceManager.GetString("NewUnits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parametar Kvaliteta.
+        /// </summary>
+        public static string QualityParameter {
+            get {
+                return ResourceManager.GetString("QualityParameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vrednost od.
+        /// </summary>
+        public static string ValueFrom {
+            get {
+                return ResourceManager.GetString("ValueFrom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vrednost do.
+        /// </summary>
+        public static string ValueTo {
+            get {
+                return ResourceManager.GetString("ValueTo", resourceCulture);
             }
         }
     }

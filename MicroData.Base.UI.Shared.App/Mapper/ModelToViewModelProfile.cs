@@ -14,14 +14,16 @@ namespace MicroData.Base.UI.Shared.App.Mapper
             CreateMap<CityModel, CityViewModel>();
             CreateMap<CurrencyModel, CurrencyViewModel>();
 
-            //CreateMap<RegisteredCompanyOnSefModel, RegisteredCompanyOnSef>();
-
             CreateMap<BusinessPartnerModel, BusinessPartnerViewModel>();
 
             CreateMap<CityModel, CityViewModel>();
             CreateMap<ClientModel, ClientViewModel>();
 
             CreateMap<EmployeeModel, EmployeeViewModel>();
+
+            CreateMap<LocationModel, LocationViewModel>();
+            CreateMap<ShipperModel, ShipperViewModel>();
+            CreateMap<QualityParameterModel, QualityParameterViewModel>();
 
             CreateMap<ProductCategoryModel, ProductCategoryViewModel>();
             CreateMap<ServiceCategoryModel, ProductCategoryViewModel>();

@@ -6,25 +6,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="AppStrings.Designer.cs">
+    <Compile Update="BaseStrings.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>AppStrings.resx</DependentUpon>
+      <DependentUpon>BaseStrings.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="AppStrings.hr-HR.resx">
-      <Generator></Generator>
+    <EmbeddedResource Update="BaseStrings.en-US.resx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Update="AppStrings.resx">
+    <EmbeddedResource Update="BaseStrings.hr-HR.resx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Update="BaseStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppStrings.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Update="AppStrings.en-US.resx">
-      <Generator></Generator>
+      <LastGenOutput>BaseStrings.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

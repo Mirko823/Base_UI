@@ -129,6 +129,9 @@
   <data name="DeleteUnits" xml:space="preserve">
     <value>Obriši</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
   <data name="EditUnits" xml:space="preserve">
     <value>Izmeni</value>
   </data>
@@ -139,7 +142,7 @@
     <value>Tabela jedinica</value>
   </data>
   <data name="Hello" xml:space="preserve">
-    <value>Pozdrav svijete - Hrvatski</value>
+    <value>Zdravo Svete - Srpski</value>
   </data>
   <data name="IsActiveName" xml:space="preserve">
     <value>Aktivna</value>
@@ -156,6 +159,9 @@
   <data name="LabelUnits" xml:space="preserve">
     <value>Oznaka</value>
   </data>
+  <data name="Location" xml:space="preserve">
+    <value>Lokacija</value>
+  </data>
   <data name="NameName" xml:space="preserve">
     <value>Naziv</value>
   </data>
@@ -163,9 +169,18 @@
     <value>Naziv je obavezno polje</value>
   </data>
   <data name="NameUnits" xml:space="preserve">
-    <value>Nazjiv</value>
+    <value>Naziv</value>
   </data>
   <data name="NewUnits" xml:space="preserve">
     <value>Novi</value>
+  </data>
+  <data name="QualityParameter" xml:space="preserve">
+    <value>Parametar Kvaliteta</value>
+  </data>
+  <data name="ValueFrom" xml:space="preserve">
+    <value>Vrednost od</value>
+  </data>
+  <data name="ValueTo" xml:space="preserve">
+    <value>Vrednost do</value>
   </data>
 </root>

@@ -129,6 +129,9 @@
   <data name="DeleteUnits" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
   <data name="EditUnits" xml:space="preserve">
     <value>Edit</value>
   </data>
@@ -156,6 +159,9 @@
   <data name="LabelUnits" xml:space="preserve">
     <value>Label</value>
   </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
   <data name="NameName" xml:space="preserve">
     <value>Naziv</value>
   </data>
@@ -167,5 +173,14 @@
   </data>
   <data name="NewUnits" xml:space="preserve">
     <value>New</value>
+  </data>
+  <data name="QualityParameter" xml:space="preserve">
+    <value>Quality Parameter</value>
+  </data>
+  <data name="ValueFrom" xml:space="preserve">
+    <value>Value From</value>
+  </data>
+  <data name="ValueTo" xml:space="preserve">
+    <value>Value To</value>
   </data>
 </root>
