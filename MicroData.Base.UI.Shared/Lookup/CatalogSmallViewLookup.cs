@@ -3,7 +3,7 @@ using System;
 
 namespace MicroData.Base.UI.Shared.Lookup
 {
-    public  class CatalogSmallLookup : BaseViewModel<Guid>
+    public  class CatalogSmallViewLookup : BaseViewModel<Guid>
     {
         public string? Code { get; set; }
 

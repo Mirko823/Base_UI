@@ -1,5 +1,6 @@
 ﻿using MicroData.Base.Data.Entity;
 using MicroData.Base.Domain.Model;
+using MicroData.Base.UI.Resource;
 using MicroData.Base.UI.Shared.Interface;
 using MicroData.Base.UI.Shared.ViewModel;
 using MicroData.Common.Domain.Interface;
@@ -28,7 +29,7 @@ namespace MicroData.Base.UI.Wpf.ViewModels
 
         }
 
-        public override string ModelName => "Prevoznici";
+        public override string ModelName => BaseStrings.Shipper;
         public override bool ShowGroupPanel => true;
         public override bool ShowRightPanel => false;
         public override bool ReadAsync => false;

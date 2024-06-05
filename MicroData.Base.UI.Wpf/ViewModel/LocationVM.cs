@@ -1,4 +1,5 @@
 ﻿using MicroData.Base.Domain.Model;
+using MicroData.Base.UI.Resource;
 using MicroData.Base.UI.Shared.Interface;
 using MicroData.Base.UI.Shared.ViewModel;
 using MicroData.Common.UI.Shared.Identity;
@@ -23,7 +24,7 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             this.DelegateDeleteCommand();
         }
 
-        public override string ModelName => "Zaposleni";
+        public override string ModelName => BaseStrings.Location;
         public override bool ShowGroupPanel => true;
         public override bool ShowAddButton => true;
         public override bool ShowEditButton => true;
@@ -45,13 +46,15 @@ namespace MicroData.Base.UI.Wpf.ViewModels
         public override LocationViewModel GetNewItem()
         {
             var location = new LocationViewModel();
-            location.IsNew = true;
-            location.IsReadOnly = false;
+
+            location.Id = Guid.NewGuid();
 
             //todo refactoring
             location.TenantId = new Guid(CurrentCompany.TenantId);
             location.CompanyId = new Guid(CurrentCompany.CompanyId);
-
+            
+            location.IsNew = true;
+            location.IsReadOnly = false;
 
             return location;
         }

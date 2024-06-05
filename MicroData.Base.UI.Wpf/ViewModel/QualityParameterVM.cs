@@ -1,4 +1,5 @@
-﻿using MicroData.Base.UI.Shared.Api;
+﻿using MicroData.Base.UI.Resource;
+using MicroData.Base.UI.Shared.Api;
 using MicroData.Base.UI.Shared.Interface;
 using MicroData.Base.UI.Shared.ViewModel;
 using MicroData.Common.UI.Shared.Identity;
@@ -23,7 +24,7 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             this.DelegateDeleteCommand();
         }
 
-        public override string ModelName => "Parametri kvaliteta";
+        public override string ModelName => BaseStrings.QualityParameter;
         public override bool ShowGroupPanel => true;
         public override bool ShowAddButton => true;
         public override bool ShowEditButton => true;

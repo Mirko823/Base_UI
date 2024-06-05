@@ -2,7 +2,7 @@
 
 namespace MicroData.Base.UI.Shared.Lookup
 {
-    public  class TaxLookup : BaseIntLookup
+    public  class TaxViewLookup : BaseIntViewLookup
     {
         public short Type { get; set; }
         public string? Label { get; set; }

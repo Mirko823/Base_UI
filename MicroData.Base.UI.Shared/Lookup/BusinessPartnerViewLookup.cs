@@ -2,7 +2,7 @@
 
 namespace MicroData.Base.UI.Shared.Lookup
 {
-    public class BusinessPartnerLookup
+    public class BusinessPartnerViewLookup
     {
         public Guid Id { get; set; }
         public string? RegistryNumber { get; set; }

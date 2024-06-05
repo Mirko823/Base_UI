@@ -10,97 +10,108 @@ namespace MicroData.Base.UI.Shared.Interface
     public interface ILookupBaseApi
     {
         #region Taxes
-        List<TaxLookup> GetAllTaxes(string accessToken);
-        Task<IEnumerable<TaxLookup>> GetAllTaxesAsync(string accessToken);
+        List<TaxViewLookup> GetAllTaxes(string accessToken);
+        Task<IEnumerable<TaxViewLookup>> GetAllTaxesAsync(string accessToken);
         #endregion
 
         #region Unit
-        List<BaseIntLookup> GetAllUnit(string accessToken);
-        Task<IEnumerable<BaseIntLookup>> GetAllUnitAsync(string accessToken);
+        List<BaseIntViewLookup> GetAllUnit(string accessToken);
+        Task<IEnumerable<BaseIntViewLookup>> GetAllUnitAsync(string accessToken);
+        #endregion
+
+        #region Unit
+        IEnumerable<BaseIntViewLookup> GetAllQualityParameter(string accessToken);
+        Task<IEnumerable<BaseIntViewLookup>> GetAllQualityParameterAsync(string accessToken);
         #endregion
 
         #region City
-        List<BaseIntLookup> GetAllCity(string accessToken);
-        Task<IEnumerable<BaseIntLookup>> GetAllCityAsync(string accessToken);
+        List<BaseIntViewLookup> GetAllCity(string accessToken);
+        Task<IEnumerable<BaseIntViewLookup>> GetAllCityAsync(string accessToken);
         #endregion
 
         #region State
-        List<BaseIntLookup> GetAllState(string accessToken);
-        Task<IEnumerable<BaseIntLookup>> GetAllStateAsync(string accessToken);
+        List<BaseIntViewLookup> GetAllState(string accessToken);
+        Task<IEnumerable<BaseIntViewLookup>> GetAllStateAsync(string accessToken);
         #endregion
 
         #region Categories
-        IEnumerable<BaseGuidLookup> GetAllCategories(string accessToken);
-        Task<IEnumerable<BaseGuidLookup>> GetAllCategoriesAsync(string accessToken);
+        IEnumerable<BaseGuidViewLookup> GetAllCategories(string accessToken);
+        Task<IEnumerable<BaseGuidViewLookup>> GetAllCategoriesAsync(string accessToken);
         #endregion
 
         #region Catalogs
-        IEnumerable<CatalogLookup> GetAllCatalogs(string accessToken);
-        Task<IEnumerable<CatalogLookup>> GetAllCatalogsAsync(string accessToken);
+        IEnumerable<CatalogViewLookup> GetAllCatalogs(string accessToken);
+        Task<IEnumerable<CatalogViewLookup>> GetAllCatalogsAsync(string accessToken);
         #endregion
 
         #region BusinessPartners
-        IEnumerable<BusinessPartnerLookup> GetAllBusinessPartners(string accessToken);
-        Task<IEnumerable<BusinessPartnerLookup>> GetAllBusinessPartnerAsync(string accessToken);
+        IEnumerable<BusinessPartnerViewLookup> GetAllBusinessPartners(string accessToken);
+        Task<IEnumerable<BusinessPartnerViewLookup>> GetAllBusinessPartnerAsync(string accessToken);
 
-        IEnumerable<BusinessPartnerSmallLookupView> GetAllBusinessPartnersSmall(string accessToken);
-        Task<IEnumerable<BusinessPartnerSmallLookupView>> GetAllBusinessPartnerSmallAsync(string accessToken);
+        IEnumerable<BusinessPartnerSmallViewLookup> GetAllBusinessPartnersSmall(string accessToken);
+        Task<IEnumerable<BusinessPartnerSmallViewLookup>> GetAllBusinessPartnerSmallAsync(string accessToken);
 
         #endregion
 
         #region Clients
-        IEnumerable<ClientLookup> GetAllClients(string accessToken);
-        Task<IEnumerable<ClientLookup>> GetAllClientAsync(string accessToken);
+        IEnumerable<ClientViewLookup> GetAllClients(string accessToken);
+        Task<IEnumerable<ClientViewLookup>> GetAllClientAsync(string accessToken);
 
-        IEnumerable<ClientSmallLookup> GetAllClientsSmall(string accessToken);
-        Task<IEnumerable<ClientSmallLookup>> GetAllClientSmallAsync(string accessToken);
+        IEnumerable<ClientSmallViewLookup> GetAllClientsSmall(string accessToken);
+        Task<IEnumerable<ClientSmallViewLookup>> GetAllClientSmallAsync(string accessToken);
 
         #endregion
 
         #region Employee
-        List<EmployeeLookup> GetAllEmployee(string accessToken);
-        Task<IEnumerable<EmployeeLookup>> GetAllEmployeeAsync(string accessToken);
+        List<EmployeeViewLookup> GetAllEmployee(string accessToken);
+        Task<IEnumerable<EmployeeViewLookup>> GetAllEmployeeAsync(string accessToken);
 
-        List<EmployeeLookup> GetAllEmployeeCanSchedule(string accessToken);
-        Task<IEnumerable<EmployeeLookup>> GetAllEmployeeCanScheduleAsync(string accessToken);
+        List<EmployeeViewLookup> GetAllEmployeeCanSchedule(string accessToken);
+        Task<IEnumerable<EmployeeViewLookup>> GetAllEmployeeCanScheduleAsync(string accessToken);
         #endregion
 
         #region Profession
-        List<BaseGuidLookup> GetAllProfession(string accessToken);
-        Task<IEnumerable<BaseGuidLookup>> GetAllProfessionAsync(string accessToken);
+        List<BaseGuidViewLookup> GetAllProfession(string accessToken);
+        Task<IEnumerable<BaseGuidViewLookup>> GetAllProfessionAsync(string accessToken);
+        #endregion
+
+        #region Location
+        List<BaseGuidViewLookup> GetAllLocation(string accessToken);
+        Task<IEnumerable<BaseGuidViewLookup>> GetAllLocationAsync(string accessToken);
         #endregion
 
         #region Warehouse Type
-        IEnumerable<BaseIntLookup> GetAllWarehouseType(string accessToken);
-        Task<IEnumerable<BaseIntLookup>> GetAllWarehouseTypeAsync(string accessToken);
+        IEnumerable<BaseIntViewLookup> GetAllWarehouseType(string accessToken);
+        Task<IEnumerable<BaseIntViewLookup>> GetAllWarehouseTypeAsync(string accessToken);
         #endregion
 
         #region Warehouse
-        IEnumerable<BaseGuidLookup> GetAllWarehouseCode(string accessToken);
-        Task<IEnumerable<BaseGuidLookup>> GetAllWarehouseCodeAsync(string accessToken);
+        IEnumerable<BaseGuidViewLookup> GetAllWarehouseCode(string accessToken);
+        Task<IEnumerable<BaseGuidViewLookup>> GetAllWarehouseCodeAsync(string accessToken);
 
-        IEnumerable<BaseGuidLookup> GetAllWarehouseCode(WarehouseType warehouseType, string accessToken);
-        Task<IEnumerable<BaseGuidLookup>> GetAllWarehouseCodeAsync(WarehouseType warehouseType, string accessToken);
+        IEnumerable<BaseGuidViewLookup> GetAllWarehouseCode(WarehouseType warehouseType, string accessToken);
+        Task<IEnumerable<BaseGuidViewLookup>> GetAllWarehouseCodeAsync(WarehouseType warehouseType, string accessToken);
 
-        IEnumerable<BaseGuidLookup> GetAllWarehouseName(string accessToken);
-        Task<IEnumerable<BaseGuidLookup>> GetAllWarehouseNameAsync(string accessToken);
+        IEnumerable<BaseGuidViewLookup> GetAllWarehouseName(string accessToken);
+        Task<IEnumerable<BaseGuidViewLookup>> GetAllWarehouseNameAsync(string accessToken);
 
-        IEnumerable<BaseGuidLookup> GetAllWarehouseName(WarehouseType warehouseType, string accessToken);
-        Task<IEnumerable<BaseGuidLookup>> GetAllWarehouseNameAsync(WarehouseType warehouseType, string accessToken);
+        IEnumerable<BaseGuidViewLookup> GetAllWarehouseName(WarehouseType warehouseType, string accessToken);
+        Task<IEnumerable<BaseGuidViewLookup>> GetAllWarehouseNameAsync(WarehouseType warehouseType, string accessToken);
         #endregion
 
         #region WorkPlace
-        List<BaseGuidLookup> GetAllWorkPlace(string accessToken);
-        Task<IEnumerable<BaseGuidLookup>> GetAllWorkPlaceAsync(string accessToken);
+        List<BaseGuidViewLookup> GetAllWorkPlace(string accessToken);
+        Task<IEnumerable<BaseGuidViewLookup>> GetAllWorkPlaceAsync(string accessToken);
         #endregion
 
         #region WorkShift
-        List<WorkShiftLookup> GetAllWorkShift(string accessToken);
-        Task<IEnumerable<WorkShiftLookup>> GetAllWorkShiftAsync(string accessToken);
+        List<WorkShiftViewLookup> GetAllWorkShift(string accessToken);
+        Task<IEnumerable<WorkShiftViewLookup>> GetAllWorkShiftAsync(string accessToken);
         #endregion
 
+
         #region Dates
-        List<BaseIntLookup> GetAllMonth();
+        List<BaseIntViewLookup> GetAllMonth();
         #endregion
     }
 }

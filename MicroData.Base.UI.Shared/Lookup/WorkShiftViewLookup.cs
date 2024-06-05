@@ -3,7 +3,7 @@ using System;
 
 namespace MicroData.Base.UI.Shared.Lookup
 {
-    public  class WorkShiftLookup : BaseGuidLookup
+    public  class WorkShiftViewLookup : BaseGuidViewLookup
     {
         public string? Name { get; set; }
         public TimeSpan StartTime { get; set; }

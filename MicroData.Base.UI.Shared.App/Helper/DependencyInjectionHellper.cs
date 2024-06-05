@@ -28,6 +28,8 @@ namespace MicroData.Base.UI.Shared.App.Helper
             services.AddScoped<IProductCatalogApi, ProductCatalogApp>();
             services.AddScoped<IProductCategoryApi, ProductCategoryApp>();
 
+            services.AddScoped<IGrainCatalogApi, GrainCatalogApp>();
+
             services.AddScoped<ILocationApi, LocationApp>();
             services.AddScoped<IShipperApi, ShipperApp>();
             services.AddScoped<IQualityParameterApi, QualityParameterApp>();
@@ -36,6 +38,8 @@ namespace MicroData.Base.UI.Shared.App.Helper
             
             services.AddScoped<IUnitApi, UnitApp>();
             services.AddScoped<IWarehouseApi, WarehouseApp>();
+
+            services.AddScoped<ILookupBaseApi, LookupBaseApp>();
 
             RegisterAutoMapper(services);
         }

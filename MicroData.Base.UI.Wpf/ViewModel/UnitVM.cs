@@ -1,4 +1,5 @@
-﻿using MicroData.Base.UI.Shared.Interface;
+﻿using MicroData.Base.UI.Resource;
+using MicroData.Base.UI.Shared.Interface;
 using MicroData.Base.UI.Shared.ViewModel;
 using MicroData.Common.UI.Wpf.ViewModels;
 
@@ -13,7 +14,7 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             _unitApi = unitApi;
         }
 
-        public override string ModelName => "Jedinice Mere";
+        public override string ModelName => BaseStrings.Unit;
         public override bool ShowGroupPanel => false;
         public override bool ShowRightPanel => false;
         public override bool ReadAsync => true;

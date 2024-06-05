@@ -3,7 +3,7 @@ using MicroData.Common.UI.Shared.Interface;
 
 namespace MicroData.Base.UI.Shared.Interface
 {
-    public interface ICatalogLookupApi : IBaseApi<CatalogSmallLookup>
+    public interface ICatalogLookupApi : IBaseApi<CatalogSmallViewLookup>
     {
     }
 }

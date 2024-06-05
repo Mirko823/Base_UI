@@ -17,7 +17,7 @@ namespace MicroData.Base.UI.Shared.App.App
         }
 
         #region Get
-        public async Task<IEnumerable<T>> GetAllAsync(string accessToken)
+        public virtual async Task<IEnumerable<T>> GetAllAsync(string accessToken)
         {
             var resultModel = await _baseService.GetAllAsync();
             var resultViewModel = _mapper.Map<IEnumerable<T>>(resultModel);
@@ -25,7 +25,7 @@ namespace MicroData.Base.UI.Shared.App.App
             return resultViewModel;
         }
 
-        public IEnumerable<T> GetAll(string accessToken)
+        public virtual IEnumerable<T> GetAll(string accessToken)
         {
             var resultModel = _baseService.GetAll();
             var resultViewModel = _mapper.Map<IEnumerable<T>>(resultModel);

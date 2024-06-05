@@ -2,7 +2,7 @@
 
 namespace MicroData.Base.Domain.Lookup
 {
-    public  class EmployeeLookup : BaseGuidLookup
+    public  class EmployeeViewLookup : BaseGuidViewLookup
     {
         public string? Designation { get; set; }
     }

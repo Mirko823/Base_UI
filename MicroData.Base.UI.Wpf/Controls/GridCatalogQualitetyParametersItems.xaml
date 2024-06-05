@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="MicroData.Base.UI.Wpf.Controls.GridCatalogQualitetyParametersItems"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:telerikGrid="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"
+             xmlns:langCommon="clr-namespace:MicroData.Common.UI.Resource;assembly=MicroData.Common.UI.Resource"
+             xmlns:langBase="clr-namespace:MicroData.Base.UI.Resource;assembly=MicroData.Base.UI.Resource"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <telerik:RadToolBar  Visibility="{Binding IsReadOnly, Converter={StaticResource InvertedBooleanToVisibilityConverter}}"
+                                 HorizontalAlignment="Stretch"  
+                                 AutoHideOverflowButton="True" >
+                <telerik:RadButton 
+                                   Command="telerikGrid:RadGridViewCommands.BeginInsert" 
+                                   CommandTarget="{Binding ElementName=gridViewGrain}"
+                                   >
+                    <ToolTipService.ToolTip>
+                        <ToolTip Content="{x:Static langCommon:CommonStrings.AddNewTooltip}" />
+                    </ToolTipService.ToolTip>
+                    <StackPanel Orientation="Horizontal">
+                        <telerik:RadGlyph Glyph="&#xe907;" FontSize="16"/>
+                        <TextBlock Text="{x:Static langCommon:CommonStrings.AddNew}" Margin="8 0 0 0" />
+                    </StackPanel>
+                </telerik:RadButton>
+                <telerik:RadToolBarSeparator  />
+                <telerik:RadButton 
+                                   Command="telerikGrid:RadGridViewCommands.Delete"
+                                   CommandTarget="{Binding ElementName=gridViewProduct}"
+                                   >
+                    <ToolTipService.ToolTip>
+                        <ToolTip Content="{x:Static langCommon:CommonStrings.DeleteTooltip}" />
+                    </ToolTipService.ToolTip>
+                    <StackPanel Orientation="Horizontal">
+                        <telerik:RadGlyph Glyph="&#xe10c;" FontSize="16"/>
+                        <TextBlock Text="{x:Static langCommon:CommonStrings.Delete}"  Margin="8 0 0 0" />
+                    </StackPanel>
+                </telerik:RadButton>
+
+            </telerik:RadToolBar>
+        </StackPanel>
+        <telerik:RadGridView Grid.Row="1" x:Name="gridViewGrain" 
+                                 PinnedRowsPosition="Top"
+                                 ColumnWidth="*"
+                                 SelectionMode="Extended"
+                                 ShouldCloseFilteringPopupOnKeyboardFocusChanged="True"
+                                 ShowGroupPanel="True" 
+                                 GroupRenderMode="Flat"     
+                                 AutoGenerateColumns="False"
+                                 RowDetailsVisibilityMode="VisibleWhenSelected"
+                                 RowIndicatorVisibility="Collapsed"  
+                                 BorderThickness="1 1 1 0"
+                                 VerticalAlignment="Top"
+                                 IsReadOnly="{Binding IsReadOnly}"
+                                 BeginningEdit="gridViewProduct_BeginningEdit"
+                                
+                                 >
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewComboBoxColumn DataMemberBinding="{Binding QualityParameterId}" 
+                                                SelectedValueMemberPath="Id" 
+                                                EditTriggers="CellClick" 
+                                                DisplayMemberPath="Value"
+                                                Header="{x:Static langBase:BaseStrings.QualityParameter}"
+                                                ItemsSource="{Binding AllQualityParameters}">
+                </telerik:GridViewComboBoxColumn>
+
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ValueFrom}"  
+                                            HeaderTextAlignment="Right" 
+                                            TextAlignment="Right" 
+                                            DataFormatString="N1"
+                                    
+                                            >
+                    <!--<telerik:GridViewDataColumn.CellEditTemplate>
+                        <DataTemplate>
+                             <telerik:RadNumericUpDown  Value="{Binding ValueFrom, StringFormat=N1}" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellEditTemplate>-->
+                </telerik:GridViewDataColumn>
+
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ValueTo}"  
+                            HeaderTextAlignment="Right" 
+                            TextAlignment="Right" 
+                            DataFormatString="N1"
+                    
+                            >
+                    <!--<telerik:GridViewDataColumn.CellEditTemplate>
+                        <DataTemplate>
+                            <telerik:RadNumericUpDown  Value="{Binding ValueTo, StringFormat=N1}" />
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellEditTemplate>-->
+                </telerik:GridViewDataColumn>
+
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Description}" />
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</UserControl>

@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BarCode" xml:space="preserve">
+    <value>Barkod</value>
+  </data>
+  <data name="BusinessPartner" xml:space="preserve">
+    <value>Poslovni Partner</value>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>Klijent</value>
+  </data>
   <data name="CodeName" xml:space="preserve">
     <value>Šifra</value>
   </data>
@@ -125,6 +134,9 @@
   </data>
   <data name="CodeUnits" xml:space="preserve">
     <value>Šifra</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Valuta</value>
   </data>
   <data name="DeleteUnits" xml:space="preserve">
     <value>Obriši</value>
@@ -138,11 +150,50 @@
   <data name="Employee" xml:space="preserve">
     <value>Zaposleni</value>
   </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Ime</value>
+  </data>
+  <data name="Grain" xml:space="preserve">
+    <value>Žitarica</value>
+  </data>
   <data name="HeaderUnit" xml:space="preserve">
     <value>Tabela jedinica</value>
   </data>
   <data name="Hello" xml:space="preserve">
     <value>Zdravo Svete - Srpski</value>
+  </data>
+  <data name="InsertAddress" xml:space="preserve">
+    <value>Unseite adresu</value>
+  </data>
+  <data name="InsertBarcode" xml:space="preserve">
+    <value>Unseite barkod</value>
+  </data>
+  <data name="InsertCity" xml:space="preserve">
+    <value>Unesite sedište</value>
+  </data>
+  <data name="InsertCode" xml:space="preserve">
+    <value>Unesite šifru</value>
+  </data>
+  <data name="InsertEmail" xml:space="preserve">
+    <value>Unsite email </value>
+  </data>
+  <data name="InsertName" xml:space="preserve">
+    <value>Unesite naziv</value>
+  </data>
+  <data name="InsertPhone" xml:space="preserve">
+    <value>Unsite kontakt telefon</value>
+  </data>
+  <data name="InsertRegistryNumber" xml:space="preserve">
+    <value>Unesite matični broj</value>
+  </data>
+  <data name="InsertState" xml:space="preserve">
+    <value>Unesite državu</value>
+  </data>
+  <data name="InsertTaxNumber" xml:space="preserve">
+    <value>Unesite PIB</value>
+  </data>
+  <data name="InsertWww" xml:space="preserve">
+    <value>Unisite internet stranicu</value>
   </data>
   <data name="IsActiveName" xml:space="preserve">
     <value>Aktivna</value>
@@ -159,6 +210,9 @@
   <data name="LabelUnits" xml:space="preserve">
     <value>Oznaka</value>
   </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Prezime</value>
+  </data>
   <data name="Location" xml:space="preserve">
     <value>Lokacija</value>
   </data>
@@ -174,13 +228,43 @@
   <data name="NewUnits" xml:space="preserve">
     <value>Novi</value>
   </data>
+  <data name="Price" xml:space="preserve">
+    <value>Cena</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Proizvodi</value>
+  </data>
   <data name="QualityParameter" xml:space="preserve">
     <value>Parametar Kvaliteta</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>Usluga</value>
+  </data>
+  <data name="Shipper" xml:space="preserve">
+    <value>Carrier</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>Porez</value>
+  </data>
+  <data name="TaxRate" xml:space="preserve">
+    <value>Stopa PDV-a</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>Jedinica Mere</value>
   </data>
   <data name="ValueFrom" xml:space="preserve">
     <value>Vrednost od</value>
   </data>
   <data name="ValueTo" xml:space="preserve">
     <value>Vrednost do</value>
+  </data>
+  <data name="Warehouse" xml:space="preserve">
+    <value>Skladište</value>
+  </data>
+  <data name="WorkPlace" xml:space="preserve">
+    <value>Radno Mesto</value>
+  </data>
+  <data name="WorkShift" xml:space="preserve">
+    <value>Radna Smena</value>
   </data>
 </root>

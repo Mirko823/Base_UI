@@ -1,4 +1,5 @@
 ﻿using MicroData.Base.Domain.Model;
+using MicroData.Base.UI.Resource;
 using MicroData.Base.UI.Shared.Interface;
 using MicroData.Base.UI.Shared.ViewModel;
 using MicroData.Common.UI.Wpf.Enum;
@@ -23,7 +24,7 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             this.DelegateDeleteCommand();
         }
 
-        public override string ModelName => "Klijenti";
+        public override string ModelName => BaseStrings.Client;
         public override bool ShowGroupPanel => true;
         public override bool ShowAddButton => true;
         public override bool ShowEditButton => true;

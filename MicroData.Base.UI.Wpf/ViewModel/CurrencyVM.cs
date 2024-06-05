@@ -1,4 +1,5 @@
-﻿using MicroData.Base.UI.Shared.Interface;
+﻿using MicroData.Base.UI.Resource;
+using MicroData.Base.UI.Shared.Interface;
 using MicroData.Base.UI.Shared.ViewModel;
 using MicroData.Common.UI.Wpf.ViewModels;
 
@@ -14,7 +15,7 @@ namespace MicroData.Base.UI.Wpf.ViewModels
 
         }
 
-        public override string ModelName => "Jedinica Mere";
+        public override string ModelName => BaseStrings.Currency;
         public override bool ShowGroupPanel => false;
         public override bool ShowRightPanel => false;
         public override bool ReadAsync => true;

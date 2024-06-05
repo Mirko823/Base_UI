@@ -3,6 +3,7 @@
     public enum CatalogType
     {
         Product = 0,
-        Service = 1
+        Service = 1,
+        Grain = 2
     }
 }

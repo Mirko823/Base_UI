@@ -4,6 +4,7 @@ using MicroData.Common.UI.Wpf.ViewModels;
 using MicroData.Base.Domain.Model;
 using MicroData.Base.UI.Shared.Interface;
 using MicroData.Base.UI.Shared.ViewModel;
+using MicroData.Base.UI.Resource;
 
 namespace MicroData.Base.UI.Wpf.ViewModels
 {
@@ -22,7 +23,7 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             this.DelegateDeleteCommand();
         }
 
-        public override string ModelName => "Radna mesta";
+        public override string ModelName => BaseStrings.WorkPlace;
         public override bool ShowGroupPanel => true;
         public override bool ShowAddButton => true;
         public override bool ShowEditButton => true;

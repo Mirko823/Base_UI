@@ -5,7 +5,7 @@ using System;
 
 namespace MicroData.Base.UI.Shared.Lookup
 {
-    public  class BusinessPartnerSmallLookupView : BaseViewModel<Guid>
+    public  class BusinessPartnerSmallViewLookup : BaseViewModel<Guid>
     {
         public string? Code { get; set; }
 

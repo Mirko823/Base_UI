@@ -117,14 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BarCode" xml:space="preserve">
+    <value>Barcode</value>
+  </data>
+  <data name="BusinessPartner" xml:space="preserve">
+    <value>Business Partner</value>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>Client</value>
+  </data>
   <data name="CodeName" xml:space="preserve">
-    <value>Šifra</value>
+    <value>Code</value>
   </data>
   <data name="CodeRequired" xml:space="preserve">
-    <value>Šifra je obavezno polje</value>
+    <value>Code is required field</value>
   </data>
   <data name="CodeUnits" xml:space="preserve">
     <value>Code</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Currency</value>
   </data>
   <data name="DeleteUnits" xml:space="preserve">
     <value>Delete</value>
@@ -138,11 +150,50 @@
   <data name="Employee" xml:space="preserve">
     <value>Employee</value>
   </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="Grain" xml:space="preserve">
+    <value>Grain</value>
+  </data>
   <data name="HeaderUnit" xml:space="preserve">
     <value>Units Grid</value>
   </data>
   <data name="Hello" xml:space="preserve">
     <value>Hello WORLD</value>
+  </data>
+  <data name="InsertAddress" xml:space="preserve">
+    <value>Insert address</value>
+  </data>
+  <data name="InsertBarcode" xml:space="preserve">
+    <value>Insert barcode</value>
+  </data>
+  <data name="InsertCity" xml:space="preserve">
+    <value>Insert city</value>
+  </data>
+  <data name="InsertCode" xml:space="preserve">
+    <value>Insert code</value>
+  </data>
+  <data name="InsertEmail" xml:space="preserve">
+    <value>Insert email</value>
+  </data>
+  <data name="InsertName" xml:space="preserve">
+    <value>Insert  name</value>
+  </data>
+  <data name="InsertPhone" xml:space="preserve">
+    <value>Insert contact</value>
+  </data>
+  <data name="InsertRegistryNumber" xml:space="preserve">
+    <value>Insert registry number</value>
+  </data>
+  <data name="InsertState" xml:space="preserve">
+    <value>Insert state</value>
+  </data>
+  <data name="InsertTaxNumber" xml:space="preserve">
+    <value>Insert tax number</value>
+  </data>
+  <data name="InsertWww" xml:space="preserve">
+    <value>Insert www address</value>
   </data>
   <data name="IsActiveName" xml:space="preserve">
     <value>Aktivna</value>
@@ -151,22 +202,25 @@
     <value>Is Active Unit?</value>
   </data>
   <data name="LabelName" xml:space="preserve">
-    <value>Oznaka</value>
+    <value>Label</value>
   </data>
   <data name="LabelRequired" xml:space="preserve">
-    <value>Oznaka je obavezno polje</value>
+    <value>Label is required field</value>
   </data>
   <data name="LabelUnits" xml:space="preserve">
     <value>Label</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last Name</value>
   </data>
   <data name="Location" xml:space="preserve">
     <value>Location</value>
   </data>
   <data name="NameName" xml:space="preserve">
-    <value>Naziv</value>
+    <value>Name</value>
   </data>
   <data name="NameRequired" xml:space="preserve">
-    <value>Naziv je obavezno polje</value>
+    <value>Name is required field</value>
   </data>
   <data name="NameUnits" xml:space="preserve">
     <value>Name</value>
@@ -174,13 +228,43 @@
   <data name="NewUnits" xml:space="preserve">
     <value>New</value>
   </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
   <data name="QualityParameter" xml:space="preserve">
     <value>Quality Parameter</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="Shipper" xml:space="preserve">
+    <value>Shipper</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>Tax</value>
+  </data>
+  <data name="TaxRate" xml:space="preserve">
+    <value>Tax rate</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>Unit</value>
   </data>
   <data name="ValueFrom" xml:space="preserve">
     <value>Value From</value>
   </data>
   <data name="ValueTo" xml:space="preserve">
     <value>Value To</value>
+  </data>
+  <data name="Warehouse" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="WorkPlace" xml:space="preserve">
+    <value>Workplace</value>
+  </data>
+  <data name="WorkShift" xml:space="preserve">
+    <value>Workshift</value>
   </data>
 </root>

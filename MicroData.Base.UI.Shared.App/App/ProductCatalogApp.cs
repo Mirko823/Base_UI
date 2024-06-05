@@ -17,6 +17,17 @@ namespace MicroData.Base.UI.Shared.Api
             _mapper = mapper;
         }
 
+        public override IEnumerable<ProductCatalogViewModel> GetAll(string accessToken)
+        {
+            var result = _productCatalogService.GetAllDapper();
+            return _mapper.Map< IEnumerable<ProductCatalogViewModel>>(result);    
+        }
+
+        public override async Task<IEnumerable<ProductCatalogViewModel>> GetAllAsync(string accessToken)
+        {
+            var result = await _productCatalogService.GetAllDapperAsync();
+            return _mapper.Map<IEnumerable<ProductCatalogViewModel>>(result);
+        }
 
     }
 }

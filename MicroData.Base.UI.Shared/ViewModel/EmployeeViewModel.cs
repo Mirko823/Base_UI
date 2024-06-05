@@ -1,4 +1,5 @@
-﻿using MicroData.Common.UI.Resource;
+﻿using MicroData.Base.UI.Resource;
+using MicroData.Common.UI.Resource;
 using MicroData.Common.UI.Shared.ViewModel;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -7,51 +8,54 @@ namespace MicroData.Base.UI.Shared.ViewModel
 {
     public  class EmployeeViewModel : BaseAuditViewModel<Guid>
     {
-        [Display(AutoGenerateField = false, Name = "Firma")]
+        [Required]
+        [Display(AutoGenerateField = false)]
         public Guid TenantId { get; set; }
 
+        [Required]
         [Display(AutoGenerateField = false)]
         public Guid CompanyId { get; set; }
 
-        [Display(AutoGenerateField = false, Name = "Eksport key")]
+        [Display(AutoGenerateField = false)]
         public int? ExportId { get; set; }
 
-        [Required(ErrorMessage = "Šifra je obavezno polje")]
-        [Display(Name = "Code", ResourceType = typeof(CommonStrings))]
+        [Required]
+        [Display(Name = "Code", ResourceType = typeof(CommonStrings), Order = 10)]
         public string? Code { get; set; }
 
-        [Display(AutoGenerateField = false, Name = "Titula", Order = 19)]
+        [Display(AutoGenerateField = false)]
         public string Title { get; set; }
 
-        [Required(ErrorMessage = "Prezime je obavezno polje")]
-        [Display(Name = "Prezime", Order = 20)]
+        [Required]
+        [Display(Name = "LastName", ResourceType = typeof(BaseStrings), Order = 20)]
         public string LastName { get; set; }
 
 
-        [Required(ErrorMessage = "Ime je obavezno polje")]
-        [Display(Name = "Ime", Order = 30)]
+        [Required][Display(Name = "FirstName", ResourceType = typeof(BaseStrings), Order = 30)]
+        
         public string FirstName { get; set; }
 
-        [Display(AutoGenerateField = false, Name = "Imenovanje", Order = 40)]
+        [Display(AutoGenerateField = false,  Order = 40)]
         public string Designation { get; set; }
 
-        [Display(Name = "Telefon", Order = 40)]
+        [Display(Name = "Phone", ResourceType = typeof(CommonStrings), Order = 40)]
         public string Phone { get; set; }
 
-        [Display(Name = "Adresa", Order = 50)]
+        [Display(Name = "Address", ResourceType = typeof(CommonStrings), Order = 50)]
         public string Address { get; set; }
 
-        [Display(Name = "Mesto", Order = 60)]
+        [Required]
+        [Display(Name = "City", ResourceType = typeof(CommonStrings), Order = 60)]
         public string City { get; set; }
 
 
-        [Display(Name = "Aktivan", Order = 70)]
+        [Display(Name = "IsActive", ResourceType = typeof(CommonStrings), Order = 70)]
         public bool IsActive { get; set; }
 
-        [Display(Name = "Slika", Order = 200)]
+        [Display(Name = "Picture", ResourceType = typeof(CommonStrings), Order = 200)]
         public byte[] Picture { get; set; }
 
-        [Display(Name = "Napomena", Order = 210)]
+        [Display(Name = "Note", ResourceType = typeof(CommonStrings), Order = 210)]
         public string Note { get; set; }
 
 

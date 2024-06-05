@@ -1,4 +1,6 @@
-﻿using MicroData.Base.UI.Shared.Lookup;
+﻿using MicroData.Base.UI.Resource;
+using MicroData.Base.UI.Shared.Lookup;
+using MicroData.Common.UI.Resource;
 using MicroData.Common.UI.Shared.Lookup;
 using MicroData.Common.UI.Shared.ViewModel;
 using System;
@@ -87,27 +89,27 @@ namespace MicroData.Base.UI.Shared.ViewModel
         }
 
         [Required(ErrorMessage = "Šifra je obavezno polje")]
-        [Display(Name = "Šifra", Order = 10)]
+        [Display(Name = "Code", ResourceType = typeof(CommonStrings), Order = 10)]
         public string Code { get; set; }
 
-        [Display(Name = "Barkod", Order = 20)]
+        [Display(Name = "BarCode", ResourceType = typeof(BaseStrings), Order = 20)]
         public string BarCode { get; set; }
 
         [Required(ErrorMessage = "Naziv je obavezno polje")]
-        [Display(Name = "Naziv", Order = 30)]
+        [Display(Name = "Name", ResourceType = typeof(CommonStrings), Order = 30)]
         public string Name { get; set; }
 
 
-        [Display(Name = "Jedinica mere", Order = 40)]
+        [Display(Name = "Unit", ResourceType = typeof(BaseStrings), Order = 40)]
         public string Unit { get; set; }
 
-        [Display(Name = "Poreska grupa", Order = 50)]
+        [Display(Name = "Tax", ResourceType = typeof(BaseStrings), Order = 50)]
         public string TaxLabel { get; set; }
 
         private decimal taxRate;
         [Required(ErrorMessage = "Stopa je obavezno polje")]
         [ReadOnly(true)]
-        [Display(Name = "Stopa Poreza", Order = 60)]
+        [Display(Name = "TaxRate", ResourceType = typeof(BaseStrings), Order = 60)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:N2}")]
         public decimal TaxRate
         {
@@ -135,10 +137,10 @@ namespace MicroData.Base.UI.Shared.ViewModel
         public decimal Stock { get; set; }
 
         [Display(AutoGenerateField = false)]
-        public List<BaseIntLookup> AllUnits { get; set; }
+        public List<BaseIntViewLookup> AllUnits { get; set; }
 
         [Display(AutoGenerateField = false)]
-        public List<TaxLookup> AllTaxes { get; set; }
+        public List<TaxViewLookup> AllTaxes { get; set; }
 
     }
 }

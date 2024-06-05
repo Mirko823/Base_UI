@@ -3,6 +3,8 @@ using MicroData.Base.UI.Resource;
 using MicroData.Common.UI.Shared.ViewModel;
 using System;
 using System.ComponentModel.DataAnnotations;
+using MicroData.Common.UI.Shared.Lookup;
+using System.Collections.Generic;
 
 namespace MicroData.Base.UI.Shared.ViewModel
 {
@@ -27,9 +29,12 @@ namespace MicroData.Base.UI.Shared.ViewModel
         public string Description { get; set; } = null!;
 
         [Display(AutoGenerateField = false)]
-        public virtual CatalogViewModel Catalog { get; set; } = null!;
+        public virtual GrainCatalogViewModel GrainCatalog { get; set; } = null!;
 
         [Display(AutoGenerateField = false)]
         public virtual QualityParameterViewModel QualityParameterViewModel { get; set; } = null!;
+
+        [Display(AutoGenerateField = false)]
+        public List<BaseIntViewLookup> AllQualityParameters { get; set; } = new List<BaseIntViewLookup>();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MicroData.Base.Domain.Model;
+using MicroData.Base.UI.Resource;
 using MicroData.Base.UI.Shared.Interface;
 using MicroData.Base.UI.Shared.ViewModel;
 using MicroData.Common.UI.Wpf.Enum;
@@ -17,7 +18,7 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             this.DelegatePreviewCommand();
         }
 
-        public override string ModelName => "Radne smene";
+        public override string ModelName => BaseStrings.WorkShift;
         public override bool ShowGroupPanel => false;
         public override bool ShowAddButton => false;
         public override bool ShowEditButton => false;

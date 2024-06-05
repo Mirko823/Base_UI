@@ -1,5 +1,6 @@
 ﻿using MicroData.Base.Domain.Lookup;
 using MicroData.Base.Domain.Model;
+using MicroData.Base.UI.Resource;
 using MicroData.Base.UI.Shared.Interface;
 using MicroData.Base.UI.Shared.ViewModel;
 using MicroData.Common.Domain.Interface;
@@ -36,7 +37,7 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             _lookupBaseApi.GetAllUnitAsync(CurrentUser.AccessToken);
         }
 
-        public override string ModelName => "Usluga";
+        public override string ModelName => BaseStrings.Service;
         public override bool ShowGroupPanel => true;
         public override bool ShowRightPanel => true;
         public override bool ShowImportButton => true;

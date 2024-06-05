@@ -15,9 +15,12 @@ namespace MicroData.Base.UI.Shared.ViewModel
         public Guid CompanyId { get; set; }
 
         [Display(AutoGenerateField = false)]
-        public int? ExportId { get; set; }
+        public Guid LocationId { get; set; }
 
         [Display(AutoGenerateField = false)]
+        public int? ExportId { get; set; }
+
+        [Display(AutoGenerateField = false)]      
         public int WarehouseTypeId { get; set; }
 
         [ReadOnly(true)]

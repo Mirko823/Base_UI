@@ -1,5 +1,6 @@
 ﻿using MicroData.Base.Domain.Lookup;
 using MicroData.Base.Domain.Model;
+using MicroData.Base.UI.Resource;
 using MicroData.Base.UI.Shared.Interface;
 using MicroData.Base.UI.Shared.ViewModel;
 using MicroData.Common.Domain.Interface;
@@ -22,6 +23,7 @@ namespace MicroData.Base.UI.Wpf.ViewModels
         public ProductCatalogVM(IProductCatalogApi productCatalogApi, ILookupBaseApi lookupBaseApi) : base(productCatalogApi)
         {
             _productCatalogApi = productCatalogApi;
+            _lookupBaseApi = lookupBaseApi;
 
             this.DelegateAddNewCommand();
             this.DelegateEditCommand();
@@ -30,17 +32,17 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             this.DelegateImportCommand();
             this.DelegateExportCommand();
 
-            _lookupBaseApi = lookupBaseApi;
-            //_lookupBaseApi.GetAllTaxesAsync(CurrentUser.AccessToken);
-            //_lookupBaseApi.GetAllUnitAsync(CurrentUser.AccessToken);
+
+            _lookupBaseApi.GetAllTaxesAsync(CurrentUser.AccessToken);
+            _lookupBaseApi.GetAllUnitAsync(CurrentUser.AccessToken);
         }
 
-        public override string ModelName => "Proizvod";
+        public override string ModelName => BaseStrings.Product;
         public override bool ShowGroupPanel => true;
 
-        public override bool ShowAddButton => false;
-        public override bool ShowEditButton => false;
-        public override bool ShowDeleteButton => false;
+        public override bool ShowAddButton => true;
+        public override bool ShowEditButton => true;
+        public override bool ShowDeleteButton => true;
 
         public override bool ShowRightPanel => true;
         public override bool ShowImportButton => true;
@@ -64,7 +66,8 @@ namespace MicroData.Base.UI.Wpf.ViewModels
         public override ProductCatalogViewModel GetNewItem()
         {
             var newItem = new ProductCatalogViewModel();
-            //newItem.Id = Guid.NewGuid();
+            
+            newItem.Id = Guid.NewGuid();
             newItem.IsReadOnly = false;
             newItem.AllTaxes = _lookupBaseApi.GetAllTaxes(CurrentUser.AccessToken);
             newItem.AllUnits = _lookupBaseApi.GetAllUnit(CurrentUser.AccessToken);
@@ -96,6 +99,12 @@ namespace MicroData.Base.UI.Wpf.ViewModels
                 }
             }
 
+            newItem.CreatedBy = CurrentUser.UserName;
+            newItem.UpdatedBy = CurrentUser.UserName;
+
+            newItem.CreatedTime = DateTime.Now;
+            newItem.UpdatedTime = DateTime.Now; 
+
             return newItem;
         }
 
@@ -104,9 +113,8 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             var item = _productCatalogApi.Get(this.SelectedItem.Id, CurrentUser.AccessToken);
             item.IsReadOnly = false;
             
-            //todo refactoring
-            //item.AllTaxes = _lookupBaseApi.GetAllTaxes(CurrentUser.AccessToken);
-            //item.AllUnits = _lookupBaseApi.GetAllUnit(CurrentUser.AccessToken);
+            item.AllTaxes = _lookupBaseApi.GetAllTaxes(CurrentUser.AccessToken);
+            item.AllUnits = _lookupBaseApi.GetAllUnit(CurrentUser.AccessToken);
 
             return item;
         }

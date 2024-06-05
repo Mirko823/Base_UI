@@ -73,9 +73,9 @@ namespace MicroData.Base.UI.Shared.ViewModel
         public string Note { get; set; }
 
         [Display(AutoGenerateField = false)]
-        public List<BaseIntLookup> AllCities { get; set; }
+        public List<BaseIntViewLookup> AllCities { get; set; }
 
         [Display(AutoGenerateField = false)]
-        public List<BaseIntLookup> AllStates { get; set; }
+        public List<BaseIntViewLookup> AllStates { get; set; }
     }
 }

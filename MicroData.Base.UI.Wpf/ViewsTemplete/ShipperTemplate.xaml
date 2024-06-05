@@ -31,7 +31,7 @@
                             Grid.Column="1"
                             Margin="0 3 5 3"
                             Text="{Binding Code, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                            WatermarkContent="Unesite sifru" 
+                            WatermarkContent="{x:Static langBase:BaseStrings.InsertCode}" 
                             IsReadOnly="{Binding IsReadOnly}"/>
 
 
@@ -49,7 +49,7 @@
                                         Grid.Column="1"
                                         Margin="0 3 5 3"
                                         Text="{Binding TaxNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                                        WatermarkContent="Unesite PIB" 
+                                        WatermarkContent="{x:Static langBase:BaseStrings.InsertTaxNumber}" 
                                         IsReadOnly="{Binding IsReadOnly}"/>
 
             <Label Grid.Row="1" Grid.Column="2" Content="{x:Static langCommon:CommonStrings.RegistryNumber}" Margin="0 3 0 0"/>
@@ -57,7 +57,7 @@
                                         Grid.Column="3"
                                         Margin="0 3 5 3"
                                         Text="{Binding RegistryNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                                        WatermarkContent="Unesite matični broj" 
+                                        WatermarkContent="{x:Static langBase:BaseStrings.InsertRegistryNumber}" 
                                         IsReadOnly="{Binding IsReadOnly}"/>
 
             <!--<Label Grid.Row="1" Grid.Column="2" Content="Registrovan na SEF" Margin="0 3 0 0"/>
@@ -69,7 +69,7 @@
 
             <Label Grid.Row="3" Grid.Column="0" Content="{x:Static langCommon:CommonStrings.Name}" Margin="0 3 0 0"/>
             <telerik:RadAutoCompleteBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"  Margin="0 3 5 3"                                              
-                                                     WatermarkContent="Unesite naziv ..."
+                                                     WatermarkContent="{x:Static langBase:BaseStrings.InsertName}"
                                                      ItemsSource="{Binding AllComapnies}"
                                                      TextSearchMode="Contains"
                                                      SearchText="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -81,7 +81,7 @@
                                         Grid.Column="1"
                                         Margin="0 3 5 3"
                                         Text="{Binding Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                                        WatermarkContent="Unesite adresu" 
+                                        WatermarkContent="{x:Static langBase:BaseStrings.InsertAddress}" 
                                         IsReadOnly="{Binding IsReadOnly}"/>
 
 
@@ -90,7 +90,7 @@
                                         Grid.Column="3"
                                         Margin="0 3 5 3"
                                         Text="{Binding City, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                                        WatermarkContent="Unesite mesto" 
+                                        WatermarkContent="{x:Static langBase:BaseStrings.InsertCity}" 
                                         IsReadOnly="{Binding IsReadOnly}"/>
 
 
@@ -99,7 +99,7 @@
                                         Grid.Column="1"
                                         Margin="0 3 5 3"
                                         Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                                        WatermarkContent="Unesite email" 
+                                        WatermarkContent="{x:Static langBase:BaseStrings.InsertEmail}" 
                                         IsReadOnly="{Binding IsReadOnly}"/>
 
 
@@ -116,7 +116,7 @@
                                         Grid.Column="1"
                                         Margin="0 3 5 3"
                                         Text="{Binding Phone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                                        WatermarkContent="Unesite telefon" 
+                                        WatermarkContent="{x:Static langBase:BaseStrings.InsertPhone}" 
                                         IsReadOnly="{Binding IsReadOnly}"/>
 
 
