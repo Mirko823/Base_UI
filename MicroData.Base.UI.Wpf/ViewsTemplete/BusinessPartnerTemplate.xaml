@@ -126,14 +126,14 @@
                       IsEnabled="{Binding IsReadOnly, Converter={StaticResource InvertedBooleanConverter}}" />
 
 
-            <Label Grid.Row="8" Grid.Column="0" Content="{x:Static langCommon:CommonStrings.Note}" Margin="0 3 0 0"/>
+            <Label Grid.Row="8" Grid.Column="0" Content="{x:Static langBase:BaseStrings.Note}" Margin="0 3 0 0"/>
             <telerik:RadWatermarkTextBox Grid.Row="8"
                                         Grid.Column="1"                                         
                                         Grid.ColumnSpan="3"
                                         VerticalContentAlignment="Top" 
                                         Margin="0 3 5 3"
                                         Text="{Binding Note, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                                        WatermarkContent=""
+                                        WatermarkContent="{x:Static langBase:BaseStrings.InsertNote}"
                                         Height="60"
                                         TextWrapping="Wrap" 
                                         IsReadOnly="{Binding IsReadOnly}"/>

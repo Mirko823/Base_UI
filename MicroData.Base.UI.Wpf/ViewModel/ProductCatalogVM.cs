@@ -44,7 +44,7 @@ namespace MicroData.Base.UI.Wpf.ViewModels
         public override bool ShowEditButton => true;
         public override bool ShowDeleteButton => true;
 
-        public override bool ShowRightPanel => true;
+        public override bool ShowRightPanel => false;
         public override bool ShowImportButton => true;
         public override bool ShowExportButton => true;
 
@@ -68,6 +68,9 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             var newItem = new ProductCatalogViewModel();
             
             newItem.Id = Guid.NewGuid();
+            newItem.TenantId = new Guid(CurrentCompany.TenantId);
+            newItem.CompanyId = new Guid(CurrentCompany.CompanyId);
+
             newItem.IsReadOnly = false;
             newItem.AllTaxes = _lookupBaseApi.GetAllTaxes(CurrentUser.AccessToken);
             newItem.AllUnits = _lookupBaseApi.GetAllUnit(CurrentUser.AccessToken);

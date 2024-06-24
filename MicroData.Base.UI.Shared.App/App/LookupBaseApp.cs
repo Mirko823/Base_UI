@@ -119,7 +119,7 @@ namespace MicroData.Base.UI.Shared.Api
         #endregion
 
         #region Catalogs
-        public IEnumerable<Lookup.CatalogViewLookup> GetAllCatalogs(string accessToken)
+        public IEnumerable<CatalogViewLookup> GetAllCatalogs(string accessToken)
         {
             var result = _lookupService.GetAllCatalogs(CurrentSecurityUser);
             return _mapper.Map< IEnumerable<CatalogViewLookup>>(result);
@@ -155,6 +155,20 @@ namespace MicroData.Base.UI.Shared.Api
         {
             var result = await _lookupService.GetAllBusinessPartnersSmallAsync(CurrentSecurityUser);
             return _mapper.Map<IEnumerable<BusinessPartnerSmallViewLookup>>(result);
+        }
+        #endregion
+
+        #region Shipper
+        public IEnumerable<ShipperViewLookup> GetAllShippers(string accessToken)
+        {
+            var result = _lookupService.GetAllShippers(CurrentSecurityUser);
+            return _mapper.Map<IEnumerable<ShipperViewLookup>>(result);
+        }
+
+        public async Task<IEnumerable<ShipperViewLookup>> GetAllShipperAsync(string accessToken)
+        {
+            var result = await _lookupService.GetAllShippersAsync(CurrentSecurityUser);
+            return _mapper.Map<IEnumerable<ShipperViewLookup>>(result);
         }
         #endregion
 

@@ -1,12 +1,9 @@
-﻿using MicroData.Base.Domain.Lookup;
-using MicroData.Base.UI.Resource;
+﻿using MicroData.Base.UI.Resource;
 using MicroData.Base.UI.Shared.Interface;
+using MicroData.Base.UI.Shared.Lookup;
 using MicroData.Base.UI.Shared.ViewModel;
-using MicroData.Base.UI.Wpf.Controls;
 using MicroData.Common.Domain.Lookup;
 using MicroData.Common.UI.Shared.Identity;
-using MicroData.Common.UI.Wpf.Dialog.EditorItemsDialog;
-using MicroData.Common.UI.Wpf.Dialog.Interface;
 using MicroData.Common.UI.Wpf.Enum;
 using MicroData.Common.UI.Wpf.Helpers;
 using MicroData.Common.UI.Wpf.Interface;
@@ -20,16 +17,14 @@ namespace MicroData.Base.UI.Wpf.ViewModels
         private readonly IGrainCatalogApi _grainCatalogApi;
         private readonly ILookupBaseApi _lookupBaseApi;
         private IBaseEditorVM baseEditorVM;
-        private IEditorItemsDialogFactory dialogItemsFactory;
-        private Uri dataFormTemplate;
-        public GrainCatalogVM(IGrainCatalogApi GrainCatalogApi, ILookupBaseApi lookupBaseApi) : base(GrainCatalogApi)
+        public GrainCatalogVM(IGrainCatalogApi grainCatalogApi, ILookupBaseApi lookupBaseApi) : base(grainCatalogApi)
         {
-            _grainCatalogApi = GrainCatalogApi;
+            _grainCatalogApi = grainCatalogApi;
             _lookupBaseApi = lookupBaseApi;
 
-            this.DelegateGrainAddNewCommand();
-            this.DelegateGrainEditCommand();
-            this.DelegateGrainPreviewCommand();
+            this.DelegateAddNewCommand();
+            this.DelegateEditCommand();
+            this.DelegatePreviewCommand();
 
             this.DelegateImportCommand();
             this.DelegateExportCommand();
@@ -37,9 +32,6 @@ namespace MicroData.Base.UI.Wpf.ViewModels
 
             _lookupBaseApi.GetAllTaxesAsync(CurrentUser.AccessToken);
             _lookupBaseApi.GetAllUnitAsync(CurrentUser.AccessToken);
-            _lookupBaseApi.GetAllQualityParameterAsync(CurrentUser.AccessToken);
-
-            CreateDialogFactory();
         }
 
         public override string ModelName => BaseStrings.Grain;
@@ -49,13 +41,13 @@ namespace MicroData.Base.UI.Wpf.ViewModels
         public override bool ShowEditButton => true;
         public override bool ShowDeleteButton => true;
 
-        public override bool ShowRightPanel => true;
+        public override bool ShowRightPanel => false;
         public override bool ShowImportButton => true;
         public override bool ShowExportButton => true;
 
         public override bool ReadAsync => false;
 
-        public override IBaseEditorVM BaseEditorVM => null;
+        public override IBaseEditorVM BaseEditorVM => GetBaseEditor();
 
         private IBaseEditorVM GetBaseEditor()
         {
@@ -67,59 +59,7 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             return baseEditorVM;
         }
 
-        private void CreateDialogFactory()
-        {
-            dialogItemsFactory = new EditorItemsDialogFactory();
-            dialogItemsFactory.TargetModelName = ModelName;
 
-            dataFormTemplate = new Uri(@"/MicroData.Base.UI.Wpf;component/ViewsTemplete/CatalogTemplate.xaml", UriKind.RelativeOrAbsolute);
-
-            dialogItemsFactory.DataFormTeplate = dataFormTemplate;
-        }
-
-        private void CreateDialogFactoryItems(GrainCatalogViewModel item)
-        {
-            dialogItemsFactory.TargetItemName = item.Name;
-
-            var editorItems = new List<EditorItem>{
-                        new EditorItem(){
-                        TabHeader = BaseStrings.QualityParameter,
-                        CustomControl = new GridCatalogQualitetyParametersItems(item)
-                        }
-                    };
-
-            dialogItemsFactory.EditorItems = editorItems;
-        }
-
-        public void DelegateGrainAddNewCommand()
-        {
-            this.AddNewRecordCommand = new DelegateCommand(
-                (o) =>
-                {
-
-                    ShowBusy(false);
-                    var newItem = this.GetNewItem();
-                    CreateDialogFactoryItems(newItem);
-                    HideBusy();
-
-                    dialogItemsFactory.ShowNewDialog(newItem);
-
-                    if (dialogItemsFactory.SaveChanges)
-                    {
-                        var currentItem = (GrainCatalogViewModel)dialogItemsFactory.CurrentItem;
-                        if (newItem != null)
-                        {
-                            this.ShowBusy(false);
-
-                            var itemFromDb = _grainCatalogApi.CreateNew(currentItem,CurrentUser.AccessToken);
-
-                            this.RefreshItems();
-                            this.HideBusy();
-                        }
-
-                    }
-                });
-        }
         public override GrainCatalogViewModel GetNewItem()
         {
             var newItem = new GrainCatalogViewModel();
@@ -129,12 +69,8 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             newItem.CompanyId = new Guid(CurrentCompany.CompanyId);
 
             newItem.IsReadOnly = false;
-
-            newItem.CatalogQualityParameters = new List<CatalogQualityParameterViewModel>();
-
             newItem.AllTaxes = _lookupBaseApi.GetAllTaxes(CurrentUser.AccessToken);
             newItem.AllUnits = _lookupBaseApi.GetAllUnit(CurrentUser.AccessToken);
-            newItem.AllQualityParameters = _lookupBaseApi.GetAllQualityParameter(CurrentUser.AccessToken).ToList();
 
             var selectedItem = this.SelectedItem;
 
@@ -172,74 +108,14 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             return newItem;
         }
 
-        public void DelegateGrainEditCommand()
-        {
-            this.EditRecordCommand = new DelegateCommand(
-                (o) =>
-                {
-
-                    ShowBusy(false);
-                    var item = _grainCatalogApi.Get(this.SelectedItem.Id, CurrentUser.AccessToken);
-                    item.CatalogQualityParameters = _grainCatalogApi.GetQualityParameterByCatalogId(this.SelectedItem.Id.ToString(), CurrentUser.AccessToken).ToList();
-
-                    item.AllTaxes = _lookupBaseApi.GetAllTaxes(CurrentUser.AccessToken);
-                    item.AllUnits = _lookupBaseApi.GetAllUnit(CurrentUser.AccessToken);
-                    item.AllQualityParameters = _lookupBaseApi.GetAllQualityParameter(CurrentUser.AccessToken).ToList();
-
-                    CreateDialogFactoryItems(item);
-                    HideBusy();
-
-                    dialogItemsFactory.ShowEditDialog(item);
-
-
-                    if (dialogItemsFactory.SaveChanges)
-                    {
-                        this.ShowBusy(false);
-                        var currentItem = (GrainCatalogViewModel)dialogItemsFactory.CurrentItem;
-                        if (currentItem != null)
-                        {
-                            //ClearLookup(ref currentItem);
-                            var itemFromDb = _grainCatalogApi.EditExisting(currentItem, CurrentUser.AccessToken);
-
-                            var found = this.GetItems.FirstOrDefault(x => x.Id == itemFromDb.Id);
-                            int i = GetItems.IndexOf(found);
-                            this.GetItems[i] = itemFromDb;
-                        }
-                        this.HideBusy();
-                    }
-
-                },
-                (o) => this.SelectedItem != null);
-        }
-
-
-        public void DelegateGrainPreviewCommand()
-        {
-            this.PreviewRecordCommand = new DelegateCommand(
-                (o) =>
-                {
-
-                    ShowBusy(false);
-                    var item = _grainCatalogApi.GetPreview(this.SelectedItem.Id, CurrentUser.AccessToken);
-                    item.CatalogQualityParameters = _grainCatalogApi.GetQualityParameterByCatalogId(this.SelectedItem.Id.ToString(), CurrentUser.AccessToken).ToList();
-
-                    CreateDialogFactoryItems(item);
-                    this.HideBusy();
-
-                    dialogItemsFactory.ShowPreviewDialog(item);
-
-
-                },
-                (o) => this.SelectedItem != null);
-        }
-
         public override GrainCatalogViewModel GetEditItem()
         {
             var item = _grainCatalogApi.Get(this.SelectedItem.Id, CurrentUser.AccessToken);
             item.IsReadOnly = false;
             
-          
-            
+            item.AllTaxes = _lookupBaseApi.GetAllTaxes(CurrentUser.AccessToken);
+            item.AllUnits = _lookupBaseApi.GetAllUnit(CurrentUser.AccessToken);
+
             return item;
         }
 
@@ -317,7 +193,7 @@ namespace MicroData.Base.UI.Wpf.ViewModels
         }
 
         private List<BaseIntLookup> AllUnits;
-        private List<TaxLookup> AllTaxes;
+        private List<TaxViewLookup> AllTaxes;
 
         private int GetUnitId(string unitLabel)
         {
@@ -348,6 +224,7 @@ namespace MicroData.Base.UI.Wpf.ViewModels
                 //printPreview.PrintReport(this.GetReportProperties());
             });
         }
+
 
     }
 }

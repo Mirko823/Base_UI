@@ -53,6 +53,11 @@ namespace MicroData.Base.UI.Shared.Interface
 
         #endregion
 
+        #region Shippers
+        IEnumerable<ShipperViewLookup> GetAllShippers(string accessToken);
+        Task<IEnumerable<ShipperViewLookup>> GetAllShipperAsync(string accessToken);
+        #endregion
+
         #region Clients
         IEnumerable<ClientViewLookup> GetAllClients(string accessToken);
         Task<IEnumerable<ClientViewLookup>> GetAllClientAsync(string accessToken);

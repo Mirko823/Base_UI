@@ -22,7 +22,6 @@ namespace MicroData.Base.UI.Shared.App.Mapper
 
             CreateMap<LocationViewModel, LocationModel>();
             CreateMap<ShipperViewModel, ShipperModel>();
-            CreateMap<QualityParameterViewModel, QualityParameterModel>();
 
             CreateMap<ProductCategoryViewModel, ProductCategoryModel>();
             CreateMap<ServiceCategoryViewModel, ServiceCategoryModel>();
@@ -31,7 +30,6 @@ namespace MicroData.Base.UI.Shared.App.Mapper
             CreateMap<ProductCatalogViewModel, ProductCatalogModel>();
             CreateMap<ServiceCatalogViewModel, ServiceCatalogModel>();
 
-            CreateMap<CatalogQualityParameterViewModel, CatalogQualityParameterModel>();
             CreateMap<GrainCatalogViewModel, GrainCatalogModel>();
 
             CreateMap<ProfessionViewModel, ProfessionModel>();

@@ -1,9 +1,7 @@
-﻿using DevExpress.DirectX.Common.Direct3D;
-using MicroData.Base.UI.Shared.ViewModel;
+﻿using MicroData.Base.UI.Shared.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reactive;
 using System.Text;
 using System.Threading.Tasks;
 

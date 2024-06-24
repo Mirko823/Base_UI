@@ -142,6 +142,15 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dokumenat.
+        /// </summary>
+        public static string Document {
+            get {
+                return ResourceManager.GetString("Document", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Izmeni.
         /// </summary>
         public static string EditUnits {
@@ -214,6 +223,15 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unesite poslovnog partnera.
+        /// </summary>
+        public static string InsertBusinessPartner {
+            get {
+                return ResourceManager.GetString("InsertBusinessPartner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unesite sedište.
         /// </summary>
         public static string InsertCity {
@@ -232,6 +250,15 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unesite dokumenat.
+        /// </summary>
+        public static string InsertDocument {
+            get {
+                return ResourceManager.GetString("InsertDocument", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unsite email .
         /// </summary>
         public static string InsertEmail {
@@ -241,11 +268,29 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unesite merkantilnu robu.
+        /// </summary>
+        public static string InsertGrain {
+            get {
+                return ResourceManager.GetString("InsertGrain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unesite naziv.
         /// </summary>
         public static string InsertName {
             get {
                 return ResourceManager.GetString("InsertName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unesite napomena.
+        /// </summary>
+        public static string InsertNote {
+            get {
+                return ResourceManager.GetString("InsertNote", resourceCulture);
             }
         }
         
@@ -394,6 +439,15 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Napomena.
+        /// </summary>
+        public static string Note {
+            get {
+                return ResourceManager.GetString("Note", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cena.
         /// </summary>
         public static string Price {
@@ -412,15 +466,6 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Parametar Kvaliteta.
-        /// </summary>
-        public static string QualityParameter {
-            get {
-                return ResourceManager.GetString("QualityParameter", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Usluga.
         /// </summary>
         public static string Service {
@@ -430,7 +475,7 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Carrier.
+        ///   Looks up a localized string similar to Prevoznik.
         /// </summary>
         public static string Shipper {
             get {

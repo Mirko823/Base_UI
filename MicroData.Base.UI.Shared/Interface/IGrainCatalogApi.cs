@@ -6,6 +6,5 @@ namespace MicroData.Base.UI.Shared.Interface
 {
     public interface IGrainCatalogApi : IBaseApi<GrainCatalogViewModel>
     {
-        IEnumerable<CatalogQualityParameterViewModel> GetQualityParameterByCatalogId(string catalogId, string accessToken);
     }
 }

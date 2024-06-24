@@ -60,7 +60,11 @@ namespace MicroData.Base.UI.Wpf.ViewModels
         public override ServiceCatalogViewModel GetNewItem()
         {
             var newItem = new ServiceCatalogViewModel();
-            //newItem.Id = Guid.NewGuid();
+            
+            newItem.Id = Guid.NewGuid();
+            newItem.TenantId = new Guid(CurrentCompany.TenantId);
+            newItem.CompanyId = new Guid(CurrentCompany.CompanyId);
+
             newItem.IsReadOnly = false;
             newItem.AllTaxes = _lookupBaseApi.GetAllTaxes(CurrentUser.AccessToken);
             newItem.AllUnits = _lookupBaseApi.GetAllUnit(CurrentUser.AccessToken);

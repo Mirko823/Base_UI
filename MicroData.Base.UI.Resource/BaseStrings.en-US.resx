@@ -144,6 +144,9 @@
   <data name="Description" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="Document" xml:space="preserve">
+    <value>Dokumenat</value>
+  </data>
   <data name="EditUnits" xml:space="preserve">
     <value>Edit</value>
   </data>
@@ -168,17 +171,29 @@
   <data name="InsertBarcode" xml:space="preserve">
     <value>Insert barcode</value>
   </data>
+  <data name="InsertBusinessPartner" xml:space="preserve">
+    <value>Insert business partner</value>
+  </data>
   <data name="InsertCity" xml:space="preserve">
     <value>Insert city</value>
   </data>
   <data name="InsertCode" xml:space="preserve">
     <value>Insert code</value>
   </data>
+  <data name="InsertDocument" xml:space="preserve">
+    <value>Insert document</value>
+  </data>
   <data name="InsertEmail" xml:space="preserve">
     <value>Insert email</value>
   </data>
+  <data name="InsertGrain" xml:space="preserve">
+    <value>Insert Grain</value>
+  </data>
   <data name="InsertName" xml:space="preserve">
     <value>Insert  name</value>
+  </data>
+  <data name="InsertNote" xml:space="preserve">
+    <value>Unesite note</value>
   </data>
   <data name="InsertPhone" xml:space="preserve">
     <value>Insert contact</value>
@@ -228,14 +243,14 @@
   <data name="NewUnits" xml:space="preserve">
     <value>New</value>
   </data>
+  <data name="Note" xml:space="preserve">
+    <value>Note</value>
+  </data>
   <data name="Price" xml:space="preserve">
     <value>Price</value>
   </data>
   <data name="Product" xml:space="preserve">
     <value>Product</value>
-  </data>
-  <data name="QualityParameter" xml:space="preserve">
-    <value>Quality Parameter</value>
   </data>
   <data name="Service" xml:space="preserve">
     <value>Service</value>

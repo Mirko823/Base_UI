@@ -144,6 +144,9 @@
   <data name="Description" xml:space="preserve">
     <value>Opis</value>
   </data>
+  <data name="Document" xml:space="preserve">
+    <value>Dokumenat</value>
+  </data>
   <data name="EditUnits" xml:space="preserve">
     <value>Izmeni</value>
   </data>
@@ -168,17 +171,29 @@
   <data name="InsertBarcode" xml:space="preserve">
     <value>Unseite barkod</value>
   </data>
+  <data name="InsertBusinessPartner" xml:space="preserve">
+    <value>Unesite poslovnog partnera</value>
+  </data>
   <data name="InsertCity" xml:space="preserve">
     <value>Unesite sedište</value>
   </data>
   <data name="InsertCode" xml:space="preserve">
     <value>Unesite šifru</value>
   </data>
+  <data name="InsertDocument" xml:space="preserve">
+    <value>Unesite dokumenat</value>
+  </data>
   <data name="InsertEmail" xml:space="preserve">
     <value>Unsite email </value>
   </data>
+  <data name="InsertGrain" xml:space="preserve">
+    <value>Unesite merkantilnu robu</value>
+  </data>
   <data name="InsertName" xml:space="preserve">
     <value>Unesite naziv</value>
+  </data>
+  <data name="InsertNote" xml:space="preserve">
+    <value>Unesite napomena</value>
   </data>
   <data name="InsertPhone" xml:space="preserve">
     <value>Unsite kontakt telefon</value>
@@ -228,20 +243,20 @@
   <data name="NewUnits" xml:space="preserve">
     <value>Novi</value>
   </data>
+  <data name="Note" xml:space="preserve">
+    <value>Napomena</value>
+  </data>
   <data name="Price" xml:space="preserve">
     <value>Cena</value>
   </data>
   <data name="Product" xml:space="preserve">
     <value>Proizvodi</value>
   </data>
-  <data name="QualityParameter" xml:space="preserve">
-    <value>Parametar Kvaliteta</value>
-  </data>
   <data name="Service" xml:space="preserve">
     <value>Usluga</value>
   </data>
   <data name="Shipper" xml:space="preserve">
-    <value>Carrier</value>
+    <value>Prevoznik</value>
   </data>
   <data name="Tax" xml:space="preserve">
     <value>Porez</value>

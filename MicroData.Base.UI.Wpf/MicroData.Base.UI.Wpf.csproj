@@ -15,22 +15,13 @@
 
 	<ItemGroup>
 		<Reference Include="Telerik.Reporting">
-			<HintPath>..\..\lib\RCWPF_HOTFIX\Reporting\Telerik.Reporting.dll</HintPath>
-		</Reference>
-		<Reference Include="Telerik.Reporting.OpenXmlRendering">
-			<HintPath>..\..\lib\RCWPF_HOTFIX\Reporting\Telerik.Reporting.OpenXmlRendering.dll</HintPath>
-		</Reference>
-		<Reference Include="Telerik.Reporting.WebServiceDataSource">
-			<HintPath>..\..\lib\RCWPF_HOTFIX\Reporting\Telerik.Reporting.WebServiceDataSource.dll</HintPath>
-		</Reference>
-		<Reference Include="Telerik.Reporting.XpsRendering">
-			<HintPath>..\..\lib\RCWPF_HOTFIX\Reporting\Telerik.Reporting.XpsRendering.dll</HintPath>
+		  <HintPath>..\..\lib\RCWPF_HOTFIX\Reporting\Telerik.Reporting.dll</HintPath>
 		</Reference>
 		<Reference Include="Telerik.ReportViewer.Wpf">
-			<HintPath>..\..\lib\RCWPF_HOTFIX\Reporting\Telerik.ReportViewer.Wpf.dll</HintPath>
+		  <HintPath>..\..\lib\RCWPF_HOTFIX\Reporting\Telerik.ReportViewer.Wpf.dll</HintPath>
 		</Reference>
 		<Reference Include="Telerik.ReportViewer.Wpf.Themes">
-			<HintPath>..\..\lib\RCWPF_HOTFIX\Reporting\Telerik.ReportViewer.Wpf.Themes.dll</HintPath>
+		  <HintPath>..\..\lib\RCWPF_HOTFIX\Reporting\Telerik.ReportViewer.Wpf.Themes.dll</HintPath>
 		</Reference>
 		<Reference Include="Telerik.Windows.Controls">
 			<HintPath>..\..\lib\RCWPF_HOTFIX\NetCore_NoXaml\Telerik.Windows.Controls.dll</HintPath>

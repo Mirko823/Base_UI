@@ -1,5 +1,4 @@
-﻿using MicroData.Base.UI.Resource;
-using MicroData.Common.UI.Resource;
+﻿using MicroData.Common.UI.Resource;
 using MicroData.Common.UI.Shared.ViewModel;
 using System;
 using System.Collections.Generic;

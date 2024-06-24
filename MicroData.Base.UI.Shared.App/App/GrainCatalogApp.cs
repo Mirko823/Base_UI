@@ -29,10 +29,5 @@ namespace MicroData.Base.UI.Shared.Api
             return _mapper.Map<IEnumerable<GrainCatalogViewModel>>(result);
         }
 
-        public IEnumerable<CatalogQualityParameterViewModel> GetQualityParameterByCatalogId(string catalogId, string accessToken)
-        {
-            var result = _grainCatalogService.GetQualityParameterByCatalogId(catalogId);
-            return _mapper.Map<IEnumerable<CatalogQualityParameterViewModel>>(result);
-        }
     }
 }

@@ -32,7 +32,7 @@ namespace MicroData.Base.UI.Shared.App.Helper
 
             services.AddScoped<ILocationApi, LocationApp>();
             services.AddScoped<IShipperApi, ShipperApp>();
-            services.AddScoped<IQualityParameterApi, QualityParameterApp>();
+
 
             services.AddScoped<ITaxApi, TaxApp>();
             
