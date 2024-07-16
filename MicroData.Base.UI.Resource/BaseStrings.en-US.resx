@@ -201,6 +201,9 @@
   <data name="InsertRegistryNumber" xml:space="preserve">
     <value>Insert registry number</value>
   </data>
+  <data name="InsertShipper" xml:space="preserve">
+    <value>Insert shipper</value>
+  </data>
   <data name="InsertState" xml:space="preserve">
     <value>Insert state</value>
   </data>

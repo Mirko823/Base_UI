@@ -20,7 +20,7 @@ namespace MicroData.Base.UI.Shared.Api
         public override IEnumerable<ProductCatalogViewModel> GetAll(string accessToken)
         {
             var result = _productCatalogService.GetAllDapper();
-            return _mapper.Map< IEnumerable<ProductCatalogViewModel>>(result);    
+            return _mapper.Map<IEnumerable<ProductCatalogViewModel>>(result);
         }
 
         public override async Task<IEnumerable<ProductCatalogViewModel>> GetAllAsync(string accessToken)

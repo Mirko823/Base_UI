@@ -85,18 +85,26 @@
                                         IsReadOnly="{Binding IsReadOnly}"/>
 
 
-            <Label Grid.Row="4" Grid.Column="2" Content="{x:Static langCommon:CommonStrings.City}" Margin="0 3 0 0"/>
-            <telerik:RadWatermarkTextBox Grid.Row="4"
-                                        Grid.Column="3"
+            <Label Grid.Row="5" Grid.Column="0" Content="{x:Static langCommon:CommonStrings.City}" Margin="0 3 0 0"/>
+            <telerik:RadWatermarkTextBox Grid.Row="5"
+                                        Grid.Column="1"
                                         Margin="0 3 5 3"
                                         Text="{Binding City, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                                         WatermarkContent="{x:Static langBase:BaseStrings.InsertCity}" 
                                         IsReadOnly="{Binding IsReadOnly}"/>
 
-
-            <Label Grid.Row="5" Grid.Column="0" Content="{x:Static langCommon:CommonStrings.Email}" Margin="0 3 0 0"/>
-            <telerik:RadWatermarkTextBox Grid.Row="5"
+            <Label Grid.Row="6" Grid.Column="0" Content="{x:Static langCommon:CommonStrings.State}" Margin="0 3 0 0"/>
+            <telerik:RadWatermarkTextBox Grid.Row="6"
                                         Grid.Column="1"
+                                        Margin="0 3 5 3"
+                                        Text="{Binding State, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                        WatermarkContent="{x:Static langBase:BaseStrings.InsertState}" 
+                                        IsReadOnly="{Binding IsReadOnly}"/>
+
+
+            <Label Grid.Row="4" Grid.Column="2" Content="{x:Static langCommon:CommonStrings.Email}" Margin="0 3 0 0"/>
+            <telerik:RadWatermarkTextBox Grid.Row="4"
+                                        Grid.Column="3"
                                         Margin="0 3 5 3"
                                         Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                                         WatermarkContent="Unesite email" 
@@ -111,9 +119,9 @@
                                         WatermarkContent="{x:Static langBase:BaseStrings.InsertWww}" 
                                         IsReadOnly="{Binding IsReadOnly}"/>
 
-            <Label Grid.Row="6" Grid.Column="0" Content="{x:Static langCommon:CommonStrings.Phone}" Margin="0 3 0 0"/>
+            <Label Grid.Row="6" Grid.Column="2" Content="{x:Static langCommon:CommonStrings.Phone}" Margin="0 3 0 0"/>
             <telerik:RadWatermarkTextBox Grid.Row="6"
-                                        Grid.Column="1"
+                                        Grid.Column="3"
                                         Margin="0 3 5 3"
                                         Text="{Binding Phone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                                         WatermarkContent="{x:Static langBase:BaseStrings.InsertPhone}" 

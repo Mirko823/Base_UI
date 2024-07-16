@@ -2,9 +2,11 @@
 using MicroData.Base.UI.Shared.Interface;
 using MicroData.Base.UI.Shared.ViewModel;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +14,10 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
 {
     public partial class UnitList
     {
+        [CascadingParameter]
+        private HttpContext HttpContext { get; set; } = default!;
+
+
         public List<UnitViewModel> Units { get; set; } = default!;
 
         [Inject]
@@ -20,8 +26,12 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
 
         protected override void OnInitialized()
         {
+            //todo test - prebaciti na state
+            var x = HttpContext;
+
+            var accessToken = x.User.Claims.FirstOrDefault(c => c.Type.Equals("AccessToken"))?.Value;
             //Units = MockData.Units;
-            Units = _unitApi.GetAll(string.Empty).ToList();
+            Units = _unitApi.GetAll(accessToken).ToList();
         }
 
     }

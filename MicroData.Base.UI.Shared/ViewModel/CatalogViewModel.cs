@@ -108,7 +108,6 @@ namespace MicroData.Base.UI.Shared.ViewModel
 
         private decimal taxRate;
         [Required(ErrorMessage = "Stopa je obavezno polje")]
-        [ReadOnly(true)]
         [Display(Name = "TaxRate", ResourceType = typeof(BaseStrings), Order = 60)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:N2}")]
         public decimal TaxRate

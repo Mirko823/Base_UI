@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using MicroData.Base.Application.Interface;
+using MicroData.Base.Application.Service;
+using MicroData.Base.Domain.Enum;
 using MicroData.Base.Domain.Model;
 using MicroData.Base.UI.Shared.App.App;
 using MicroData.Base.UI.Shared.Interface;
@@ -17,10 +19,11 @@ namespace MicroData.Base.UI.Shared.Api
             _mapper = mapper;
         }
 
+
         public override IEnumerable<GrainCatalogViewModel> GetAll(string accessToken)
         {
             var result = _grainCatalogService.GetAllDapper();
-            return _mapper.Map< IEnumerable<GrainCatalogViewModel>>(result);    
+            return _mapper.Map<IEnumerable<GrainCatalogViewModel>>(result);
         }
 
         public override async Task<IEnumerable<GrainCatalogViewModel>> GetAllAsync(string accessToken)

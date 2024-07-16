@@ -32,7 +32,7 @@ namespace MicroData.Base.UI.Wpf.ViewModels
         public override string ModelName => BaseStrings.BusinessPartner;
         public override bool ShowGroupPanel => true;
         public override bool ShowRightPanel => false;
-        public override bool ReadAsync => false;
+        public override bool ReadAsync => true;
 
         public override IBaseEditorVM BaseEditorVM => GetBaseEditor();
 
@@ -51,7 +51,6 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             var newItem = new BusinessPartnerViewModel();
             newItem.IsReadOnly = false;
             newItem.CanEdit = true;
-            newItem.State = "RS";
 
             newItem.Id = Guid.NewGuid();
 

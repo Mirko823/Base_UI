@@ -178,7 +178,7 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Žitarica.
+        ///   Looks up a localized string similar to Merkantilan Roba.
         /// </summary>
         public static string Grain {
             get {
@@ -309,6 +309,15 @@ namespace MicroData.Base.UI.Resource {
         public static string InsertRegistryNumber {
             get {
                 return ResourceManager.GetString("InsertRegistryNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unesite prevoznika.
+        /// </summary>
+        public static string InsertShipper {
+            get {
+                return ResourceManager.GetString("InsertShipper", resourceCulture);
             }
         }
         
@@ -457,7 +466,7 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Proizvodi.
+        ///   Looks up a localized string similar to Roba.
         /// </summary>
         public static string Product {
             get {

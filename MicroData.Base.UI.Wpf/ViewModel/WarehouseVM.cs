@@ -86,16 +86,31 @@ namespace MicroData.Base.UI.Wpf.ViewModels
             
             warehouse.Id = Guid.NewGuid();
 
-            warehouse.LocationId = CurrentLocation.Id;
-
             //todo refactoring
             warehouse.TenantId = new Guid(CurrentCompany.TenantId);
             warehouse.CompanyId = new Guid(CurrentCompany.CompanyId);
+
+            warehouse.LocationId = CurrentLocation.Id;
+
+            if (SelectedItem != null)
+            {
+                warehouse.WarehouseTypeId = SelectedItem.WarehouseTypeId;
+            }
+            else
+            {
+                var warehouseType = AllWarehouseTypes.FirstOrDefault();
+                if (warehouseType != null)
+                {
+                    warehouse.WarehouseTypeId = warehouseType.Id;
+                }
+            }
 
             warehouse.CreatedBy = CurrentUser.UserName;
             warehouse.CreatedTime = DateTime.Now;
             warehouse.UpdatedBy = CurrentUser.UserName;
             warehouse.UpdatedTime = DateTime.Now;
+
+            warehouse.IsActive = true;
 
             warehouse.IsNew = true;
             warehouse.IsReadOnly = false;

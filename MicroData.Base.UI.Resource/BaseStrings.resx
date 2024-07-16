@@ -157,7 +157,7 @@
     <value>Ime</value>
   </data>
   <data name="Grain" xml:space="preserve">
-    <value>Žitarica</value>
+    <value>Merkantilan Roba</value>
   </data>
   <data name="HeaderUnit" xml:space="preserve">
     <value>Tabela jedinica</value>
@@ -200,6 +200,9 @@
   </data>
   <data name="InsertRegistryNumber" xml:space="preserve">
     <value>Unesite matični broj</value>
+  </data>
+  <data name="InsertShipper" xml:space="preserve">
+    <value>Unesite prevoznika</value>
   </data>
   <data name="InsertState" xml:space="preserve">
     <value>Unesite državu</value>
@@ -250,7 +253,7 @@
     <value>Cena</value>
   </data>
   <data name="Product" xml:space="preserve">
-    <value>Proizvodi</value>
+    <value>Roba</value>
   </data>
   <data name="Service" xml:space="preserve">
     <value>Usluga</value>
