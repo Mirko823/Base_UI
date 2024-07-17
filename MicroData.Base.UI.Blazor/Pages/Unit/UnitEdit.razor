@@ -1,7 +1,29 @@
-﻿@page "/unitedit"
+﻿@page "/unitedit/{IdS}"
+@inject NavigationManager NavigationManager
+@using DevExpress.Blazor
+@inject IStringLocalizer<BaseStrings> localizer
 
-<h3>UnitEdit</h3>
-
-<h3>Sacuvati podatke u bazi ....</h3>
 
 
+<h3>Izmena Jedinice</h3>
+
+<DxFormLayout>
+    <DxFormLayoutItem Caption="@localizer["CodeUnits"]">
+        <DxTextBox @bind-Text="unit.Code" ReadOnly="true" />
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="@localizer["LabelUnits"]">
+        <DxTextBox @bind-Text="unit.Label" />
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="@localizer["NameUnits"]">
+        <DxTextBox @bind-Text="unit.Name" />
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="@localizer["IsActiveUnits"]">
+        <DxCheckBox @bind-Checked="unit.IsActive" />
+    </DxFormLayoutItem>
+    <DxFormLayoutItem>
+        <ChildContent Context="buttonContext">
+            <DxButton Click="SaveUnit">Sačuvaj</DxButton>
+            <DxButton Click="Cancel">Otkaži</DxButton>
+        </ChildContent>
+    </DxFormLayoutItem>
+</DxFormLayout>

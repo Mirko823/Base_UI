@@ -1,6 +1,9 @@
 ﻿@page "/unitlist"
 @inject IStringLocalizer<BaseStrings> localizer
+@using Microsoft.AspNetCore.Authorization
+@using MicroData.Base.UI.Shared.ViewModel
 
+@attribute [Authorize]
 <h1>@localizer["HeaderUnit"]</h1>
 
 <DxGrid Data="@Units"
@@ -9,45 +12,28 @@
         KeyFieldName="Code">
 
     <Columns>
-
-       
         <DxGridDataColumn Caption="@localizer["CodeUnits"]" FieldName="Code" Width="10%" />
         <DxGridDataColumn Caption="@localizer["LabelUnits"]" FieldName="Label" />
         <DxGridDataColumn Caption="@localizer["NameUnits"]" FieldName="Name" />
-        <DxGridDataColumn Caption="@localizer["IsActiveUnits"]"  FieldName="IsActive" />
+        <DxGridDataColumn Caption="@localizer["IsActiveUnits"]" FieldName="IsActive" />
         <DxGridCommandColumn>
             <HeaderTemplate>
                 <a class="oi oi-plus" style="text-decoration: none;" href="javascript:void(0);"> @localizer["NewUnits"]</a>
             </HeaderTemplate>
-            <CellDisplayTemplate>
-                <a class="oi oi-pencil" Text="dx-icon-aligncenter" style="text-decoration: none; margin-right: 5px;" href="javascript:void(0);"> @localizer["EditUnits"]</a>
+            <CellDisplayTemplate Context="context">
+                @{
+                    var unit = (UnitViewModel)context.DataItem;
+                }
+                <a class="oi oi-pencil" style="text-decoration: none; margin-right: 5px;" href="@($"/unitedit/{unit.Id}")"> @localizer["EditUnits"]</a>
                 <a class="oi oi-x" style="text-decoration: none; color: #DC143C;" href="javascript:void(0);"> @localizer["DeleteUnits"]</a>
             </CellDisplayTemplate>
         </DxGridCommandColumn>
-
-
     </Columns>
-
 </DxGrid>
 
-
-
-            <br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
-    <DxButton RenderStyle="ButtonRenderStyle.Primary" IconCssClass="dx-icon-aligncenter" Text="dx-icon-aligncenter" />
-
-
+<DxButton RenderStyle="ButtonRenderStyle.Primary" IconCssClass="dx-icon-aligncenter" Text="dx-icon-aligncenter" />
 
 <h3>UnitList - Napraviti listu jedinica mere sa devexpres gridom</h3>
-
 <h5>UnitList - Dodati akcije, Novi , izmeni, brisanje</h5>
-
 <h5>UnitList - Novi i izmenu neka idu na posebnoj formi </h5>
-
 <h5>UnitList - Pre brisanje postaviti pitanje ? Da li ste sigurni da zelite da obrisete ________   DA /NE </h5>
-
