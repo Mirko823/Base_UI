@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Reactive;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,6 +33,16 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
             var accessToken = x.User.Claims.FirstOrDefault(c => c.Type.Equals("AccessToken"))?.Value;
             //Units = MockData.Units;
             Units = _unitApi.GetAll(accessToken).ToList();
+        }
+
+        private void OnNewButtonClick()
+        {
+            var unit = new UnitViewModel();
+            var editform = new UnitEdit();
+            editform.unit = unit;
+            Console.WriteLine("OnNewButtonClick called");
+            NavigationManager.NavigateTo("/unitedit/new");
+
         }
 
     }

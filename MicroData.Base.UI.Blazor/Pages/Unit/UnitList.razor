@@ -2,13 +2,20 @@
 @inject IStringLocalizer<BaseStrings> localizer
 @using Microsoft.AspNetCore.Authorization
 @using MicroData.Base.UI.Shared.ViewModel
-
+@inject NavigationManager NavigationManager
 @attribute [Authorize]
-<h1>@localizer["HeaderUnit"]</h1>
+
+<div class="header-container">
+    <h1>@localizer["HeaderUnit"]</h1> 
+</div>
+
+<div class="button-grid-container">
+    <DxButton CssClass="custom-button" Click="OnNewButtonClick"> <i class="oi oi-plus"></i> @localizer["NewUnits"]</DxButton>
+</div>
+
 
 <DxGrid Data="@Units"
         CssClass="mw-1100"
-        EditMode="GridEditMode.PopupEditForm"
         KeyFieldName="Code">
 
     <Columns>
@@ -16,9 +23,9 @@
         <DxGridDataColumn Caption="@localizer["LabelUnits"]" FieldName="Label" />
         <DxGridDataColumn Caption="@localizer["NameUnits"]" FieldName="Name" />
         <DxGridDataColumn Caption="@localizer["IsActiveUnits"]" FieldName="IsActive" />
-        <DxGridCommandColumn>
+        <DxGridCommandColumn Width="13%">
             <HeaderTemplate>
-                <a class="oi oi-plus" style="text-decoration: none;" href="javascript:void(0);"> @localizer["NewUnits"]</a>
+                
             </HeaderTemplate>
             <CellDisplayTemplate Context="context">
                 @{
@@ -37,3 +44,5 @@
 <h5>UnitList - Dodati akcije, Novi , izmeni, brisanje</h5>
 <h5>UnitList - Novi i izmenu neka idu na posebnoj formi </h5>
 <h5>UnitList - Pre brisanje postaviti pitanje ? Da li ste sigurni da zelite da obrisete ________   DA /NE </h5>
+
+

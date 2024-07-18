@@ -11,10 +11,9 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
 {
     public partial class UnitEdit
     {
+        
         [Parameter]
-        public string IdS { get; set; }
-
-        private UnitViewModel unit = new UnitViewModel();
+        public UnitViewModel unit { get; set; }
 
        
 

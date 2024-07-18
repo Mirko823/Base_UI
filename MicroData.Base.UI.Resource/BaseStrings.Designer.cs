@@ -79,6 +79,15 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Izmena jedinice.
+        /// </summary>
+        public static string ChangeUnit {
+            get {
+                return ResourceManager.GetString("ChangeUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Klijent.
         /// </summary>
         public static string Client {

@@ -123,6 +123,9 @@
   <data name="BusinessPartner" xml:space="preserve">
     <value>Poslovni Partner</value>
   </data>
+  <data name="ChangeUnit" xml:space="preserve">
+    <value>Izmena jedinice</value>
+  </data>
   <data name="Client" xml:space="preserve">
     <value>Klijent</value>
   </data>

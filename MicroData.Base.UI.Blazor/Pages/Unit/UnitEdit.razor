@@ -1,29 +1,34 @@
-﻿@page "/unitedit/{IdS}"
+﻿@page "/unitedit"
 @inject NavigationManager NavigationManager
 @using DevExpress.Blazor
-@inject IStringLocalizer<BaseStrings> localizer
+@inject IStringLocalizer<BaseStrings> baseLocalizer
+@inject IStringLocalizer<CommonStrings> commonLocalizer
 
 
 
-<h3>Izmena Jedinice</h3>
+    <h3>@baseLocalizer["ChangeUnit"]</h3>
+
 
 <DxFormLayout>
-    <DxFormLayoutItem Caption="@localizer["CodeUnits"]">
+    <DxFormLayoutItem Caption="@baseLocalizer["CodeUnits"]">
         <DxTextBox @bind-Text="unit.Code" ReadOnly="true" />
     </DxFormLayoutItem>
-    <DxFormLayoutItem Caption="@localizer["LabelUnits"]">
+    <DxFormLayoutItem Caption="@baseLocalizer["LabelUnits"]">
         <DxTextBox @bind-Text="unit.Label" />
     </DxFormLayoutItem>
-    <DxFormLayoutItem Caption="@localizer["NameUnits"]">
+    <DxFormLayoutItem Caption="@baseLocalizer["NameUnits"]">
         <DxTextBox @bind-Text="unit.Name" />
     </DxFormLayoutItem>
-    <DxFormLayoutItem Caption="@localizer["IsActiveUnits"]">
+    <DxFormLayoutItem Caption="@baseLocalizer["IsActiveUnits"]">
         <DxCheckBox @bind-Checked="unit.IsActive" />
     </DxFormLayoutItem>
     <DxFormLayoutItem>
         <ChildContent Context="buttonContext">
-            <DxButton Click="SaveUnit">Sačuvaj</DxButton>
-            <DxButton Click="Cancel">Otkaži</DxButton>
+            <DxButton Click="SaveUnit">@commonLocalizer["Save"]</DxButton>
+            <DxButton Click="Cancel">@commonLocalizer["Close"]</DxButton>
         </ChildContent>
     </DxFormLayoutItem>
 </DxFormLayout>
+
+
+
