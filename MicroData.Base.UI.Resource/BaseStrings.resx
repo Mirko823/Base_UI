@@ -117,14 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AutomaticEntryOfTheEmployee" xml:space="preserve">
+    <value>Automatski unos vagara na osnovu zadnjeg meerenja</value>
+  </data>
   <data name="BarCode" xml:space="preserve">
     <value>Barkod</value>
   </data>
   <data name="BusinessPartner" xml:space="preserve">
     <value>Poslovni Partner</value>
   </data>
-  <data name="ChangeUnit" xml:space="preserve">
-    <value>Izmena jedinice</value>
+  <data name="BusinessPartnerUppercase" xml:space="preserve">
+    <value>Prikaz naziva poslovnog partnera velikim slovima</value>
   </data>
   <data name="Client" xml:space="preserve">
     <value>Klijent</value>
@@ -141,6 +144,12 @@
   <data name="Currency" xml:space="preserve">
     <value>Valuta</value>
   </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Kupac</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
   <data name="DeleteUnits" xml:space="preserve">
     <value>Obriši</value>
   </data>
@@ -149,6 +158,9 @@
   </data>
   <data name="Document" xml:space="preserve">
     <value>Dokumenat</value>
+  </data>
+  <data name="DriverUppercase" xml:space="preserve">
+    <value>Prikaz naziva vozača velikim slovima</value>
   </data>
   <data name="EditUnits" xml:space="preserve">
     <value>Izmeni</value>
@@ -258,11 +270,20 @@
   <data name="Product" xml:space="preserve">
     <value>Roba</value>
   </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Reference</value>
+  </data>
   <data name="Service" xml:space="preserve">
     <value>Usluga</value>
   </data>
   <data name="Shipper" xml:space="preserve">
     <value>Prevoznik</value>
+  </data>
+  <data name="ShipperUppercase" xml:space="preserve">
+    <value>Prikaz naziva prevoznika velikim slovima</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>Dobavljač</value>
   </data>
   <data name="Tax" xml:space="preserve">
     <value>Porez</value>
@@ -270,8 +291,14 @@
   <data name="TaxRate" xml:space="preserve">
     <value>Stopa PDV-a</value>
   </data>
+  <data name="Time" xml:space="preserve">
+    <value>Vreme</value>
+  </data>
   <data name="Unit" xml:space="preserve">
     <value>Jedinica Mere</value>
+  </data>
+  <data name="UnitChange" xml:space="preserve">
+    <value>Izmena jedinice mere</value>
   </data>
   <data name="ValueFrom" xml:space="preserve">
     <value>Vrednost od</value>

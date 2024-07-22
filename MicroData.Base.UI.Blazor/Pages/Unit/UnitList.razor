@@ -3,6 +3,8 @@
 @using Microsoft.AspNetCore.Authorization
 @using MicroData.Base.UI.Shared.ViewModel
 @inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
 @attribute [Authorize]
 
 
@@ -51,6 +53,8 @@
 
 <div>
     <button @onclick="ChangeText">Klikni me</button>
+
+    <DxButton Click="IncrementCount">Click me</DxButton>
 </div>
 
 <p>@message</p>

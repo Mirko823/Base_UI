@@ -61,6 +61,15 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automatski unos vagara na osnovu zadnjeg meerenja.
+        /// </summary>
+        public static string AutomaticEntryOfTheEmployee {
+            get {
+                return ResourceManager.GetString("AutomaticEntryOfTheEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Barkod.
         /// </summary>
         public static string BarCode {
@@ -79,11 +88,11 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Izmena jedinice.
+        ///   Looks up a localized string similar to Prikaz naziva poslovnog partnera velikim slovima.
         /// </summary>
-        public static string ChangeUnit {
+        public static string BusinessPartnerUppercase {
             get {
-                return ResourceManager.GetString("ChangeUnit", resourceCulture);
+                return ResourceManager.GetString("BusinessPartnerUppercase", resourceCulture);
             }
         }
         
@@ -133,6 +142,24 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kupac.
+        /// </summary>
+        public static string Customer {
+            get {
+                return ResourceManager.GetString("Customer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Datum.
+        /// </summary>
+        public static string Date {
+            get {
+                return ResourceManager.GetString("Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Obriši.
         /// </summary>
         public static string DeleteUnits {
@@ -156,6 +183,15 @@ namespace MicroData.Base.UI.Resource {
         public static string Document {
             get {
                 return ResourceManager.GetString("Document", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prikaz naziva vozača velikim slovima.
+        /// </summary>
+        public static string DriverUppercase {
+            get {
+                return ResourceManager.GetString("DriverUppercase", resourceCulture);
             }
         }
         
@@ -484,6 +520,15 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reference.
+        /// </summary>
+        public static string Reference {
+            get {
+                return ResourceManager.GetString("Reference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Usluga.
         /// </summary>
         public static string Service {
@@ -498,6 +543,24 @@ namespace MicroData.Base.UI.Resource {
         public static string Shipper {
             get {
                 return ResourceManager.GetString("Shipper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prikaz naziva prevoznika velikim slovima.
+        /// </summary>
+        public static string ShipperUppercase {
+            get {
+                return ResourceManager.GetString("ShipperUppercase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dobavljač.
+        /// </summary>
+        public static string Supplier {
+            get {
+                return ResourceManager.GetString("Supplier", resourceCulture);
             }
         }
         
@@ -520,11 +583,29 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vreme.
+        /// </summary>
+        public static string Time {
+            get {
+                return ResourceManager.GetString("Time", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Jedinica Mere.
         /// </summary>
         public static string Unit {
             get {
                 return ResourceManager.GetString("Unit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Izmena jedinice mere.
+        /// </summary>
+        public static string UnitChange {
+            get {
+                return ResourceManager.GetString("UnitChange", resourceCulture);
             }
         }
         

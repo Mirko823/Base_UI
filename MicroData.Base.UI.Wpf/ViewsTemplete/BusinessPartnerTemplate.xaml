@@ -72,7 +72,7 @@
                                                      WatermarkContent="{x:Static langBase:BaseStrings.InsertName}"
                                                      ItemsSource="{Binding AllComapnies}"
                                                      TextSearchMode="Contains"
-                                                     SearchText="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                     SearchText="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
                                                      SelectionMode="Single"
                                                      DisplayMemberPath="Name"/>
 

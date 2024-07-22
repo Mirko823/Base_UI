@@ -1,4 +1,5 @@
-﻿using MicroData.Common.UI.Resource;
+﻿using MicroData.Base.UI.Shared.Settings;
+using MicroData.Common.UI.Resource;
 using MicroData.Common.UI.Shared.ViewModel;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -34,7 +35,13 @@ namespace MicroData.Base.UI.Shared.ViewModel
                 if (IsReadOnly)
                     return;
 
-                SetField(ref name, value, () => Name);
+
+                if (BaseSettings.IsBusinessPartnerUppercase)
+                    name = value.ToUpper();
+                else
+                    name = value;
+
+                OnPropertyChanged(()=>  Name);
 
                 if (!CanEdit)
                     return;
@@ -42,6 +49,8 @@ namespace MicroData.Base.UI.Shared.ViewModel
              
             }
         }
+
+
 
         //[Required(ErrorMessage = "Adresa je obavezno polje")]
         [Display(Name = "Address", ResourceType = typeof(CommonStrings), AutoGenerateField = false)]

@@ -1,4 +1,6 @@
-﻿using MicroData.Common.UI.Resource;
+﻿using MicroData.Base.UI.Resource;
+using MicroData.Base.UI.Shared.Settings;
+using MicroData.Common.UI.Resource;
 using MicroData.Common.UI.Shared.ViewModel;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -17,9 +19,24 @@ namespace MicroData.Base.UI.Shared.ViewModel
         [Display(Name = "Code", ResourceType = typeof(CommonStrings), AutoGenerateField = false)]
         public string? Code { get; set; }
 
+
+        public string? name;
         [Required]
         [Display(Name = "Name", ResourceType = typeof(CommonStrings), Order = 30)]
-        public string Name { get; set; } = null!;
+        public string? Name
+        {
+            get { return name; }
+            set
+            {
+
+                if (BaseSettings.IsShipperUppercase)
+                    name = value.ToUpper();
+                else
+                    name = value;
+
+                OnPropertyChanged(() => Name);
+            }
+        }
 
         [Display(Name = "Address", ResourceType = typeof(CommonStrings), AutoGenerateField = false)]
         public string? Address { get; set; }

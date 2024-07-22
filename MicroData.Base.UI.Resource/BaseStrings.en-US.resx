@@ -117,14 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AutomaticEntryOfTheEmployee" xml:space="preserve">
+    <value>Automatic scale entry based on the last measurement</value>
+  </data>
   <data name="BarCode" xml:space="preserve">
     <value>Barcode</value>
   </data>
   <data name="BusinessPartner" xml:space="preserve">
     <value>Business Partner</value>
   </data>
-  <data name="ChangeUnit" xml:space="preserve">
-    <value>Edit Unit</value>
+  <data name="BusinessPartnerUppercase" xml:space="preserve">
+    <value>Display the name of the business partner in capital letters</value>
   </data>
   <data name="Client" xml:space="preserve">
     <value>Client</value>
@@ -141,6 +144,12 @@
   <data name="Currency" xml:space="preserve">
     <value>Currency</value>
   </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
   <data name="DeleteUnits" xml:space="preserve">
     <value>Delete</value>
   </data>
@@ -149,6 +158,9 @@
   </data>
   <data name="Document" xml:space="preserve">
     <value>Dokumenat</value>
+  </data>
+  <data name="DriverUppercase" xml:space="preserve">
+    <value>Display driver name in capital letters</value>
   </data>
   <data name="EditUnits" xml:space="preserve">
     <value>Edit</value>
@@ -258,11 +270,20 @@
   <data name="Product" xml:space="preserve">
     <value>Product</value>
   </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Referenca</value>
+  </data>
   <data name="Service" xml:space="preserve">
     <value>Service</value>
   </data>
   <data name="Shipper" xml:space="preserve">
     <value>Shipper</value>
+  </data>
+  <data name="ShipperUppercase" xml:space="preserve">
+    <value>Display shipper name in capital letters</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>Supplier</value>
   </data>
   <data name="Tax" xml:space="preserve">
     <value>Tax</value>
@@ -270,8 +291,14 @@
   <data name="TaxRate" xml:space="preserve">
     <value>Tax rate</value>
   </data>
+  <data name="Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
   <data name="Unit" xml:space="preserve">
     <value>Unit</value>
+  </data>
+  <data name="UnitChange" xml:space="preserve">
+    <value>Unit change</value>
   </data>
   <data name="ValueFrom" xml:space="preserve">
     <value>Value From</value>
