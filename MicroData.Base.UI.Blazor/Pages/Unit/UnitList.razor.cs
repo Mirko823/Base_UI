@@ -45,6 +45,14 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
 
         }
 
+
+        private string message = "Poruka pre klika";
+
+        private void ChangeText()
+        {
+            message = "Dugme je kliknuto!";
+        }
+
     }
 }
 

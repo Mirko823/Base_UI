@@ -5,12 +5,13 @@
 @inject NavigationManager NavigationManager
 @attribute [Authorize]
 
+
 <div class="header-container">
     <h1>@localizer["HeaderUnit"]</h1> 
 </div>
 
 <div class="button-grid-container">
-    <DxButton CssClass="custom-button" Click="OnNewButtonClick"> <i class="oi oi-plus"></i> @localizer["NewUnits"]</DxButton>
+    <DxButton CssClass="custom-button" @onclick="OnNewButtonClick"> <i class="oi oi-plus"></i> @localizer["NewUnits"]</DxButton>
 </div>
 
 
@@ -46,3 +47,10 @@
 <h5>UnitList - Pre brisanje postaviti pitanje ? Da li ste sigurni da zelite da obrisete ________   DA /NE </h5>
 
 
+
+
+<div>
+    <button @onclick="ChangeText">Klikni me</button>
+</div>
+
+<p>@message</p>
