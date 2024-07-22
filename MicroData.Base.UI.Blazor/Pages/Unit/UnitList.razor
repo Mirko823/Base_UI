@@ -1,19 +1,21 @@
 ﻿@page "/unitlist"
-@inject IStringLocalizer<BaseStrings> localizer
+@inject IStringLocalizer<BaseStrings> baseLocalizer
+@inject IStringLocalizer<CommonStrings> commonLocalizer
 @using Microsoft.AspNetCore.Authorization
 @using MicroData.Base.UI.Shared.ViewModel
 @inject NavigationManager NavigationManager
 @rendermode InteractiveServer
 
+
 @attribute [Authorize]
 
 
 <div class="header-container">
-    <h1>@localizer["HeaderUnit"]</h1> 
+    <h1>@baseLocalizer["HeaderUnit"]</h1> 
 </div>
 
 <div class="button-grid-container">
-    <DxButton CssClass="custom-button" @onclick="OnNewButtonClick"> <i class="oi oi-plus"></i> @localizer["NewUnits"]</DxButton>
+    <DxButton CssClass="custom-button" @onclick="OnNewButtonClick"> <i class="oi oi-plus"></i> @baseLocalizer["NewUnits"]</DxButton>
 </div>
 
 
@@ -22,10 +24,10 @@
         KeyFieldName="Code">
 
     <Columns>
-        <DxGridDataColumn Caption="@localizer["CodeUnits"]" FieldName="Code" Width="10%" />
-        <DxGridDataColumn Caption="@localizer["LabelUnits"]" FieldName="Label" />
-        <DxGridDataColumn Caption="@localizer["NameUnits"]" FieldName="Name" />
-        <DxGridDataColumn Caption="@localizer["IsActiveUnits"]" FieldName="IsActive" />
+        <DxGridDataColumn Caption="@baseLocalizer["CodeUnits"]" FieldName="Code" Width="10%" />
+        <DxGridDataColumn Caption="@baseLocalizer["LabelUnits"]" FieldName="Label" />
+        <DxGridDataColumn Caption="@baseLocalizer["NameUnits"]" FieldName="Name" />
+        <DxGridDataColumn Caption="@baseLocalizer["IsActiveUnits"]" FieldName="IsActive" />
         <DxGridCommandColumn Width="13%">
             <HeaderTemplate>
                 
@@ -34,14 +36,37 @@
                 @{
                     var unit = (UnitViewModel)context.DataItem;
                 }
-                <a class="oi oi-pencil" style="text-decoration: none; margin-right: 5px;" href="@($"/unitedit/{unit.Id}")"> @localizer["EditUnits"]</a>
-                <a class="oi oi-x" style="text-decoration: none; color: #DC143C;" href="javascript:void(0);"> @localizer["DeleteUnits"]</a>
+                <a class="oi oi-pencil" style="text-decoration: none; margin-right: 5px;" href="@($"/unitedit/{unit.Id}")"> @baseLocalizer["EditUnits"]</a>
+                <a class="oi oi-x" @onclick="ShowPopup" style="text-decoration: none; color: #DC143C;" href="javascript:void(0);"> @baseLocalizer["DeleteUnits"]</a>
             </CellDisplayTemplate>
         </DxGridCommandColumn>
     </Columns>
 </DxGrid>
 
-<DxButton RenderStyle="ButtonRenderStyle.Primary" IconCssClass="dx-icon-aligncenter" Text="dx-icon-aligncenter" />
+
+
+<DxPopup HeaderText="@commonLocalizer["HeaderDeleteWindow"]"
+         @bind-Visible="isPopupVisible" 
+    ShowFooter="true" ShowCloseButton="true"
+         BodyText="@commonLocalizer["BodyTextDeleteWindow"]">
+
+    
+    <FooterContentTemplate>
+        <DxButton CssClass="popup-button my-1 ms-2 custom-delete-button" RenderStyle="ButtonRenderStyle.Primary" Click="ConfirmDelete" Text="@commonLocalizer["Yes"]" />
+        <DxButton CssClass="popup-button my-1 ms-2" RenderStyle="ButtonRenderStyle.Secondary" Click="CancelDelete" Text="@commonLocalizer["No"]" />
+    </FooterContentTemplate>
+   
+</DxPopup>
+
+
+
+
+
+
+<a class="oi oi-x" @onclick="ShowPopup" style="text-decoration: none; color: #DC143C;" href="javascript:void(0);"> @baseLocalizer["DeleteUnits"]</a>
+
+
+
 
 <h3>UnitList - Napraviti listu jedinica mere sa devexpres gridom</h3>
 <h5>UnitList - Dodati akcije, Novi , izmeni, brisanje</h5>

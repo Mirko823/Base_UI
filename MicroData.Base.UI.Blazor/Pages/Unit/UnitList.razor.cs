@@ -72,6 +72,27 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
             message = "Dugme je kliknuto!";
         }
 
+
+        bool isPopupVisible = false;
+
+        void ShowPopup()
+        {
+            isPopupVisible = true;
+        }
+
+        void ConfirmDelete()
+        {
+            // Your delete logic here
+            isPopupVisible = false;
+        }
+
+        void CancelDelete()
+        {
+            isPopupVisible = false;
+        }
+
+
+
     }
 }
 
