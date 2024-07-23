@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reactive;
+using MicroData.Base.UI.Shared.Interface;
+using System.ComponentModel.DataAnnotations;
 
 namespace MicroData.Base.UI.Blazor.Pages.Unit
 {
@@ -19,6 +21,9 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
         [Parameter]
         public string unitId { get; set; }
 
+        [Inject]
+        public IUnitApi _unitApi { get; set; }
+
         protected override async Task OnInitializedAsync()
         {
 
@@ -29,11 +34,17 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
                     Code = string.Empty,
                     Label = string.Empty,
                     Name = string.Empty,
-                    IsActive = true
+                    IsActive = true,
+                    IsNew = true
                 };
             }
             else
             {
+
+                var currentUnitId = Convert.ToInt32(unitId);
+                var result = _unitApi.Get(currentUnitId, string.Empty);
+                unit = result;
+               
                 // Ovdje možete učitati postojeći UnitViewModel iz baze podataka prema unitId
                 // unit = await LoadUnit(unitId);
             }
@@ -48,7 +59,26 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
         {
             // Ovdje dodajte logiku za spremanje podataka u bazu
             // Trenutno samo vraća na UnitList stranicu
-            Console.WriteLine("SaveUnit method called.");
+            //Uraditi validaciju
+            //Ispravne podatke sacuvati u bazi
+
+            UnitViewModel result;
+
+            if (unit.IsNew)
+                result = _unitApi.CreateNew(unit, string.Empty);
+            else
+                result = _unitApi.EditExisting(unit, string.Empty);
+ 
+            //Proveriti rezultat i prikazati ako postoji greska
+
+            if (result.HasErrors)
+            {
+                string prvagreska = result.GetFirstOrDefaultError();
+
+               var allErrors = result.GetAllErrors();
+            }
+
+            //Console.WriteLine("SaveUnit method called.");
             NavigationManager.NavigateTo("/unitlist");
         }
 

@@ -38,6 +38,8 @@
                 }
                 <a class="oi oi-pencil" style="text-decoration: none; margin-right: 5px;" href="@($"/unitedit/{unit.Id}")"> @baseLocalizer["EditUnits"]</a>
                 <a class="oi oi-x" @onclick="ShowPopup" style="text-decoration: none; color: #DC143C;" href="javascript:void(0);"> @baseLocalizer["DeleteUnits"]</a>
+
+              
             </CellDisplayTemplate>
         </DxGridCommandColumn>
     </Columns>
@@ -46,8 +48,9 @@
 
 
 <DxPopup HeaderText="@commonLocalizer["HeaderDeleteWindow"]"
-         @bind-Visible="isPopupVisible" 
-    ShowFooter="true" ShowCloseButton="true"
+         @bind-Visible="isPopupVisible"
+         
+         ShowFooter="true" ShowCloseButton="true"
          BodyText="@commonLocalizer["BodyTextDeleteWindow"]">
 
     

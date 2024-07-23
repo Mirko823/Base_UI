@@ -33,19 +33,19 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
         protected override void OnInitialized()
         {
             //todo test - prebaciti na state
-            var x = HttpContext;
+            //var x = HttpContext;
 
-            if (x == null)
-                return;
+            //if (x == null)
+            //    return;
 
-            var y = httpContextAccessor;
+            //var y = httpContextAccessor;
 
-            var accessToken = x.User.Claims.FirstOrDefault(c => c.Type.Equals("AccessToken"))?.Value;
+            //var accessToken = x.User.Claims.FirstOrDefault(c => c.Type.Equals("AccessToken"))?.Value;
 
-            if (accessToken == null)
-                return;
+            //if (accessToken == null)
+            //    return;
 
-            Units = _unitApi.GetAll(accessToken).ToList();
+            Units = _unitApi.GetAll(string.Empty).ToList();
 
         }
 
@@ -77,10 +77,13 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
             isPopupVisible = true;
         }
 
-        void ConfirmDelete()
+        void ConfirmDelete()  //proslediti id ili ceo model ovde
         {
+
             // Your delete logic here
             isPopupVisible = false;
+            //
+            // _unitApi.DeleteExisting(unitId, string.Empty);
         }
 
         void CancelDelete()
