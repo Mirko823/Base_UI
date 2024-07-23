@@ -37,7 +37,7 @@
                     var unit = (UnitViewModel)context.DataItem;
                 }
                 <a class="oi oi-pencil" style="text-decoration: none; margin-right: 5px;" href="@($"/unitedit/{unit.Id}")"> @baseLocalizer["EditUnits"]</a>
-                <a class="oi oi-x" @onclick="ShowPopup" style="text-decoration: none; color: #DC143C;" href="javascript:void(0);"> @baseLocalizer["DeleteUnits"]</a>
+                <a class="oi oi-x" @onclick="() => ShowPopup(unit.Id)" style="text-decoration: none; color: var(--bs-red);" href="javascript:void(0);"> @baseLocalizer["DeleteUnits"]</a>
 
               
             </CellDisplayTemplate>
@@ -65,12 +65,6 @@
 
 
 
-
-<a class="oi oi-x" @onclick="ShowPopup" style="text-decoration: none; color: var(--bs-red);" href="javascript:void(0);"> @baseLocalizer["DeleteUnits"]</a>
-
-
-
-
 <h3>UnitList - Napraviti listu jedinica mere sa devexpres gridom</h3>
 <h5>UnitList - Dodati akcije, Novi , izmeni, brisanje</h5>
 <h5>UnitList - Novi i izmenu neka idu na posebnoj formi </h5>
@@ -78,9 +72,3 @@
 
 
 
-<div>
-    <button @onclick="ChangeText">Klikni me</button>
-
-</div>
-
-<p>@message</p>

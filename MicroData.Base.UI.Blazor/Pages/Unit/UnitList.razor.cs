@@ -21,7 +21,7 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
         [Inject]
         private IHttpContextAccessor httpContextAccessor { get; set; }
 
-
+        private int unitIdToDelete;
 
 
         public List<UnitViewModel> Units { get; set; } = default!;
@@ -51,30 +51,21 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
 
         private void OnNewButtonClick()
         {
-            var unit = new UnitViewModel();
-            var editform = new UnitEdit();
-            editform.unit = unit;
-            Console.WriteLine("OnNewButtonClick called");
+            
             NavigationManager.NavigateTo("/unitedit/new");
 
         }
 
 
-        private string message = "Poruka pre klika";
-
-        private void ChangeText()
-        {
-            message = "Dugme je kliknuto!";
-        }
-
-      
-
 
         bool isPopupVisible = false;
 
-        void ShowPopup()
+        void ShowPopup(int unitId)
         {
+            unitIdToDelete = unitId;
             isPopupVisible = true;
+           
+
         }
 
         void ConfirmDelete()  //proslediti id ili ceo model ovde
@@ -82,8 +73,8 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
 
             // Your delete logic here
             isPopupVisible = false;
-            //
-            // _unitApi.DeleteExisting(unitId, string.Empty);
+            
+            _unitApi.DeleteExisting(unitIdToDelete, string.Empty);
         }
 
         void CancelDelete()
