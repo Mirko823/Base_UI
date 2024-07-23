@@ -67,10 +67,7 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
             message = "Dugme je kliknuto!";
         }
 
-        private void IncrementCount()
-        {
-            message = "Dugme je kliknuto!";
-        }
+      
 
 
         bool isPopupVisible = false;

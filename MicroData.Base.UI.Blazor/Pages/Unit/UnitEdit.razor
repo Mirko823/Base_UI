@@ -1,13 +1,13 @@
-﻿@page "/unitedit"
+﻿@page "/unitedit/{unitId}"
 @inject NavigationManager NavigationManager
 @using DevExpress.Blazor
 @inject IStringLocalizer<BaseStrings> baseLocalizer
 @inject IStringLocalizer<CommonStrings> commonLocalizer
 
 
-
-<h3>@baseLocalizer["UnitChange"]</h3>
-
+<div class="header-container">
+    <h3>@baseLocalizer["UnitChange"]</h3>
+</div>
 
 
 <DxFormLayout>
@@ -32,24 +32,9 @@
 </DxFormLayout>
 
 
-<DxFormLayout>
-    <DxFormLayoutItem Caption="@baseLocalizer["CodeUnits"]">
-        <DxTextBox @bind-Text="unit.Code" ReadOnly="true" />
-    </DxFormLayoutItem>
-    <DxFormLayoutItem Caption="@baseLocalizer["LabelUnits"]">
-        <DxTextBox @bind-value="unit.Label" @bind-value:event="oninpunt" />
-    </DxFormLayoutItem>
-    <DxFormLayoutItem Caption="@baseLocalizer["NameUnits"]">
-        <DxTextBox @bind-Text="unit.Name" />
-    </DxFormLayoutItem>
-    <DxFormLayoutItem Caption="@baseLocalizer["IsActiveUnits"]">
-        <DxCheckBox @bind-Checked="unit.IsActive" />
-    </DxFormLayoutItem>
-    <DxFormLayoutItem>
-        <ChildContent Context="buttonContext">
-            <DxButton Click="SaveUnit">@commonLocalizer["Save"]</DxButton>
-            <DxButton Click="Cancel">@commonLocalizer["Close"]</DxButton>
-        </ChildContent>
-    </DxFormLayoutItem>
-</DxFormLayout>
+<div>
+    <button @onclick="ChangeText">Klikni me</button>
 
+</div>
+
+<p>@message</p>

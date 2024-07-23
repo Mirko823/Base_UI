@@ -11,7 +11,7 @@
 
 
 <div class="header-container">
-    <h1>@baseLocalizer["HeaderUnit"]</h1> 
+    <h3>@baseLocalizer["HeaderUnit"]</h3> 
 </div>
 
 <div class="button-grid-container">
@@ -63,7 +63,7 @@
 
 
 
-<a class="oi oi-x" @onclick="ShowPopup" style="text-decoration: none; color: #DC143C;" href="javascript:void(0);"> @baseLocalizer["DeleteUnits"]</a>
+<a class="oi oi-x" @onclick="ShowPopup" style="text-decoration: none; color: var(--bs-red);" href="javascript:void(0);"> @baseLocalizer["DeleteUnits"]</a>
 
 
 
@@ -71,7 +71,6 @@
 <h3>UnitList - Napraviti listu jedinica mere sa devexpres gridom</h3>
 <h5>UnitList - Dodati akcije, Novi , izmeni, brisanje</h5>
 <h5>UnitList - Novi i izmenu neka idu na posebnoj formi </h5>
-<h5>UnitList - Pre brisanje postaviti pitanje ? Da li ste sigurni da zelite da obrisete ________   DA /NE </h5>
 
 
 
@@ -79,7 +78,6 @@
 <div>
     <button @onclick="ChangeText">Klikni me</button>
 
-    <DxButton Click="IncrementCount">Click me</DxButton>
 </div>
 
 <p>@message</p>
