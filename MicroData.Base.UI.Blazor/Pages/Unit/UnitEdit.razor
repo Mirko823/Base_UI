@@ -10,31 +10,44 @@
 </div>
 
 
+<EditForm Model="@unit"
+          OnValidSubmit="@HandleValidSubmit"
+          OnInvalidSubmit="@HandleInvalidSubmit"
+          Context="EditFormContext">
+
+    <DataAnnotationsValidator />
 <DxFormLayout>
     <DxFormLayoutItem Caption="@baseLocalizer["CodeUnits"]">
-        <DxTextBox @bind-Text="unit.Code"  />
+            <DxTextBox InputId="identifierInputId" @bind-Text="unit.Code" ShowValidationIcon="true" />
+            <ValidationMessage For="@(() => unit.Code)" />
     </DxFormLayoutItem>
     <DxFormLayoutItem Caption="@baseLocalizer["LabelUnits"]">
-        <DxTextBox @bind-Text="unit.Label"/>
+            <DxTextBox @bind-Text="unit.Label" ShowValidationIcon="true" />
+            <ValidationMessage For="@(() => unit.Label)" />
     </DxFormLayoutItem>
     <DxFormLayoutItem Caption="@baseLocalizer["NameUnits"]">
-        <DxTextBox @bind-Text="unit.Name" />
+            <DxTextBox @bind-Text="unit.Name" ShowValidationIcon="true" />
+            <ValidationMessage For="@(() => unit.Name)" />
     </DxFormLayoutItem>
     <DxFormLayoutItem Caption="@baseLocalizer["IsActiveUnits"]">
-        <DxCheckBox @bind-Checked="unit.IsActive" />
+        <DxCheckBox  @bind-Checked="unit.IsActive" />
     </DxFormLayoutItem>
     <DxFormLayoutItem>
         <ChildContent Context="buttonContext">
-            <DxButton Click="SaveUnit">@commonLocalizer["Save"]</DxButton>
-            <DxButton Click="Cancel">@commonLocalizer["Close"]</DxButton>
+                <DxButton Click="SaveUnit" SubmitFormOnClick="true" RenderStyle="ButtonRenderStyle.Primary">@commonLocalizer["Save"]</DxButton>
+                <DxButton Click="Cancel" RenderStyle="ButtonRenderStyle.Secondary">@commonLocalizer["Close"]</DxButton>
         </ChildContent>
     </DxFormLayoutItem>
 </DxFormLayout>
 
+  <div class="row w-100 mx-0">
+            <p class="demo-text col-12 mt-2">
+                Form Validation State:
+                <b>@FormValidationState</b>
+            </p>
+        </div>
 
-<div>
-    <button @onclick="ChangeText">Klikni me</button>
+</EditForm>
 
-</div>
 
-<p>@message</p>
+

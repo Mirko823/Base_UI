@@ -44,7 +44,8 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
                 var currentUnitId = Convert.ToInt32(unitId);
                 var result = _unitApi.Get(currentUnitId, string.Empty);
                 unit = result;
-               
+                unit.IsNew = false;
+
                 // Ovdje možete učitati postojeći UnitViewModel iz baze podataka prema unitId
                 // unit = await LoadUnit(unitId);
             }
@@ -57,12 +58,23 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
 
         private async Task SaveUnit()
         {
-            // Ovdje dodajte logiku za spremanje podataka u bazu
-            // Trenutno samo vraća na UnitList stranicu
-            //Uraditi validaciju
-            //Ispravne podatke sacuvati u bazi
+            unit.ClearAllErrors();
+            unit.Validate();
 
-            UnitViewModel result;
+            if (unit.HasErrors)
+            {
+                //todo
+                return;
+            }
+
+            
+
+                // Ovdje dodajte logiku za spremanje podataka u bazu
+                // Trenutno samo vraća na UnitList stranicu
+                //Uraditi validaciju
+                //Ispravne podatke sacuvati u bazi
+
+                UnitViewModel result;
 
             if (unit.IsNew)
                 result = _unitApi.CreateNew(unit, string.Empty);
@@ -79,7 +91,10 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
             }
 
             //Console.WriteLine("SaveUnit method called.");
+            
             NavigationManager.NavigateTo("/unitlist");
+
+            
         }
 
     
@@ -89,12 +104,20 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
             Console.WriteLine("Cancel back to unitlist");
         }
 
-        private string message = "Poruka pre klika";
 
-        private void ChangeText()
+        string FormValidationState = @"Press the ""Submit"" button to validate the form.";
+
+
+        void HandleValidSubmit()
         {
-            message = "Dugme je kliknuto!";
+            FormValidationState = @"Form data is valid";
         }
+
+        void HandleInvalidSubmit()
+        {
+            FormValidationState = unit.GetFirstOrDefaultError();
+        }
+
 
     }
 }

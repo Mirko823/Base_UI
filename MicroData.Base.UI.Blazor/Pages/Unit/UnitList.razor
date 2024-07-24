@@ -28,7 +28,7 @@
         <DxGridDataColumn Caption="@baseLocalizer["LabelUnits"]" FieldName="Label" />
         <DxGridDataColumn Caption="@baseLocalizer["NameUnits"]" FieldName="Name" />
         <DxGridDataColumn Caption="@baseLocalizer["IsActiveUnits"]" FieldName="IsActive" />
-        <DxGridCommandColumn Width="13%">
+        <DxGridCommandColumn Width="70px">
             <HeaderTemplate>
                 
             </HeaderTemplate>
@@ -36,10 +36,8 @@
                 @{
                     var unit = (UnitViewModel)context.DataItem;
                 }
-                <a class="oi oi-pencil" style="text-decoration: none; margin-right: 5px;" href="@($"/unitedit/{unit.Id}")"> @baseLocalizer["EditUnits"]</a>
-                <a class="oi oi-x" @onclick="() => ShowPopup(unit.Id)" style="text-decoration: none; color: var(--bs-red);" href="javascript:void(0);"> @baseLocalizer["DeleteUnits"]</a>
-
-              
+                <a class="oi oi-pencil" style="text-decoration: none; margin-right: 5px; color: var( --bs-primary);  margin-right: 10%;" href="@($"/unitedit/{unit.Id}")" />
+                <a class="oi oi-trash" IconCssClass="grid-icon grid-icon-delete" @onclick="() => ShowPopup(unit.Id)" style="text-decoration: none; color: var(--bs-primary);" href="javascript:void(0);" />
             </CellDisplayTemplate>
         </DxGridCommandColumn>
     </Columns>
@@ -49,10 +47,8 @@
 
 <DxPopup HeaderText="@commonLocalizer["HeaderDeleteWindow"]"
          @bind-Visible="isPopupVisible"
-         
          ShowFooter="true" ShowCloseButton="true"
          BodyText="@commonLocalizer["BodyTextDeleteWindow"]">
-
     
     <FooterContentTemplate>
         <DxButton CssClass="popup-button my-1 ms-2 custom-delete-button" RenderStyle="ButtonRenderStyle.Primary" Click="ConfirmDelete" Text="@commonLocalizer["Yes"]" />
@@ -60,15 +56,4 @@
     </FooterContentTemplate>
    
 </DxPopup>
-
-
-
-
-
-<h3>UnitList - Napraviti listu jedinica mere sa devexpres gridom</h3>
-<h5>UnitList - Dodati akcije, Novi , izmeni, brisanje</h5>
-<h5>UnitList - Novi i izmenu neka idu na posebnoj formi </h5>
-
-
-
 
