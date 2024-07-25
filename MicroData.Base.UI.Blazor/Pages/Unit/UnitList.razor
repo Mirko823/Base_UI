@@ -19,6 +19,9 @@
 </div>
 
 
+
+
+
 <DxGrid Data="@Units"
         CssClass="mw-1100"
         KeyFieldName="Code">
@@ -36,16 +39,16 @@
                 @{
                     var unit = (UnitViewModel)context.DataItem;
                 }
-@*                 <a Class="edit--icon" href="@($"/unitedit/{unit.Id}")" />
-                <a class="mdi--trash" @onclick="() => ShowPopup(unit.Id)" /> *@
 
                 <div class="grid-cell-align-center">
                     <DxButton IconCssClass="grid-icon grid-icon-edit"
                               RenderStyle="ButtonRenderStyle.Link"
+                              @onclick="() => ToUnitEdit(unit.Id)"
                               aria-label="Edit" />
 
                     <DxButton IconCssClass="grid-icon grid-icon-delete"
                               RenderStyle="ButtonRenderStyle.Link"
+                              @onclick="() => ShowPopup(unit.Id)"
                               aria-label="Delete" />
                 </div>
             </CellDisplayTemplate>

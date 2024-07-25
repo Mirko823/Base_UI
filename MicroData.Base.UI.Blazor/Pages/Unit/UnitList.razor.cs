@@ -83,6 +83,13 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
         }
 
 
+        private void ToUnitEdit(int UnitId)
+        {
+
+            NavigationManager.NavigateTo($"/unitedit/{UnitId}");
+
+        }
+
 
     }
 }
