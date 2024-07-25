@@ -36,8 +36,18 @@
                 @{
                     var unit = (UnitViewModel)context.DataItem;
                 }
-                <a Class="edit--icon" href="@($"/unitedit/{unit.Id}")" />
-                <a class="mdi--trash" @onclick="() => ShowPopup(unit.Id)" />
+@*                 <a Class="edit--icon" href="@($"/unitedit/{unit.Id}")" />
+                <a class="mdi--trash" @onclick="() => ShowPopup(unit.Id)" /> *@
+
+                <div class="grid-cell-align-center">
+                    <DxButton IconCssClass="grid-icon grid-icon-edit"
+                              RenderStyle="ButtonRenderStyle.Link"
+                              aria-label="Edit" />
+
+                    <DxButton IconCssClass="grid-icon grid-icon-delete"
+                              RenderStyle="ButtonRenderStyle.Link"
+                              aria-label="Delete" />
+                </div>
             </CellDisplayTemplate>
         </DxGridCommandColumn>
     </Columns>
