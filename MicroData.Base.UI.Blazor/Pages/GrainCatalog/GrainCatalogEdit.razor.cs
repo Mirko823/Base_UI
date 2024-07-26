@@ -1,6 +1,7 @@
 ﻿using MicroData.Base.UI.Shared.Api;
 using MicroData.Base.UI.Shared.Interface;
 using MicroData.Base.UI.Shared.ViewModel;
+using MicroData.Common.UI.Shared.Identity;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -36,8 +37,23 @@ namespace MicroData.Base.UI.Blazor.Pages.GrainCatalog
                     Unit = string.Empty,
                     UnitId = 1,
                     TaxId = 1,
+                    TaxLabel = string.Empty,
+                    CatalogCategory = string.Empty,
                     IsNew = true
                 };
+
+                grain.Id = Guid.NewGuid();
+                grain.TenantId = Guid.NewGuid(); 
+                grain.CompanyId = Guid.NewGuid();
+
+                grain.IsReadOnly = false;
+
+                grain.CreatedBy = CurrentUser.UserName;
+                grain.UpdatedBy = CurrentUser.UserName;
+
+                grain.CreatedTime = DateTime.Now;
+                grain.UpdatedTime = DateTime.Now;
+
             }
             else
             {
