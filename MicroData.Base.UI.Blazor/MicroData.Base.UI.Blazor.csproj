@@ -25,8 +25,4 @@
     <ProjectReference Include="..\MicroData.Base.UI.Shared\MicroData.Base.UI.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\pp\" />
-  </ItemGroup>
-
 </Project>

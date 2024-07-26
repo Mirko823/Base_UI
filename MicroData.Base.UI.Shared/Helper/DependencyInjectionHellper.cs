@@ -25,7 +25,7 @@ namespace MicroData.Base.UI.Shared.Helper
             //services.AddScoped<IClientApi, ClientApi>();
             //services.AddScoped<IProfessionApi, ProfessionApi>();
 
-            //services.AddScoped<IProductCatalogApi, ProductCatalogApi>();
+            services.AddScoped<IGrainCatalogApi, GrainCatalogApi>();
             //services.AddScoped<IProductCategoryApi, ProductCategoryApi>();
             //services.AddScoped<IServiceCatalogApi, ServiceCatalogApi>();
             //services.AddScoped<IServiceCategoryApi, ServiceCategoryApi>();

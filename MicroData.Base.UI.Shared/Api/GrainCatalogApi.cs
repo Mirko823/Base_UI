@@ -3,10 +3,10 @@ using MicroData.Base.UI.Shared.ViewModel;
 
 namespace MicroData.Base.UI.Shared.Api
 {
-    public class GrainCatalog : BaseBaseApi<GrainCatalogViewModel> , IGrainCatalogApi
+    public class GrainCatalogApi : BaseBaseApi<GrainCatalogViewModel> , IGrainCatalogApi
     {
       
-        public GrainCatalog() : base()
+        public GrainCatalogApi() : base()
         {
         }
 
