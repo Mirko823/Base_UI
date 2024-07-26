@@ -105,8 +105,7 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
         }
 
 
-        string FormValidationState = @"Press the ""Submit"" button to validate the form.";
-
+        string FormValidationState;
 
         void HandleValidSubmit()
         {

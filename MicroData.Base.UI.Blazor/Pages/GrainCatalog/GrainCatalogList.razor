@@ -1,4 +1,4 @@
-﻿@page "/unitList"
+﻿@page "/graincataloglist"
 @inject IStringLocalizer<BaseStrings> baseLocalizer
 @inject IStringLocalizer<CommonStrings> commonLocalizer
 @using Microsoft.AspNetCore.Authorization
@@ -9,66 +9,42 @@
 
 
 <div class="header-container">
-    <h3>@baseLocalizer["HeaderUnit"]</h3> 
+    <h3>@baseLocalizer["HeaderUnit"]</h3>
 </div>
 
 <div class="button-grid-container">
-    <DxButton CssClass="custom-button" @onclick="OnNewButtonClick"> <i class="oi oi-plus"></i> @baseLocalizer["NewUnits"]</DxButton>
+    <DxButton CssClass="custom-button"> <i class="oi oi-plus"></i> @baseLocalizer["NewUnits"]</DxButton>
 </div>
 
-
-
-
-
-<DxGrid Data="@Units"
+<DxGrid Data="@GrainCatalogs"
         CssClass="mw-1100"
         KeyFieldName="Code">
 
     <Columns>
         <DxGridDataColumn Caption="@baseLocalizer["CodeUnits"]" FieldName="Code" Width="10%" />
-        <DxGridDataColumn Caption="@baseLocalizer["LabelUnits"]" FieldName="Label" />
+        <DxGridDataColumn Caption="@commonLocalizer["BarCode"]" FieldName="BarCode" />
         <DxGridDataColumn Caption="@baseLocalizer["NameUnits"]" FieldName="Name" />
-        <DxGridDataColumn Caption="@baseLocalizer["IsActiveUnits"]" FieldName="IsActive" />
+        <DxGridDataColumn Caption="@commonLocalizer["Unit"]" FieldName="Unit" />
         <DxGridCommandColumn Width="70px">
             <HeaderTemplate>
-                
             </HeaderTemplate>
             <CellDisplayTemplate Context="context">
                 @{
-                    var unit = (UnitViewModel)context.DataItem;
+                    var unit = (GrainCatalogViewModel)context.DataItem;
                 }
 
                 <div class="grid-cell-align-center">
                     <DxButton IconCssClass="grid-icon grid-icon-edit"
                               RenderStyle="ButtonRenderStyle.Link"
-                              @onclick="() => ToUnitEdit(unit.Id)"
+                             
                               aria-label="Edit" />
 
                     <DxButton IconCssClass="grid-icon grid-icon-delete"
                               RenderStyle="ButtonRenderStyle.Link"
-                              @onclick="() => ShowPopup(unit.Id)"
+                             
                               aria-label="Delete" />
                 </div>
             </CellDisplayTemplate>
         </DxGridCommandColumn>
     </Columns>
 </DxGrid>
-
-
-
-<DxPopup HeaderText="@commonLocalizer["HeaderDeleteWindow"]"
-         @bind-Visible="isPopupVisible"
-         ShowFooter="true" ShowCloseButton="true"
-         BodyText="@commonLocalizer["BodyTextDeleteWindow"]">
-    
-    <FooterContentTemplate>
-        <DxButton CssClass="popup-button my-1 ms-2 custom-delete-button" RenderStyle="ButtonRenderStyle.Primary" Click="ConfirmDelete" Text="@commonLocalizer["Yes"]" />
-        <DxButton CssClass="popup-button my-1 ms-2" RenderStyle="ButtonRenderStyle.Secondary" Click="CancelDelete" Text="@commonLocalizer["No"]" />
-    </FooterContentTemplate>
-   
-</DxPopup>
-
-
-
-
-
