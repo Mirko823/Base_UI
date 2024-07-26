@@ -232,6 +232,24 @@ namespace MicroData.Base.UI.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Izmena merkantilne robe.
+        /// </summary>
+        public static string GrainCatalogEdit {
+            get {
+                return ResourceManager.GetString("GrainCatalogEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Merkantilna Roba.
+        /// </summary>
+        public static string HeaderGrainCatalog {
+            get {
+                return ResourceManager.GetString("HeaderGrainCatalog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Tabela jedinica.
         /// </summary>
         public static string HeaderUnit {

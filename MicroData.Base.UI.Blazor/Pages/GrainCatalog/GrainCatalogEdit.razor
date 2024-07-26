@@ -1,5 +1,47 @@
-﻿<h3>GrainCatalogEdit</h3>
+﻿@page "/graincatalogedit/{grainId}"
+@inject NavigationManager NavigationManager
+@using DevExpress.Blazor
+@inject IStringLocalizer<BaseStrings> baseLocalizer
+@inject IStringLocalizer<CommonStrings> commonLocalizer
+@rendermode InteractiveServer
 
-@code {
 
-}
+<div class="header-container">
+    <h3>@baseLocalizer["GrainCatalogEdit"]</h3>
+</div>
+
+<EditForm Model="@grain"
+          OnValidSubmit="@HandleValidSubmit"
+          OnInvalidSubmit="@HandleInvalidSubmit"
+          Context="EditFormContext">
+
+    <DataAnnotationsValidator />
+    <DxFormLayout>
+        <DxFormLayoutItem Caption="@baseLocalizer["CodeUnits"]">
+            <DxTextBox InputId="identifierInputId" @bind-Text="grain.Code" ShowValidationIcon="true" />
+            <ValidationMessage For="@(() => grain.Code)" />
+        </DxFormLayoutItem>
+        <DxFormLayoutItem Caption="@commonLocalizer["BarCode"]">
+            <DxTextBox InputId="identifierInputId" @bind-Text="grain.BarCode" ShowValidationIcon="true" />
+            <ValidationMessage For="@(() => grain.BarCode)" />
+        </DxFormLayoutItem>
+        <DxFormLayoutItem Caption="@baseLocalizer["NameUnits"]">
+            <DxTextBox @bind-Text="grain.Name" ShowValidationIcon="true" />
+            <ValidationMessage For="@(() => grain.Name)" />
+        </DxFormLayoutItem>
+        <DxFormLayoutItem Caption="@commonLocalizer["Unit"]">
+            <DxTextBox @bind-Text="grain.Unit" ShowValidationIcon="true" />
+            <ValidationMessage For="@(() => grain.Unit)" />
+        </DxFormLayoutItem>
+
+
+        <DxFormLayoutItem>
+            <ChildContent Context="buttonContext">
+                <DxButton Click="SaveUnit" SubmitFormOnClick="true" RenderStyle="ButtonRenderStyle.Primary">@commonLocalizer["Save"]</DxButton>
+                <DxButton  RenderStyle="ButtonRenderStyle.Secondary">@commonLocalizer["Close"]</DxButton>
+            </ChildContent>
+        </DxFormLayoutItem>
+    </DxFormLayout>
+
+
+</EditForm>

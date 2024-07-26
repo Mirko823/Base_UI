@@ -20,5 +20,14 @@ namespace MicroData.Base.UI.Blazor.Pages.GrainCatalog
         {
             GrainCatalogs = _grainCatalogApi.GetAll(string.Empty).ToList();
         }
+
+
+        private void OnNewButtonClick()
+        {
+
+            NavigationManager.NavigateTo("/graincatalogedit/new");
+
+        }
+
     }
 }
