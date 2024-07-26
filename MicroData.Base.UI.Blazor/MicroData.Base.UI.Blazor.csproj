@@ -13,6 +13,7 @@
   </ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="DevExpress.Blazor" Version="24.1.3" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="8.0.5" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.5" />
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.5" />
@@ -22,6 +23,10 @@
   <ItemGroup>
     <ProjectReference Include="..\MicroData.Base.UI.Resource\MicroData.Base.UI.Resource.csproj" />
     <ProjectReference Include="..\MicroData.Base.UI.Shared\MicroData.Base.UI.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\pp\" />
   </ItemGroup>
 
 </Project>
