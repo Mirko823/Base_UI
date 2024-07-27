@@ -60,7 +60,19 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
             // Your delete logic here
             isPopupVisible = false;
             
-            _unitApi.DeleteExisting(unitIdToDelete, string.Empty);
+            var result = _unitApi.DeleteExisting(unitIdToDelete, string.Empty);
+
+            if (result)
+            {
+                //1. Nacin  Brzi, nesigurnije (malo sigurniji sa result = true  )
+                var itemForDelete = Units.FirstOrDefault(f => f.Id == unitIdToDelete);
+
+                if (itemForDelete != null)
+                    Units.Remove(itemForDelete);
+
+                //2.Nacin Spriji, Sigurniji
+                //Units = _unitApi.GetAll(string.Empty).ToList();
+            }
         }
 
         void CancelDelete()

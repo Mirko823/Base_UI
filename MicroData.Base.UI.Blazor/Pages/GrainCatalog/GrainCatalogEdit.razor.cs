@@ -24,6 +24,8 @@ namespace MicroData.Base.UI.Blazor.Pages.GrainCatalog
         [Inject]
         public IGrainCatalogApi _grainCatalogApi { get; set; }
 
+        //[Inject]
+        //public ILookupBaseApi _lookupBaseApi { get; set; }
         protected override async Task OnInitializedAsync()
         {
 
