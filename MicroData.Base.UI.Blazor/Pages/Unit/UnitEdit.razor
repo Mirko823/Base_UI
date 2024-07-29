@@ -5,6 +5,8 @@
 @inject IStringLocalizer<CommonStrings> commonLocalizer
 @rendermode InteractiveServer
 
+<MdToolBar IsActive="true" OnSave="@SaveUnit" OnCancel="@Cancel" />
+
 <div class="header-container">
     <h3>@baseLocalizer["UnitChange"]</h3>
 </div>
@@ -32,12 +34,12 @@
     <DxFormLayoutItem Caption="@baseLocalizer["IsActiveUnits"]">
         <DxCheckBox  @bind-Checked="unit.IsActive" />
     </DxFormLayoutItem>
-    <DxFormLayoutItem>
+   @* <DxFormLayoutItem>
         <ChildContent Context="buttonContext">
                 <DxButton Click="SaveUnit" SubmitFormOnClick="true" RenderStyle="ButtonRenderStyle.Primary">@commonLocalizer["Save"]</DxButton>
                 <DxButton Click="Cancel" RenderStyle="ButtonRenderStyle.Secondary">@commonLocalizer["Close"]</DxButton>
         </ChildContent>
-    </DxFormLayoutItem>
+        </DxFormLayoutItem> *@
 </DxFormLayout>
 
 

@@ -21,6 +21,7 @@
 	</ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Common\UI\MicroData.Common.UI.Blazor\MicroData.Common.UI.Blazor.csproj" />
     <ProjectReference Include="..\MicroData.Base.UI.Resource\MicroData.Base.UI.Resource.csproj" />
     <ProjectReference Include="..\MicroData.Base.UI.Shared\MicroData.Base.UI.Shared.csproj" />
   </ItemGroup>
