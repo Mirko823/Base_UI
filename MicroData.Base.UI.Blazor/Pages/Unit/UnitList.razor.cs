@@ -7,8 +7,8 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
 {
     public partial class UnitList
     {
-        [CascadingParameter]
-        private Task<AuthenticationState> AuthenticationState { get; set; }
+        //[CascadingParameter]
+        //private Task<AuthenticationState> AuthenticationState { get; set; }
 
         private int unitIdToDelete;
 
@@ -21,7 +21,7 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
 
         protected override async Task OnInitializedAsync()
         {
-            var authState = await AuthenticationState;
+            //var authState = await AuthenticationState;
 
             //if (!authState.User.Identity.IsAuthenticated)
             //{
