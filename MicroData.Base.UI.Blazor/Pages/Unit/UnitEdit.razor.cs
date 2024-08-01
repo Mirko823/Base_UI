@@ -118,5 +118,13 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
         }
 
 
+        private string message = "Pozdrav iz roditeljske komponente!";
+
+        private void HandleButtonClick(string newText)
+        {
+            message = newText;
+        }
+
+
     }
 }

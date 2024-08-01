@@ -5,7 +5,9 @@
 @inject IStringLocalizer<CommonStrings> commonLocalizer
 @rendermode InteractiveServer
 
-@* <MdToolBar IsActive="true" OnSave="@SaveUnit" OnCancel="@Cancel" /> *@
+
+
+<MdToolBar OnButtonClick="HandleButtonClick" OnSave="@SaveUnit" OnCancel="@Cancel" />
 
 <div class="header-container">
     <h3>@baseLocalizer["UnitChange"]</h3>
