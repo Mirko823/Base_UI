@@ -7,7 +7,6 @@
 
 
 
-<MdToolBar OnButtonClick="HandleButtonClick" OnSave="@SaveUnit" OnCancel="@Cancel" />
 
 <div class="header-container">
     <h3>@baseLocalizer["UnitChange"]</h3>
@@ -20,7 +19,10 @@
           Context="EditFormContext">
 
     <DataAnnotationsValidator />
-<DxFormLayout>
+
+    <MdToolBar OnButtonClick="HandleButtonClick" OnSave="@SaveUnit" OnCancel="@Cancel" />
+
+    <DxFormLayout>
     <DxFormLayoutItem Caption="@baseLocalizer["CodeUnits"]">
             <DxTextBox InputId="identifierInputId" @bind-Text="unit.Code" ShowValidationIcon="true" />
             <ValidationMessage For="@(() => unit.Code)" />
