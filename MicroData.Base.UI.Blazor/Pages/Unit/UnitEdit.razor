@@ -24,14 +24,15 @@
 
     <DxFormLayout>
 
-    <MdTextBoxEditItem MdCaption="@baseLocalizer["CodeUnits"]" MdBindValue="@unit.Code" Model="@unit"/>
-   
+        <MdTextBoxEditItem MdCaption="@baseLocalizer["CodeUnits"]" @bind-MdBindValue="@unit.Code" />
+        <ValidationMessage For="@(() => unit.Label)" />
+
     @* <DxFormLayoutItem Caption="@baseLocalizer["CodeUnits"]">
             <DxTextBox InputId="identifierInputId" @bind-Text="unit.Code" ShowValidationIcon="true" /> 
             <ValidationMessage For="@(() => unit.Code)" />
         </DxFormLayoutItem>*@
     <DxFormLayoutItem Caption="@baseLocalizer["LabelUnits"]">
-            <DxTextBox @bind-Text="unit.Label" ShowValidationIcon="true" />
+            <DxTextBox  @bind-Text="unit.Label" ShowValidationIcon="true" />
             <ValidationMessage For="@(() => unit.Label)" />
     </DxFormLayoutItem>
     <DxFormLayoutItem Caption="@baseLocalizer["NameUnits"]">

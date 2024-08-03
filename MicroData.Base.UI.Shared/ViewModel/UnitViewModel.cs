@@ -13,9 +13,17 @@ namespace MicroData.Base.UI.Shared.ViewModel
         [Display(Name = "Oznaka")]
         public string Label { get; set; }
 
+        private string name;
         [Required(ErrorMessage = "Naziv je obavezno polje")]
         [Display(Name = "Naziv")]
-        public string Name { get; set; }
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                name = value;
+            }
+        }
 
         [Display(Name = "Aktivna", AutoGenerateField = false)]
         public bool IsActive { get; set; }
