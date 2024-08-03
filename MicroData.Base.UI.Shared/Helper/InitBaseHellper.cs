@@ -1,6 +1,4 @@
-﻿using MicroData.Base.UI.Shared.Api;
-using MicroData.Base.UI.Shared.Interface;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace MicroData.Base.UI.Shared.Helper
 {

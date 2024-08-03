@@ -1,5 +1,4 @@
-﻿using MicroData.Base.Domain.Lookup;
-using MicroData.Base.UI.Shared.Enum;
+﻿using MicroData.Base.UI.Shared.Enum;
 using MicroData.Base.UI.Shared.Lookup;
 using MicroData.Common.UI.Shared.Lookup;
 using System.Collections.Generic;
