@@ -23,10 +23,13 @@
     <MdToolBar OnButtonClick="HandleButtonClick" OnSave="@SaveUnit" OnCancel="@Cancel" />
 
     <DxFormLayout>
-    <DxFormLayoutItem Caption="@baseLocalizer["CodeUnits"]">
-            <DxTextBox InputId="identifierInputId" @bind-Text="unit.Code" ShowValidationIcon="true" />
+
+    <MdTextBoxEditItem MdCaption="@baseLocalizer["CodeUnits"]" MdBindValue="@unit.Code" Model="@unit"/>
+   
+    @* <DxFormLayoutItem Caption="@baseLocalizer["CodeUnits"]">
+            <DxTextBox InputId="identifierInputId" @bind-Text="unit.Code" ShowValidationIcon="true" /> 
             <ValidationMessage For="@(() => unit.Code)" />
-    </DxFormLayoutItem>
+        </DxFormLayoutItem>*@
     <DxFormLayoutItem Caption="@baseLocalizer["LabelUnits"]">
             <DxTextBox @bind-Text="unit.Label" ShowValidationIcon="true" />
             <ValidationMessage For="@(() => unit.Label)" />
