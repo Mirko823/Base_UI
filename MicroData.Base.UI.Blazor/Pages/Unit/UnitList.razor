@@ -6,7 +6,8 @@
 @inject NavigationManager NavigationManager
 @rendermode InteractiveServer
 @* @attribute [Authorize] *@
-
+@using Microsoft.JSInterop;
+@inject IJSRuntime JSRuntime
 
 <div class="header-container" >
     <h3>@baseLocalizer["HeaderUnit"]</h3> 
@@ -21,8 +22,17 @@
 
 
 <DxGrid Data="@Units"
-        CssClass="mw-1100"
-        KeyFieldName="Code">
+        CssClass="mw-1100 grid-container"
+        KeyFieldName="Code"
+        PageSize="@PageSize"
+        PagerVisibleNumericButtonCount="10"
+        PagerVisible="true"
+        PagerPosition="GridPagerPosition.Top">
+
+
+        
+      
+    
 
     <Columns>
         <DxGridDataColumn Caption="@baseLocalizer["CodeUnits"]" FieldName="Code" Width="10%" />
@@ -52,8 +62,15 @@
             </CellDisplayTemplate>
         </DxGridCommandColumn>
     </Columns>
-</DxGrid>
 
+
+
+
+</DxGrid>
+<div class="pager-container">
+   
+        Total: @Units.Count @commonLocalizer["Unit"]
+</div>
 
 
 <DxPopup HeaderText="@commonLocalizer["HeaderDeleteWindow"]"

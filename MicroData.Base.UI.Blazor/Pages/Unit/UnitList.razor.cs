@@ -2,6 +2,8 @@
 using MicroData.Base.UI.Shared.ViewModel;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
+using DevExpress.Blazor;
+using Microsoft.JSInterop;
 
 namespace MicroData.Base.UI.Blazor.Pages.Unit
 {
@@ -31,9 +33,19 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
             //var accessToken = authState.User.Claims.FirstOrDefault(c => c.Type.Equals("AccessToken"))?.Value;
             //if (accessToken != null)
             Units = _unitApi.GetAll(string.Empty).ToList();
+
+            
         }
 
 
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                PageSize = await CalculatePageSizeAsync();
+                StateHasChanged(); // Osvježi komponentu nakon ažuriranja PageSize
+            }
+        }
 
         private void OnNewButtonClick()
         {
@@ -88,6 +100,32 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
 
         }
 
+
+        private int PageSize { get; set; } = 6;
+
+        //IGrid Grid { get; set; }
+        ////IEnumerable<UnitViewModel> Data { get; set; }
+        //int PageCount { get; set; }
+        //int TotalRecords { get; set; }
+        //int ActivePageIndex { get; set; } = 0;
+        //string RowCountField { get; set; } = "Country";
+
+        //protected override void OnAfterRender(bool firstRender)
+        //{
+        //    TotalRecords = Units.Count;
+        //    PageCount = (int)Math.Ceiling((decimal)TotalRecords / PageSize);
+        //    StateHasChanged();
+        //    base.OnAfterRender(firstRender);
+        //}
+
+        private async Task<int> CalculatePageSizeAsync()
+        {
+            var viewportHeight = await JSRuntime.InvokeAsync<int>("getViewportHeight");
+            // Assume each row is approximately 40px high
+            int rowHeight = 40;
+            int pageSize = viewportHeight / rowHeight;
+            return pageSize;
+        }
 
     }
 }
