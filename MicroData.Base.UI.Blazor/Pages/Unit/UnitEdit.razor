@@ -25,20 +25,29 @@
     <DxFormLayout>
 
         <MdTextBoxEditItem @bind-MdBindValue="@unit.Code" 
-                           ValueExpression="()=>unit.Code" />
-                                 
-    <DxFormLayoutItem Caption="@baseLocalizer["LabelUnits"]">
+                           ValueExpression="()=>unit.Code"
+                           ShowValidationIcon="true"/>
+
+        <MdTextBoxEditItem MdCaption="@baseLocalizer["LabelUnits"]"
+                           @bind-MdBindValue="@unit.Name"
+                           ValueExpression="()=>unit.Name"
+                           ShowValidationIcon="true" />
+
+        <MdTextBoxEditItem MdCaption="@baseLocalizer["NameUnits"]"
+                           @bind-MdBindValue="@unit.Label"
+                           ValueExpression="()=>unit.Label"
+                           ShowValidationIcon="true" />
+
+        <MdCheckBoxEditItem MdCaption="@baseLocalizer["IsActiveUnits"]" 
+                            MdBindValue="@unit.IsActive"/>
+@* 
+        <DxFormLayoutItem Caption="@baseLocalizer["LabelUnits"]">
             <DxTextBox  @bind-Text="unit.Label" ShowValidationIcon="true" />
             <ValidationMessage For="@(() => unit.Label)" />
-    </DxFormLayoutItem>
-    <DxFormLayoutItem Caption="@baseLocalizer["NameUnits"]">
-            <DxTextBox @bind-Text="unit.Name" ShowValidationIcon="true" />
-            <ValidationMessage For="@(() => unit.Name)" />
-    </DxFormLayoutItem>
-    <DxFormLayoutItem Caption="@baseLocalizer["IsActiveUnits"]">
-        <DxCheckBox  @bind-Checked="unit.IsActive" />
-    </DxFormLayoutItem>
-@*    <DxFormLayoutItem>
+    </DxFormLayoutItem> 
+
+
+  <DxFormLayoutItem>
         <ChildContent Context="buttonContext">
                 <DxButton Click="SaveUnit" SubmitFormOnClick="true" RenderStyle="ButtonRenderStyle.Primary">@commonLocalizer["Save"]</DxButton>
                 <DxButton Click="Cancel" RenderStyle="ButtonRenderStyle.Secondary">@commonLocalizer["Close"]</DxButton>
