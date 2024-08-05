@@ -39,7 +39,7 @@
                            ShowValidationIcon="true" />
 
         <MdCheckBoxEditItem MdCaption="@baseLocalizer["IsActiveUnits"]" 
-                            MdBindValue="@unit.IsActive"/>
+                            @bind-MdBindValue = "@unit.IsActive"/>
 @* 
         <DxFormLayoutItem Caption="@baseLocalizer["LabelUnits"]">
             <DxTextBox  @bind-Text="unit.Label" ShowValidationIcon="true" />
