@@ -53,10 +53,7 @@
                               @onclick="() => ToUnitEdit(unit.Id)"
                               aria-label="Edit" />
 
-                    <DxButton IconCssClass="grid-icon grid-icon-delete"
-                              RenderStyle="ButtonRenderStyle.Link"
-                              @onclick="() => ShowPopup(unit.Id)"
-                              aria-label="Delete" />
+                    <MdButtonDelete OnClickDelete="() => ShowPopup(unit.Id)" />
                 </div>
             </CellDisplayTemplate>
         </DxGridCommandColumn>
