@@ -6,9 +6,7 @@
 @rendermode InteractiveServer
 
 
-<div class="header-container">
-    <h3>@baseLocalizer["GrainCatalogEdit"]</h3>
-</div>
+<MdHeader MdCaption="@baseLocalizer["GrainCatalogEdit"]" />
 
 <EditForm Model="@grain"
           OnValidSubmit="@HandleValidSubmit"
@@ -16,6 +14,9 @@
           Context="EditFormContext">
 
     <DataAnnotationsValidator />
+
+   
+
     <DxFormLayout>
         <DxFormLayoutItem Caption="@baseLocalizer["CodeUnits"]">
             <DxTextBox InputId="identifierInputId" @bind-Text="grain.Code" ShowValidationIcon="true" />

@@ -8,13 +8,11 @@
 @* @attribute [Authorize] *@
 
 
-<div class="header-container">
-    <h3>@baseLocalizer["HeaderGrainCatalog"]</h3>
-</div>
+<MdHeader MdCaption="@baseLocalizer["HeaderGrainCatalog"]" />
 
-<div class="button-grid-container">
-    <DxButton CssClass="custom-button" @onclick="OnNewButtonClick"> <i class="oi oi-plus"></i> @baseLocalizer["NewUnits"]</DxButton>
-</div>
+
+<MdToolBarList  OnNewButtonClick="OnNewButtonClick" />
+
 
 <DxGrid Data="@GrainCatalogs"
         CssClass="mw-1100"

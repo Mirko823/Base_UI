@@ -6,12 +6,7 @@
 @rendermode InteractiveServer
 
 
-
-
-<div class="header-container">
-    <h3>@baseLocalizer["UnitChange"]</h3>
-</div>
-
+<MdHeader MdCaption="@baseLocalizer["UnitChange"]" />
 
 <EditForm Model="@unit"
           OnValidSubmit="@HandleValidSubmit"

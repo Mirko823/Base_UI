@@ -9,14 +9,10 @@
 @using Microsoft.JSInterop;
 @inject IJSRuntime JSRuntime
 
-<div class="header-container" >
-    <h3>@baseLocalizer["HeaderUnit"]</h3> 
-</div>
+<MdHeader MdCaption="@baseLocalizer["HeaderUnit"]" />
 
 
-<MdToolBarList MdCaption="@baseLocalizer["NewUnits"]" OnNewButtonClick="OnNewButtonClick" />
-
-
+<MdToolBarList OnNewButtonClick="OnNewButtonClick" />
 
 
 
