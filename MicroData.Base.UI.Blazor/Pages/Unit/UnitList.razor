@@ -13,9 +13,8 @@
     <h3>@baseLocalizer["HeaderUnit"]</h3> 
 </div>
 
-<div class="button-grid-container">
-    <DxButton CssClass="custom-button" @onclick="OnNewButtonClick"> <i class="oi oi-plus"></i> @baseLocalizer["NewUnits"]</DxButton>
-</div>
+
+<MdToolBarList MdCaption="@baseLocalizer["NewUnits"]" OnNewButtonClick="OnNewButtonClick" />
 
 
 
@@ -73,19 +72,9 @@
 </div>
 
 
-<DxPopup HeaderText="@commonLocalizer["HeaderDeleteWindow"]"
-         @bind-Visible="isPopupVisible"
-         ShowFooter="true" ShowCloseButton="true"
-         BodyText="@commonLocalizer["BodyTextDeleteWindow"]">
-    
-    <FooterContentTemplate>
-        <DxButton CssClass="popup-button my-1 ms-2 custom-delete-button" RenderStyle="ButtonRenderStyle.Primary" Click="ConfirmDelete" Text="@commonLocalizer["Yes"]" />
-        <DxButton CssClass="popup-button my-1 ms-2" RenderStyle="ButtonRenderStyle.Secondary" Click="CancelDelete" Text="@commonLocalizer["No"]" />
-    </FooterContentTemplate>
-   
-</DxPopup>
 
-
-
-
-
+<MdPopUpDelete Visible="isPopupVisible"
+               OnConfirmDelete="ConfirmDelete"
+               OnCancelDelete="CancelDelete"
+               MdHeaderText="@commonLocalizer["HeaderDeleteWindow"]"
+               MdBodyText="@commonLocalizer["BodyTextDeleteWindow"]" />
