@@ -48,10 +48,8 @@
                 }
 
                 <div class="grid-cell-align-center">
-                    <DxButton IconCssClass="grid-icon grid-icon-edit"
-                              RenderStyle="ButtonRenderStyle.Link"
-                              @onclick="() => ToUnitEdit(unit.Id)"
-                              aria-label="Edit" />
+
+                    <MdButtonEdit OnClickEdit="() => ToUnitEdit(unit.Id)" />
 
                     <MdButtonDelete OnClickDelete="() => ShowPopup(unit.Id)" />
                 </div>
