@@ -16,13 +16,17 @@
 
 
 
-<DxGrid Data="@Units"
+<DxGrid @ref="Grid"
+        Data="@Units"
         CssClass="mw-1100 grid-container"
         KeyFieldName="Code"
         PageSize="@PageSize"
         PagerVisibleNumericButtonCount="10"
-        PagerVisible="true"
-        PagerPosition="GridPagerPosition.Top">
+        PagerPosition="GridPagerPosition.Bottom"
+        @bind-PageIndex="@ActivePageIndex"
+        PagerVisible="false"
+        FooterDisplayMode="GridFooterDisplayMode.Never">
+    
 
 
         
@@ -54,13 +58,21 @@
     </Columns>
 
 
-
+    <TotalSummary>
+        <DxGridSummaryItem SummaryType="GridSummaryItemType.Count"
+                           FieldName="@RowCountField"
+                           Visible="false" />
+    </TotalSummary>
 
 </DxGrid>
 <div class="pager-container">
-   
-        Total: @Units.Count @commonLocalizer["Unit"]
+    <DxPager PageCount="@PageCount" @bind-ActivePageIndex="@ActivePageIndex" />
+    <div>
+        Total: @TotalRecords records
+    </div>
 </div>
+
+
 
 
 

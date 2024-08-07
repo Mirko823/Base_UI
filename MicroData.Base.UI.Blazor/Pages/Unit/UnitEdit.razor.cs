@@ -24,6 +24,9 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
         [Inject]
         public IUnitApi _unitApi { get; set; }
 
+        [Parameter]
+        public int? PageIndex { get; set; }
+
         protected override async Task OnInitializedAsync()
         {
 
@@ -91,17 +94,25 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
             }
 
             //Console.WriteLine("SaveUnit method called.");
-            
-            NavigationManager.NavigateTo("/unitlist");
 
-            
+            if (PageIndex.HasValue)
+            {
+                NavigationManager.NavigateTo($"/unitlist/{PageIndex}");
+            }
+            else
+            {
+                NavigationManager.NavigateTo("/unitlist");
+            }
+
+
+
         }
 
-    
+
         public void Cancel()
         {
-            NavigationManager.NavigateTo("/unitlist");
-            Console.WriteLine("Cancel back to unitlist");
+            NavigationManager.NavigateTo($"/unitlist/{PageIndex}");
+
         }
 
 
