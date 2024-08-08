@@ -49,6 +49,10 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
             {
                 ActivePageIndex = PageIndex.Value;
             }
+            else
+            {
+                ActivePageIndex = 0;
+            }
 
 
         }
@@ -104,7 +108,7 @@ namespace MicroData.Base.UI.Blazor.Pages.Unit
         private void ToUnitEdit(int UnitId)
         {
             //SavePageIndex();
-            NavigationManager.NavigateTo($"/unitedit/{UnitId}?pageIndex={ActivePageIndex}");
+            NavigationManager.NavigateTo($"/unitedit/{UnitId}/{ActivePageIndex}");
 
         }
 
